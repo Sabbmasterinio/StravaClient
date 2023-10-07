@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StravaClient</name>
+    </assembly>
+    <members>
+        <member name="T:StravaClient.ActivityStatsResponseModel">
+            <summary>
+            Represents activity stats.
+            </summary>
+            <remarks>A set of rolled-up statistics and totals for an athlete.</remarks>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.BiggestRideDistance">
+            <summary>
+            The longest distance ridden by the athlete
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.BiggestClimbElevationGain">
+            <summary>
+            The highest climb ridden by the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.RecentRideTotals">
+            <summary>
+            The recent (last 4 weeks) ride stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.RecentRunTotals">
+            <summary>
+            The recent (last 4 weeks) run stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.RecentSwimTotals">
+            <summary>
+            The recent (last 4 weeks) swim stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.YtdRideTotals">
+            <summary>
+            The year to date ride stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.YtdRunTotals">
+            <summary>
+            The year to date run stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.YtdSwimTotals">
+            <summary>
+            The year to date swim stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.AllRideTotals">
+            <summary>
+            The all time ride stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.AllRunTotals">
+            <summary>
+            The all time run stats for the athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStatsResponseModel.AllSwimTotals">
+            <summary>
+            The all time swim stats for the athlete.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityStatsResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ActivityTotalResponseModel">
+            <summary>
+            Represents an activity total.
+            </summary>
+            <remarks>
+            A roll-up of metrics pertaining to a set of activities. Values are in seconds and meters.
+            </remarks>
+        </member>
+        <member name="P:StravaClient.ActivityTotalResponseModel.Count">
+            <summary>
+            The number of activities considered in this total.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityTotalResponseModel.Distance">
+            <summary>
+            The total distance covered by the considered activities.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityTotalResponseModel.MovingTime">
+            <summary>
+            The total moving time of the considered activities.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityTotalResponseModel.ElapsedTime">
+            <summary>
+            The total elapsed time of the considered activities.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityTotalResponseModel.ElevationGain">
+            <summary>
+            The total elevation gain of the considered activities
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityTotalResponseModel.AchievementCount">
+            <summary>
+            The total elevation gain of the considered activities
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityTotalResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ActivityType">
+            <summary>
+            Provides enumeration over the activity types.
+            </summary>
+            <remarks>
+            An enumeration of the types an activity may have. 
+            Note that this enumeration does not include new 
+            sport types (e.g. MountainBikeRide, EMountainBikeRide), 
+            activities with these sport types will have 
+            the corresponding activity type (e.g. Ride for 
+            MountainBikeRide, EBikeRide for EMountainBikeRide).
+            </remarks>
+        </member>
+        <member name="F:StravaClient.ActivityType.AlpineSki">
+            <summary>
+            Alpine ski.
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.BackcountrySki">
+            <summary>
+            Backcountry ski
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Canoeing">
+            <summary>
+            Canoeing
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Crossfit">
+            <summary>
+            Crossfit
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.EBikeRide">
+            <summary>
+            E bike ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Elliptical">
+            <summary>
+            Elliptical
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Golf">
+            <summary>
+            Golf
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Handcycle">
+            <summary>
+            Hand cycle
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Hike">
+            <summary>
+            Hike
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.IceSkate">
+            <summary>
+            Ice skate
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.InlineSkate">
+            <summary>
+            Inline skate
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Kayaking">
+            <summary>
+            Kayaking
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Kitesurf">
+            <summary>
+            Kitesurf
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.NordicSki">
+            <summary>
+            Nordic ski
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Ride">
+            <summary>
+            Ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.RockClimbing">
+            <summary>
+            Rock climbing
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.RollerSki">
+            <summary>
+            Roller ski
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Rowing">
+            <summary>
+            Rowing
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Run">
+            <summary>
+            Run
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Sail">
+            <summary>
+            Sail
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Skateboard">
+            <summary>
+            Skateboard
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Snowboard">
+            <summary>
+            Snowboard
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Snowshoe">
+            <summary>
+            Snowshoe
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Soccer">
+            <summary>
+            Soccer
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.StairStepper">
+            <summary>
+            Stair stepper
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.StandUpPaddling">
+            <summary>
+            Stand up paddling
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Surfing">
+            Surfing <summary>
+             Surfing
+             </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Swim">
+            <summary>
+            Swim
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Velomobile">
+            <summary>
+            Velomobile
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.VirtualRide">
+            <summary>
+            Virtual ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.VirtualRun">
+            <summary>
+            Virtual run
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Walk">
+            <summary>
+            Walk
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.WeightTraining">
+            <summary>
+            Weight training
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Wheelchair">
+            <summary>
+            Wheelchair
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Windsurf">
+            <summary>
+            Windsurf
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Workout">
+            <summary>
+            Workout
+            </summary>
+        </member>
+        <member name="F:StravaClient.ActivityType.Yoga">
+            <summary>
+            Yoga
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClubActivityResponseModel">
+            <summary>
+            Represents a club activity.
+            </summary>
+        </member>
+        <member name="F:StravaClient.ClubActivityResponseModel.mName">
+            <summary>
+            The member of <see cref="P:StravaClient.ClubActivityResponseModel.Name"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.ClubActivityResponseModel.mAthlete">
+            <summary>
+            The member of <see cref="P:StravaClient.ClubActivityResponseModel.Athlete"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.Athlete">
+            <summary>
+            An instance of MetaAthlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.Name">
+            <summary>
+            The name of the activity
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.Distance">
+            <summary>
+            The activity's distance, in meters
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.MovingTime">
+            <summary>
+            The activity's moving time, in seconds
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.ElapsedTime">
+            <summary>
+            The activity's elapsed time, in seconds
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.TotalElevationGain">
+            <summary>
+            The activity's total elevation gain.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.Type">
+            <summary>
+            Deprecated. Prefer to use sport_type
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.SportType">
+            <summary>
+            An instance of SportType.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.WorkoutType">
+            <summary>
+            The activity's workout type
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubActivityResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.MetaAthleteResponseModel">
+            <summary>
+            Represends a meta athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.MetaAthleteResponseModel.Id">
+            <summary>
+            The unique identifier of the athlete
+            </summary>
+        </member>
+        <member name="T:StravaClient.SportType">
+            <summary>
+            Provides enumaration over the sport types
+            </summary>
+            <remarks>
+            An enumeration of the sport types an activity 
+            may have. Distinct from ActivityType in that 
+            it has new types (e.g. MountainBikeRide)
+            </remarks>
+        </member>
+        <member name="F:StravaClient.SportType.AlpineSki">
+            <summary>
+            Alpine ski.
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.BackcountrySki">
+            <summary>
+            Backcountry ski
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Badminton">
+            <summary>
+            Badminton
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Canoeing">
+            <summary>
+            Canoeing
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Crossfit">
+            <summary>
+            Crossfit
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.EBikeRide">
+            <summary>
+            E bike ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Elliptical">
+            <summary>
+            Elliptical
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.EMountainBikeRide">
+            <summary>
+            E mountain bike ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Golf">
+            <summary>
+            Golf
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.GravelRide">
+            <summary>
+            Gravel ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Handcycle">
+            <summary>
+            Hand cycle
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.HighIntensityIntervalTraining">
+            <summary>
+            High intensity interval training
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Hike">
+            <summary>
+            Hike
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.IceSkate">
+            <summary>
+            Ice skate
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.InlineSkate">
+            <summary>
+            Inline skate
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Kayaking">
+            <summary>
+            Kayaking
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Kitesurf">
+            <summary>
+            Kitesurf
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.MountainBikeRide">
+            <summary>
+            Mountain bike ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.NordicSki">
+            <summary>
+            Nordic ski
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Pickleball">
+            <summary>
+            Pickleball
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Pilates">
+            <summary>
+            Pilates
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Racquetball">
+            <summary>
+            Racquetball
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Ride">
+            <summary>
+            Ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.RockClimbing">
+            <summary>
+            Rock climbing
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.RollerSki">
+            <summary>
+            Roller ski
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Rowing">
+            <summary>
+            Rowing
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Run">
+            <summary>
+            Run
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Sail">
+            <summary>
+            Sail
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Skateboard">
+            <summary>
+            Skateboard
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Snowboard">
+            <summary>
+            Snowboard
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Snowshoe">
+            <summary>
+            Snowshoe
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Soccer">
+            <summary>
+            Soccer
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Squash">
+            <summary>
+            Squash
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.StairStepper">
+            <summary>
+            Stair stepper
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.StandUpPaddling">
+            <summary>
+            Stand up paddling
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Surfing">
+            Surfing <summary>
+             Surfing
+             </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Swim">
+            <summary>
+            Swim
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.TableTennis">
+            <summary>
+            Table tennis
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Tennis">
+            <summary>
+            Tennis
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.TrailRun">
+            <summary>
+            Trail run
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Velomobile">
+            <summary>
+            Velomobile
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.VirtualRide">
+            <summary>
+            Virtual ride
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.VirtualRow">
+            <summary>
+            Virtual row
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.VirtualRun">
+            <summary>
+            Virtual run
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Walk">
+            <summary>
+            Walk
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.WeightTraining">
+            <summary>
+            Weight training
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Wheelchair">
+            <summary>
+            Wheelchair
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Windsurf">
+            <summary>
+            Windsurf
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Workout">
+            <summary>
+            Workout
+            </summary>
+        </member>
+        <member name="F:StravaClient.SportType.Yoga">
+            <summary>
+            Yoga
+            </summary>
+        </member>
+    </members>
+</doc>

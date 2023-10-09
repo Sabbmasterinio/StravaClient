@@ -3,6 +3,15 @@ using StravaClient;
 using System.Collections.Immutable;
 using System.Net.Http.Headers;
 
+GenerateMappings<ActivityType>();
+
+var dict = StravaClientConstants.ActivityTypeToStringMapper;
+var activityTypeString = StravaClientConstants.ActivityTypeToStringMapper[ActivityType.AlpineSki];
+
+var result = ((ImmutableDictionary<ActivityType, string>)StravaClientConstants.ActivityTypeToStringMapper).Clear();
+
+
+
 var c = default(char);
 var f = default(float);
 var i = default(int);
@@ -55,9 +64,25 @@ heartRateZoneRangesResponseModel.Zones = zones;
 
 CreateResult(zones);
 
+var cadance = new CadenceStreamResponseModel();
+
+var heartRate = new HeartrateStreamResponseModel();
+
 Console.ReadLine();
 
 void CreateResult(IEnumerable<ZoneRangeResponseModel> zoneRanges)
 {
+
+}
+
+void GenerateMappings<T>()
+    where T : struct, Enum
+{
+    var result = string.Empty;
+    foreach(var enumValue in Enum.GetValues<T>())
+    {
+        result += "{ " + typeof(T).Name + "." + enumValue.ToString() + ", \"" + enumValue.ToString() + "\" }," + Environment.NewLine;
+    }
+
 
 }

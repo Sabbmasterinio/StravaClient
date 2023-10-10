@@ -6,12 +6,12 @@
     /// <remarks>
     /// Possible values: 2 -> "summary", 3 -> "detail".
     /// </remarks>
-    public enum SummaryGearResourceState
+    public enum GearResourceState
     {
         /// <summary>
         /// Summary
         /// </summary>
-        Summary = 2,
+        Summary,
 
         /// <summary>
         /// Detail

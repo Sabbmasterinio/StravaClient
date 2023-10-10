@@ -11,7 +11,7 @@
         /// <summary>
         /// Meta
         /// </summary>
-        Meta = 1,
+        Meta,
 
         /// <summary>
         /// Summary
@@ -23,5 +23,4 @@
         /// </summary>
         Detail
     }
-
 }

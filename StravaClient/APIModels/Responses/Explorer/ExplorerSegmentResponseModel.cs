@@ -17,12 +17,12 @@ namespace StravaClient
         private string? mName;
 
         /// <summary>
-        /// The member of <see cref="StartLatlng"/> property
+        /// The member of <see cref="StartLatitudeLongitude"/> property
         /// </summary>
         private IEnumerable<float>? mStartLatlng;
 
         /// <summary>
-        /// The member of <see cref="EndLatlng"/> property
+        /// The member of <see cref="EndLatitudeLongitude"/> property
         /// </summary>
         private IEnumerable<float>? mEndLatlng;
 
@@ -51,6 +51,7 @@ namespace StravaClient
             get => mName ?? string.Empty;
             set => mName = value;
         }
+
         /// <summary>
         /// The category of the climb [0, 5]. Higher is harder.
         /// </summary>
@@ -82,7 +83,7 @@ namespace StravaClient
         /// An instance of LatLng.
         /// </summary>
         [JsonProperty("start_latlng")]
-        public IEnumerable<float> StartLatlng
+        public IEnumerable<float> StartLatitudeLongitude
         {
             get => mStartLatlng ?? Enumerable.Empty<float>();
 
@@ -94,7 +95,7 @@ namespace StravaClient
         /// An instance of LatLng.
         /// </summary>
         [JsonProperty("end_latlng")]
-        public IEnumerable<float> EndLatlng
+        public IEnumerable<float> EndLatitudeLongitude
         {
             get => mEndLatlng ?? Enumerable.Empty<float>();
 
@@ -140,7 +141,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Name;
+
         #endregion
     }
-
 }

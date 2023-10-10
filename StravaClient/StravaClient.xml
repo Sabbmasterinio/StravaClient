@@ -987,12 +987,12 @@
              May take one of the following values: member, pending.
             </remarks>
         </member>
-        <member name="P:StravaClient.DetailedClubResponseModel.Admin">
+        <member name="P:StravaClient.DetailedClubResponseModel.IsAdmin">
             <summary>
             Whether the currently logged-in athlete is an administrator of this club.
             </summary>
         </member>
-        <member name="P:StravaClient.DetailedClubResponseModel.Owner">
+        <member name="P:StravaClient.DetailedClubResponseModel.IsOwner">
             <summary>
             Whether the currently logged-in athlete is the owner of this club.
             </summary>
@@ -1194,6 +1194,11 @@
             The content of the comment.
             </summary>
         </member>
+        <member name="P:StravaClient.CommentResponseModel.ResourceState">
+            <summary>
+            The resource state.
+            </summary>
+        </member>
         <member name="P:StravaClient.CommentResponseModel.Athlete">
             <summary>
             An instance of SummaryAthlete.
@@ -1281,12 +1286,12 @@
         </member>
         <member name="F:StravaClient.ExplorerSegmentResponseModel.mStartLatlng">
             <summary>
-            The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.StartLatlng"/> property
+            The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.StartLatitudeLongitude"/> property
             </summary>
         </member>
         <member name="F:StravaClient.ExplorerSegmentResponseModel.mEndLatlng">
             <summary>
-            The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.EndLatlng"/> property
+            The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.EndLatitudeLongitude"/> property
             </summary>
         </member>
         <member name="F:StravaClient.ExplorerSegmentResponseModel.mPoints">
@@ -1327,12 +1332,12 @@
             The segment's average grade, in percents.
             </summary>
         </member>
-        <member name="P:StravaClient.ExplorerSegmentResponseModel.StartLatlng">
+        <member name="P:StravaClient.ExplorerSegmentResponseModel.StartLatitudeLongitude">
             <summary>
             An instance of LatLng.
             </summary>
         </member>
-        <member name="P:StravaClient.ExplorerSegmentResponseModel.EndLatlng">
+        <member name="P:StravaClient.ExplorerSegmentResponseModel.EndLatitudeLongitude">
             <summary>
             An instance of LatLng.
             </summary>
@@ -1463,7 +1468,7 @@
             Possible values: 2 -> "summary", 3 -> "detail".
             </remarks>
         </member>
-        <member name="P:StravaClient.SummaryGearResponseModel.Primary">
+        <member name="P:StravaClient.SummaryGearResponseModel.IsPrimary">
             <summary>
             Whether this gear's is the owner's default one.
             </summary>
@@ -2982,12 +2987,12 @@
             Provides enumeration over the activity zone types.
             </summary>
         </member>
-        <member name="F:StravaClient.ActivityZoneType.heartrate">
+        <member name="F:StravaClient.ActivityZoneType.Heartrate">
             <summary>
             Heartrate
             </summary>
         </member>
-        <member name="F:StravaClient.ActivityZoneType.power">
+        <member name="F:StravaClient.ActivityZoneType.Power">
             <summary>
             Power
             </summary>
@@ -2997,12 +3002,12 @@
             Provides enumeration over the sex of the athlete
             </summary>
         </member>
-        <member name="F:StravaClient.AthleteSex.M">
+        <member name="F:StravaClient.AthleteSex.Male">
             <summary>
             Male
             </summary>
         </member>
-        <member name="F:StravaClient.AthleteSex.F">
+        <member name="F:StravaClient.AthleteSex.Female">
             <summary>
             Female
             </summary>
@@ -3050,7 +3055,25 @@
         </member>
         <member name="F:StravaClient.ClimbCategory.HorsCategory">
             <summary>
-            Hors categorie
+            Hors catégorie
+            </summary>
+        </member>
+        <member name="T:StravaClient.GearResourceState">
+            <summary>
+            Provides enumeration over the summary gear resource states.
+            </summary>
+            <remarks>
+            Possible values: 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
+        <member name="F:StravaClient.GearResourceState.Summary">
+            <summary>
+            Summary
+            </summary>
+        </member>
+        <member name="F:StravaClient.GearResourceState.Detail">
+            <summary>
+            Detail
             </summary>
         </member>
         <member name="T:StravaClient.MeasurementPreference">
@@ -3097,17 +3120,17 @@
             Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
             </remarks>
         </member>
-        <member name="F:StravaClient.ResourceState.meta">
+        <member name="F:StravaClient.ResourceState.Meta">
             <summary>
             Meta
             </summary>
         </member>
-        <member name="F:StravaClient.ResourceState.summary">
+        <member name="F:StravaClient.ResourceState.Summary">
             <summary>
             Summary
             </summary>
         </member>
-        <member name="F:StravaClient.ResourceState.detail">
+        <member name="F:StravaClient.ResourceState.Detail">
             <summary>
             Detail
             </summary>
@@ -3150,7 +3173,7 @@
             Provides enumeration over the route types.
             </summary>
             <remarks>
-            This route's type (1 for ride, 2 for runs).
+            This route's type (1 for ride, 2 for run).
             </remarks>
         </member>
         <member name="F:StravaClient.RouteType.Ride">
@@ -3158,9 +3181,9 @@
             Ride
             </summary>
         </member>
-        <member name="F:StravaClient.RouteType.Runs">
+        <member name="F:StravaClient.RouteType.Run">
             <summary>
-            Runs
+            Run
             </summary>
         </member>
         <member name="T:StravaClient.SegmentActivityType">
@@ -3476,23 +3499,223 @@
             Time
             </summary>
         </member>
-        <member name="T:StravaClient.SummaryGearResourceState">
+        <member name="T:StravaClient.ActivityTypeToStringJsonConverter">
             <summary>
-            Provides enumeration over the summary gear resource states.
-            </summary>
-            <remarks>
-            Possible values: 2 -> "summary", 3 -> "detail".
-            </remarks>
-        </member>
-        <member name="F:StravaClient.SummaryGearResourceState.Summary">
-            <summary>
-            Summary
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:StravaClient.ActivityType"/> to a <see cref="T:System.String"/>.
             </summary>
         </member>
-        <member name="F:StravaClient.SummaryGearResourceState.Detail">
+        <member name="M:StravaClient.ActivityTypeToStringJsonConverter.#ctor">
             <summary>
-            Detail
+            Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.ActivityTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.ActivityZoneTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.ActivityZoneType"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityZoneTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityZoneTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.AthleteSexToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.AthleteSex"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.AthleteSexToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.AthleteSexToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.BaseEnumToValueJsonConverter`2">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <typeparamref name="TEnum"/> to a <typeparamref name="TValue"/>.
+            </summary>
+            <typeparam name="TEnum">The type of the enum.</typeparam>
+            <typeparam name="TValue">The type of the values that are mapped to the enum values.</typeparam>
+        </member>
+        <member name="M:StravaClient.BaseEnumToValueJsonConverter`2.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.BaseEnumToValueJsonConverter`2.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.BaseEnumToValueJsonConverter`2.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.BaseEnumToValueJsonConverter`2.GetMapper">
+            <summary>
+            Gets a mapper that maps the enum values to other values.
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClimbCategoryToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.ClimbCategory"/> to a <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClimbCategoryToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClimbCategoryToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.ClimbCategoryToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.ClimbCategory"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClimbCategoryToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClimbCategoryToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.GearResourceStateToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.GearResourceState"/> to a <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.GearResourceStateToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.GearResourceStateToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.MeasurementPreferenceToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.MeasurementPreference"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.MeasurementPreferenceToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.MeasurementPreferenceToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.MembershipToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.Membership"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.MembershipToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.MembershipToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.ResourceStateToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.ResourceState"/> to a <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ResourceStateToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.ResourceStateToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.RouteSubTypeToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.RouteSubType"/> to a <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.RouteSubTypeToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.RouteSubTypeToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.RouteTypeToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.RouteType"/> to a <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.RouteTypeToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.RouteTypeToIntJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.SegmentActivityTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.SegmentActivityType"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.SegmentActivityTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.SegmentActivityTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.SportTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.SportType"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.SportTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.SportTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.StreamResolutionToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.StreamResolution"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.StreamResolutionToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.StreamResolutionToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.StreamSeriesTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.StreamSeriesType"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.StreamSeriesTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.StreamSeriesTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.StravaClientConstants">
             <summary>
@@ -3502,6 +3725,77 @@
         <member name="P:StravaClient.StravaClientConstants.ActivityTypeToStringMapper">
             <summary>
             Maps each <see cref="T:StravaClient.ActivityType"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.ActivityZoneTypeToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.ActivityZoneType"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.AthleteSexToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.AthleteSex"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.ClimbCategoryToIntMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.ClimbCategory"/> to each <see cref="T:System.Int32"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.ClimbCategoryToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.ClimbCategory"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.GearResourceStateToIntMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.GearResourceState"/> to each <see cref="T:System.Int32"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.MeasurementPreferenceToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.MeasurementPreference"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.MembershipToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.Membership"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.ResourceStateToIntMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.ResourceState"/> to each <see cref="T:System.Int32"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.RouteSubTypeToIntMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.RouteSubType"/> to each <see cref="T:System.Int32"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.RouteTypeToIntMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.RouteType"/> to each <see cref="T:System.Int32"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.SegmentActivityTypeToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.SegmentActivityType"/> to each <see cref="T:System.String"/> representation
+            </summary>
+            
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.SportTypeToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.SportType"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.StreamResolutionToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.StreamResolution"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.StreamSeriesTypeToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.StreamResolution"/> to each <see cref="T:System.String"/> representation
             </summary>
         </member>
     </members>

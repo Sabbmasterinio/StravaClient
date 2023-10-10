@@ -43,13 +43,14 @@ namespace StravaClient
         /// Possible values: 2 -> "summary", 3 -> "detail".
         /// </remarks>
         [JsonProperty("resource_state")]
-        public SummaryGearResourceState ResourceState { get; set; }
+        [JsonConverter(typeof(GearResourceStateToIntJsonConverter))]
+        public GearResourceState ResourceState { get; set; }
 
         /// <summary>
         /// Whether this gear's is the owner's default one.
         /// </summary>
         [JsonProperty("primary")]
-        public bool Primary { get; set; }
+        public bool IsPrimary { get; set; }
 
         /// <summary>
         /// The gear's name.

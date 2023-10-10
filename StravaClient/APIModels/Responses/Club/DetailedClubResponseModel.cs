@@ -8,6 +8,8 @@ namespace StravaClient
     /// </summary>
     public class DetailedClubResponseModel : SummaryClubResponseModel
     {
+        #region Public Properties
+
         /// <summary>
         /// The membership status of the logged-in athlete.
         /// </summary>
@@ -21,21 +23,19 @@ namespace StravaClient
         /// Whether the currently logged-in athlete is an administrator of this club.
         /// </summary>
         [JsonProperty("admin")]
-        public bool Admin { get; set; }
+        public bool IsAdmin { get; set; }
 
         /// <summary>
         /// Whether the currently logged-in athlete is the owner of this club.
         /// </summary>
         [JsonProperty("owner")]
-        public bool Owner { get; set; }
+        public bool IsOwner { get; set; }
 
         /// <summary>
         /// The number of athletes in the club that the logged-in athlete follows.
         /// </summary>
         [JsonProperty("following_count")]
         public int FollowingCount { get; set; }
-
-        #region Public Properties
 
         #endregion
 
@@ -48,10 +48,6 @@ namespace StravaClient
         {
 
         }
-
-        #endregion
-
-        #region Public Methods
 
         #endregion
     }

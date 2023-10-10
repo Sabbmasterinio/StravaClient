@@ -42,7 +42,7 @@
         Four = 4,
 
         /// <summary>
-        /// Hors categorie
+        /// Hors catégorie
         /// </summary>
         HorsCategory = 5
     }

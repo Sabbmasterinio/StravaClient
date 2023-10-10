@@ -49,6 +49,13 @@ namespace StravaClient
         }
 
         /// <summary>
+        /// The resource state.
+        /// </summary>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
+        /// <summary>
         /// An instance of SummaryAthlete.
         /// </summary>
         [JsonProperty("athlete")]
@@ -62,8 +69,7 @@ namespace StravaClient
         /// The time at which this comment was created.
         /// </summary>
         [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; set; }
-
+        public DateTimeOffset CreatedAt { get; set; }
 
         #endregion
 
@@ -81,8 +87,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Text;
+
         #endregion
-
     }
-
 }

@@ -11,7 +11,7 @@
         /// <summary>
         /// Ride
         /// </summary>
-        Ride = 1,
+        Ride,
 
         /// <summary>
         /// Run

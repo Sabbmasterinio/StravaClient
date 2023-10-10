@@ -11,7 +11,7 @@
         /// <summary>
         /// Road
         /// </summary>
-        Road = 1,
+        Road,
 
         /// <summary>
         /// MountainBike

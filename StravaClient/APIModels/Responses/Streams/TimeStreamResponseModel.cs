@@ -19,9 +19,5 @@
         }
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
     }
 }

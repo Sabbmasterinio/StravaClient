@@ -61,6 +61,7 @@ namespace StravaClient
         /// climb_category_desc = 3.
         /// </remarks>
         [JsonProperty("climb_category")]
+        [JsonConverter(typeof(ClimbCategoryToIntJsonConverter))]
         public ClimbCategory ClimbCategory { get; set; }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace StravaClient
         /// </remarks>
         [AllowNull]
         [JsonProperty("climb_category_desc")]
+        [JsonConverter(typeof(ClimbCategoryToStringJsonConverter))]
         public ClimbCategory ClimbCategoryDesc { get; set; }
 
         /// <summary>

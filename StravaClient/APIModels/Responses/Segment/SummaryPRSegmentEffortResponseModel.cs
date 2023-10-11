@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text.Json;
+using System.Xml.Linq;
 
 namespace StravaClient
 {
@@ -26,7 +27,7 @@ namespace StravaClient
         /// The time at which the PR effort was started.
         /// </summary>
         [JsonProperty("pr_date")]
-        public DateTime PrDate { get; set; }
+        public DateTimeOffset PrDate { get; set; }
 
         /// <summary>
         /// Number of efforts by the authenticated athlete on this segment.
@@ -50,7 +51,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => "Number of efforts by the authenticated athlete on this segment : " + EffortCount;
+
         #endregion
     }
-
 }

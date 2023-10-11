@@ -36,6 +36,4 @@ void GenerateMappings<T>()
     {
         result += "{ " + typeof(T).Name + "." + enumValue.ToString() + ", \"" + enumValue.ToString() + "\" }," + Environment.NewLine;
     }
-
-
 }

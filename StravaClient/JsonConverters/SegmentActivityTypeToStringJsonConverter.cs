@@ -7,25 +7,23 @@ namespace StravaClient
     /// </summary>
     public sealed class SegmentActivityTypeToStringJsonConverter : BaseEnumToValueJsonConverter<SegmentActivityType, string>
     {
-            #region Constructors
+        #region Constructors
 
-            /// <summary>
-            /// Default constructor
-            /// </summary>
-            public SegmentActivityTypeToStringJsonConverter() : base()
-            {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public SegmentActivityTypeToStringJsonConverter() : base()
+        {
 
-            }
+        }
 
-            #endregion
+        #endregion
 
-            #region Protected Methods
+        #region Protected Methods
 
-            /// <inheritdoc/>
-            protected override IReadOnlyDictionary<SegmentActivityType, string> GetMapper() => StravaClientConstants.SegmentActivityTypeToStringMapper;
+        /// <inheritdoc/>
+        protected override IReadOnlyDictionary<SegmentActivityType, string> GetMapper() => StravaClientConstants.SegmentActivityTypeToStringMapper;
 
-            #endregion
+        #endregion
     }
 }
-
-

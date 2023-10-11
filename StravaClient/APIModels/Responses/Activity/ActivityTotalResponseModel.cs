@@ -70,7 +70,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => "The total number of achievements of the considered activities is : " + AchievementCount;
+
         #endregion
     }
-
 }

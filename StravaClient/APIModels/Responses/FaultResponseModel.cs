@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace StravaClient
@@ -40,6 +41,7 @@ namespace StravaClient
         /// <summary>
         /// The message of the fault.
         /// </summary>
+        [AllowNull]
         [JsonProperty("message")]
         public string Message
         {
@@ -62,7 +64,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Message;
+
         #endregion
     }
-
 }

@@ -33,6 +33,7 @@ namespace StravaClient
         /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
         /// </remarks>
         [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
         public ResourceState ResourceState { get; set; }
 
         /// <summary>
@@ -62,7 +63,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Name;
+
         #endregion
     }
-
 }

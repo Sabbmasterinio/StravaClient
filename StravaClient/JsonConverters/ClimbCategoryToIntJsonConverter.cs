@@ -7,25 +7,23 @@ namespace StravaClient
     /// </summary>
     public sealed class ClimbCategoryToIntJsonConverter : BaseEnumToValueJsonConverter<ClimbCategory, int>
     {
-            #region Constructors
+        #region Constructors
 
-            /// <summary>
-            /// Default constructor
-            /// </summary>
-            public ClimbCategoryToIntJsonConverter() : base()
-            {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public ClimbCategoryToIntJsonConverter() : base()
+        {
 
-            }
+        }
 
-            #endregion
+        #endregion
 
-            #region Protected Methods
+        #region Protected Methods
 
-            /// <inheritdoc/>
-            protected override IReadOnlyDictionary<ClimbCategory, int> GetMapper() => StravaClientConstants.ClimbCategoryToIntMapper;
+        /// <inheritdoc/>
+        protected override IReadOnlyDictionary<ClimbCategory, int> GetMapper() => StravaClientConstants.ClimbCategoryToIntMapper;
 
-            #endregion
+        #endregion
     }
 }
-
-

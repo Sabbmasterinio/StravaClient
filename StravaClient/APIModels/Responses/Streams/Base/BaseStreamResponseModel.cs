@@ -20,12 +20,14 @@ namespace StravaClient
         /// The number of data points in this stream.
         /// </summary>
         [JsonProperty("resolution")]
+        [JsonConverter(typeof(StreamResolutionToStringJsonConverter))]
         public StreamResolution Resolution { get; set; }
         
         /// <summary>
         /// The number of data points in this stream.
         /// </summary>
         [JsonProperty("series_type")]
+        [JsonConverter(typeof(StreamSeriesTypeToStringJsonConverter))]
         public StreamSeriesType SeriesType { get; set; }
 
         #endregion
@@ -41,11 +43,5 @@ namespace StravaClient
         }
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
-
     }
-
 }

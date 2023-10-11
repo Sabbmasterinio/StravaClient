@@ -7,25 +7,23 @@ namespace StravaClient
     /// </summary>
     public sealed class RouteSubTypeToIntJsonConverter : BaseEnumToValueJsonConverter<RouteSubType, int>
     {
-            #region Constructors
+        #region Constructors
 
-            /// <summary>
-            /// Default constructor
-            /// </summary>
-            public RouteSubTypeToIntJsonConverter() : base()
-            {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public RouteSubTypeToIntJsonConverter() : base()
+        {
 
-            }
+        }
 
-            #endregion
+        #endregion
 
-            #region Protected Methods
+        #region Protected Methods
 
-            /// <inheritdoc/>
-            protected override IReadOnlyDictionary<RouteSubType, int> GetMapper() => StravaClientConstants.RouteSubTypeToIntMapper;
+        /// <inheritdoc/>
+        protected override IReadOnlyDictionary<RouteSubType, int> GetMapper() => StravaClientConstants.RouteSubTypeToIntMapper;
 
-            #endregion
+        #endregion
     }
 }
-
-

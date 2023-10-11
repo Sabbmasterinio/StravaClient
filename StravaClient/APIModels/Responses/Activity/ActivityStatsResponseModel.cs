@@ -178,7 +178,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => "The biggest ride distance is : " + BiggestRideDistance;
+
         #endregion
     }
-
 }

@@ -76,6 +76,7 @@ namespace StravaClient
         /// An instance of SportType.
         /// </summary>
         [JsonProperty("sport_type")]
+        [JsonConverter(typeof(SportTypeToStringJsonConverter))]
         public SportType SportType { get; set; }
 
         /// <summary>
@@ -98,9 +99,11 @@ namespace StravaClient
 
         #endregion
 
-        #region Puclic Methods
+        #region Public Methods
+
+        /// <inheritdoc/>
+        public override string ToString() => "The activity's elapsed time, in seconds : " + ElapsedTime;
 
         #endregion
     }
-
 }

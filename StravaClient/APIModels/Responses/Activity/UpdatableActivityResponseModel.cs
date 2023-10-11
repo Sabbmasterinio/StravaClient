@@ -34,19 +34,19 @@ namespace StravaClient
         /// Whether this activity is a commute.
         /// </summary>
         [JsonProperty("commute")]
-        public bool Commute { get; set; }
+        public bool IsCommute { get; set; }
 
         /// <summary>
         /// Whether this activity was recorded on a training machine.
         /// </summary>
         [JsonProperty("trainer")]
-        public bool Trainer { get; set; }
+        public bool IsTrainer { get; set; }
 
         /// <summary>
         /// Whether this activity is muted.
         /// </summary>
         [JsonProperty("hide_from_home")]
-        public bool HideFromHome { get; set; }
+        public bool IsHideFromHome { get; set; }
 
         /// <summary>
         /// The description of the activity.
@@ -74,6 +74,7 @@ namespace StravaClient
         /// An instance of SportType.
         /// </summary>
         [JsonProperty("sport_type")]
+        [JsonConverter(typeof(SportTypeToStringJsonConverter))]
         public SportType SportType { get; set; }
 
         /// <summary>
@@ -104,7 +105,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Name;
+
         #endregion
     }
-
 }

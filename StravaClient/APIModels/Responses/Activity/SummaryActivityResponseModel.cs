@@ -144,19 +144,20 @@ namespace StravaClient
         /// An instance of SportType.
         /// </summary>
         [JsonProperty("sport_type")]
+        [JsonConverter(typeof(SportTypeToStringJsonConverter))]
         public SportType SportType { get; set; }
 
         /// <summary>
         /// The time at which the activity was started.
         /// </summary>
         [JsonProperty("start_date")]
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
         /// <summary>
         /// The time at which the activity was started in the local timezone.
         /// </summary>
         [JsonProperty("start_date_local")]
-        public DateTime StartDateLocal { get; set; }
+        public DateTimeOffset StartDateLocal { get; set; }
 
         /// <summary>
         /// The timezone of the activity.
@@ -363,9 +364,11 @@ namespace StravaClient
 
         #endregion
 
+        /// <inheritdoc/>
         #region Public Methods
+
+        public override string ToString() => Name;
 
         #endregion
     }
-
 }

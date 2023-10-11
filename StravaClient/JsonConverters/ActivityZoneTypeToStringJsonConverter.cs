@@ -27,4 +27,3 @@ namespace StravaClient
         #endregion
     }
 }
-

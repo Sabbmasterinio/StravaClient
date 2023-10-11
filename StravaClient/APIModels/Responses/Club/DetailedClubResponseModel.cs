@@ -17,6 +17,7 @@ namespace StravaClient
         ///  May take one of the following values: member, pending.
         /// </remarks>
         [JsonProperty("membership")]
+        [JsonConverter(typeof(MembershipToStringJsonConverter))]
         public Membership Membership { get; set; }
 
         /// <summary>
@@ -51,5 +52,4 @@ namespace StravaClient
 
         #endregion
     }
-
 }

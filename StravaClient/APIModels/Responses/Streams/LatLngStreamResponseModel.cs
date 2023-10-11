@@ -20,10 +20,6 @@
 
         #endregion
 
-        #region Public Methods
-
-        #endregion
-
         #region Protected Methods
 
         /// <inheritdoc/>
@@ -31,5 +27,4 @@
 
         #endregion
     }
-
 }

@@ -48,10 +48,5 @@ namespace StravaClient
         }
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
     }
-
 }

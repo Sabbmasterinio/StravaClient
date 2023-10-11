@@ -76,6 +76,7 @@ namespace StravaClient
         /// May take one of the following values: Ride, Run.
         /// </summary>
         [JsonProperty("activity_type")]
+        [JsonConverter(typeof(SegmentActivityTypeToStringJsonConverter))]
         public SegmentActivityType ActivityType { get; set; }
 
         /// <summary>
@@ -135,6 +136,7 @@ namespace StravaClient
         /// ie. 5 is Hors catégorie, 0 is uncategorized in climb_category.
         /// </remarks>
         [JsonProperty("climb_category")]
+        [JsonConverter(typeof(ClimbCategoryToIntJsonConverter))]
         public ClimbCategory ClimbCategory { get; set; }
 
         /// <summary>
@@ -214,5 +216,4 @@ namespace StravaClient
 
         #endregion
     }
-
 }

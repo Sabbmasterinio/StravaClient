@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text.Json;
+using System.Xml.Linq;
 
 namespace StravaClient
 {
@@ -32,13 +33,13 @@ namespace StravaClient
         /// The time at which the effort was started.
         /// </summary>
         [JsonProperty("start_date")]
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
         /// <summary>
         /// The time at which the effort was started in the local timezone.
         /// </summary>
         [JsonProperty("start_date_local")]
-        public DateTime StartDateLocal { get; set; }
+        public DateTimeOffset StartDateLocal { get; set; }
 
         /// <summary>
         /// The effort's distance in meters.
@@ -68,7 +69,8 @@ namespace StravaClient
 
         #region Public Methods
 
+        public override string ToString() => "The effort's distance in meters : " + Distance;
+
         #endregion
     }
-
 }

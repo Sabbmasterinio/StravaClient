@@ -45,6 +45,7 @@ namespace StravaClient
         /// May take one of the following values: heartrate, power.
         /// </summary>
         [JsonProperty("type")]
+        [JsonConverter(typeof(ActivityZoneTypeToStringJsonConverter))]
         public ActivityZoneType Type { get; set; }
         
         /// <summary>
@@ -84,10 +85,5 @@ namespace StravaClient
         }
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
     }
-
 }

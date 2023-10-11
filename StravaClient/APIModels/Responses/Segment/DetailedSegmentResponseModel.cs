@@ -63,7 +63,7 @@ namespace StravaClient
         /// Whether this segment is considered hazardous.
         /// </summary>
         [JsonProperty("hazardous")]
-        public bool Hazardous { get; set; }
+        public bool IsHazardous { get; set; }
 
         /// <summary>
         /// The number of stars for this segment
@@ -87,7 +87,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => "The total number of efforts for this segment : " + EffortCount;
+
         #endregion
     }
-
 }

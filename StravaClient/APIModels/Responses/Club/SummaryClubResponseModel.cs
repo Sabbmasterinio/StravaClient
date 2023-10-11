@@ -119,6 +119,7 @@ namespace StravaClient
         /// This takes precedence over sport_type.
         /// </summary>
         [JsonProperty("activity_types")]
+        [JsonConverter(typeof(ActivityTypeToStringJsonConverter))]
         public ActivityType ActivityTypes { get; set; }
 
         /// <summary>

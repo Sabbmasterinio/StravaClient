@@ -68,7 +68,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => "The distance of this split, in meters : " + Distance;
+
         #endregion
     }
-
 }

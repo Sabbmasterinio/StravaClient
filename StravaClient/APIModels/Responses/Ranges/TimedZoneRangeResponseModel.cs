@@ -42,9 +42,11 @@ namespace StravaClient
 
         #endregion
 
+        /// <inheritdoc/>
         #region Public Methods
+
+        public override string ToString() => "The number of seconds spent in this zone : " + Time;
 
         #endregion
     }
-
 }

@@ -7,25 +7,23 @@ namespace StravaClient
     /// </summary>
     public sealed class SportTypeToStringJsonConverter : BaseEnumToValueJsonConverter<SportType, string>
     {
-            #region Constructors
+        #region Constructors
 
-            /// <summary>
-            /// Default constructor
-            /// </summary>
-            public SportTypeToStringJsonConverter() : base()
-            {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public SportTypeToStringJsonConverter() : base()
+        {
 
-            }
+        }
 
-            #endregion
+        #endregion
 
-            #region Protected Methods
+        #region Protected Methods
 
-            /// <inheritdoc/>
-            protected override IReadOnlyDictionary<SportType, string> GetMapper() => StravaClientConstants.SportTypeToStringMapper;
+        /// <inheritdoc/>
+        protected override IReadOnlyDictionary<SportType, string> GetMapper() => StravaClientConstants.SportTypeToStringMapper;
 
-            #endregion
+        #endregion
     }
 }
-
-

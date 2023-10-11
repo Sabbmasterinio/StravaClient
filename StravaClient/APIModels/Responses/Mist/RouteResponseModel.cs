@@ -138,6 +138,7 @@ namespace StravaClient
         /// This route's type (1 for ride, 2 for runs).
         /// </summary>
         [JsonProperty("type")]
+        [JsonConverter(typeof(RouteTypeToIntJsonConverter))]
         public RouteType Type { get; set; }
 
         /// <summary>
@@ -147,6 +148,7 @@ namespace StravaClient
         /// (1 for road, 2 for mountain bike, 3 for cross, 4 for trail, 5 for mixed).
         /// </remarks>
         [JsonProperty("sub_type")]
+        [JsonConverter(typeof(RouteSubTypeToIntJsonConverter))]
         public RouteSubType SubType { get; set; }
 
         /// <summary>
@@ -193,7 +195,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Name;
+
         #endregion
     }
-
 }

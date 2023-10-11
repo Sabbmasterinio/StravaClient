@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
+using System.Xml.Linq;
 
 namespace StravaClient
 {
@@ -149,6 +150,7 @@ namespace StravaClient
         /// May take one of the following values: M, F.
         /// </remarks>
         [JsonProperty("sex")]
+        [JsonConverter(typeof(AthleteSexToStringJsonConverter))]
         public AthleteSex Sex { get; set; }
 
         /// <summary>
@@ -185,7 +187,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Firstname;
+
         #endregion
     }
-
 }

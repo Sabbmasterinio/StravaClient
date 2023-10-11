@@ -137,13 +137,13 @@ namespace StravaClient
         /// The time at which the lap was started.
         /// </summary>
         [JsonProperty("start_date")]
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
         /// <summary>
         /// The time at which the lap was started in the local timezone.
         /// </summary>
         [JsonProperty("start_date_local")]
-        public DateTime StartDateLocal { get; set; }
+        public DateTimeOffset StartDateLocal { get; set; }
 
         /// <summary>
         /// The elevation gain of this lap, in meters.
@@ -167,7 +167,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Name;
+
         #endregion
     }
-
 }

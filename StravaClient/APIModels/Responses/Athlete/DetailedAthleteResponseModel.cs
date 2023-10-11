@@ -48,6 +48,7 @@ namespace StravaClient
         ///  May take one of the following values: feet, meters.
         /// </remarks>
         [JsonProperty("measurement_preference")]
+        [JsonConverter(typeof(MeasurementPreferenceToStringJsonConverter))]
         public MeasurementPreference MeasurementPreference { get; set; }
 
         /// <summary>
@@ -108,7 +109,12 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            return "The athlete's follower count : " + FollowerCount;
+        }
+
         #endregion
     }
-
 }

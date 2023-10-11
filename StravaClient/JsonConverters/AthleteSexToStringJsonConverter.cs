@@ -13,23 +13,23 @@ namespace StravaClient
     /// </summary>
     public sealed class AthleteSexToStringJsonConverter : BaseEnumToValueJsonConverter<AthleteSex, string>
     {
-            #region Constructors
+        #region Constructors
 
-            /// <summary>
-            /// Default constructor
-            /// </summary>
-            public AthleteSexToStringJsonConverter() : base()
-            {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public AthleteSexToStringJsonConverter() : base()
+        {
 
-            }
+        }
 
-            #endregion
+        #endregion
 
-            #region Protected Methods
+        #region Protected Methods
 
-            /// <inheritdoc/>
-            protected override IReadOnlyDictionary<AthleteSex, string> GetMapper() => StravaClientConstants.AthleteSexToStringMapper;
+        /// <inheritdoc/>
+        protected override IReadOnlyDictionary<AthleteSex, string> GetMapper() => StravaClientConstants.AthleteSexToStringMapper;
 
-            #endregion
+        #endregion
     }
 }

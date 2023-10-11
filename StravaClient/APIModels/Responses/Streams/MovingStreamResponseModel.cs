@@ -19,17 +19,5 @@
         }
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
-
-        #region Protected Methods
-
-        /// <inheritdoc/>
-        protected override IEnumerable<bool> GetFallbackValue() => Enumerable.Empty<bool>();
-
-        #endregion
     }
-
 }

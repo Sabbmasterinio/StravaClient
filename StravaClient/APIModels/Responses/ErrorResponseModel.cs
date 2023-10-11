@@ -78,7 +78,9 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
+        public override string ToString() => Code;
+
         #endregion
     }
-
 }

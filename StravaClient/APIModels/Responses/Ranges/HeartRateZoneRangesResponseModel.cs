@@ -23,7 +23,7 @@ namespace StravaClient
         /// Whether the athlete has set their own custom heart rate zones.
         /// </summary>
         [JsonProperty("custom_zones")]
-        public bool CustomZones { get; set; }
+        public bool IsCustomZones { get; set; }
 
         /// <summary>
         /// 
@@ -41,10 +41,5 @@ namespace StravaClient
         #region Constructors
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
     }
-
 }

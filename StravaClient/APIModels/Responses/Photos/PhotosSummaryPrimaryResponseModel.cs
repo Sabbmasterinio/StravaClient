@@ -17,11 +17,6 @@ namespace StravaClient
         /// </summary>
         private string? mUniqueId;
 
-        /// <summary>
-        /// The member of <see cref="Urls"/> property
-        /// </summary>
-        private string? mUrls;
-
         #endregion
 
         #region Public Properties
@@ -30,7 +25,7 @@ namespace StravaClient
         /// An instance of long.
         /// </summary>
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// An instance of integer.
@@ -50,15 +45,10 @@ namespace StravaClient
         }
 
         /// <summary>
-        /// An instance of string.
+        /// Urls.
         /// </summary>
-        [AllowNull]
         [JsonProperty("urls")]
-        public string Urls
-        {
-            get => mUrls ?? string.Empty;
-            set => mUrls = value;
-        }
+        public object? Urls { get; set; }
 
         #endregion
 

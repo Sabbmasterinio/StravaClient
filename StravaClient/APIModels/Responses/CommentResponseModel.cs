@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
@@ -17,9 +18,20 @@ namespace StravaClient
         private string? mText;
 
         /// <summary>
+        /// The member of <see cref="MentionsMetadata"/> property
+        /// </summary>
+        private string? mMentionsMetadata;
+        
+
+        /// <summary>
         /// The member of <see cref="Athlete"/> property
         /// </summary>
         private SummaryAthleteResponseModel? mAthlete;
+
+        /// <summary>
+        /// The member of <see cref="Cursor"/> property
+        /// </summary>
+        private string? mCursor;
 
         #endregion
 
@@ -36,6 +48,12 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("activity_id")]
         public long ActivityId { get; set; }
+        
+        /// <summary>
+        /// The post id.
+        /// </summary>
+        [JsonProperty("post_id")]
+        public long? PostId { get; set; }
 
         /// <summary>
         /// The content of the comment.
@@ -47,10 +65,24 @@ namespace StravaClient
             get => mText ?? string.Empty;
             set => mText = value;
         }
+        
+        /// <summary>
+        /// The mentions metadata.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("mentions_metadata")]
+        public string MentionsMetadata
+        {
+            get => mMentionsMetadata ?? string.Empty;
+            set => mMentionsMetadata = value;
+        }
 
         /// <summary>
-        /// The resource state.
+        /// Resource state, indicates level of detail.
         /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
         [JsonProperty("resource_state")]
         [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
         public ResourceState ResourceState { get; set; }
@@ -63,6 +95,16 @@ namespace StravaClient
         {
             get => mAthlete ??= new();
             set => mAthlete = value;
+        }
+        
+        /// <summary>
+        /// A cursor.
+        /// </summary>
+        [JsonProperty("cursor")]
+        public string Cursor
+        {
+            get => mCursor ?? string.Empty;
+            set => mCursor = value;
         }
 
         /// <summary>

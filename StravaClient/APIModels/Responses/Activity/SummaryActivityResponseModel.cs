@@ -15,6 +15,11 @@ namespace StravaClient
         /// The member of <see cref="ExternalId"/> property
         /// </summary>
         private string? mExternalId;
+        
+        /// <summary>
+        /// The member of <see cref="UploadId"/> property
+        /// </summary>
+        private string? mUploadId;
 
         /// <summary>
         /// The member of <see cref="Name"/> property
@@ -56,6 +61,31 @@ namespace StravaClient
         /// </summary>
         private string? mUploadIdStr;
 
+        /// <summary>
+        /// The member of <see cref="PartnerBrandTag"/> property
+        /// </summary>
+        private string? mPartnerBrandTag;
+        
+        /// <summary>
+        /// The member of <see cref="HighlightedKudosers"/> property
+        /// </summary>
+        private IEnumerable<HighLightedKudoserResponseModel>? mHighlightedKudosers;
+        
+        /// <summary>
+        /// The member of <see cref="LocationCity"/> property
+        /// </summary>
+        private string? mLocationCity;
+        
+        /// <summary>
+        /// The member of <see cref="LocationState"/> property
+        /// </summary>
+        private string? mLocationState;
+        
+        /// <summary>
+        /// The member of <see cref="LocationCountry"/> property
+        /// </summary>
+        private string? mLocationCountry;
+
         #endregion
 
         #region Public Properties
@@ -80,8 +110,13 @@ namespace StravaClient
         /// <summary>
         /// The identifier of the upload that resulted in this activity.
         /// </summary>
+        [AllowNull]
         [JsonProperty("upload_id")]
-        public long UploadId { get; set; }
+        public string? UploadId
+        {
+            get => mUploadId ?? string.Empty;
+            set => mUploadId = value;
+        }
 
         /// <summary>
         /// An instance of MetaAthlete.
@@ -242,37 +277,37 @@ namespace StravaClient
         /// Whether this activity was recorded on a training machine.
         /// </summary>
         [JsonProperty("trainer")]
-        public bool Trainer { get; set; }
+        public bool IsTrainer { get; set; }
 
         /// <summary>
         /// Whether this activity is a commute.
         /// </summary>
         [JsonProperty("commute")]
-        public bool Commute { get; set; }
+        public bool IsCommute { get; set; }
 
         /// <summary>
         /// Whether this activity was created manually.
         /// </summary>
         [JsonProperty("manual")]
-        public bool Manual { get; set; }
+        public bool IsManual { get; set; }
 
         /// <summary>
         /// Whether this activity is private.
         /// </summary>
         [JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool IsPrivate { get; set; }
 
         /// <summary>
         /// Whether this activity is flagged.
         /// </summary>
         [JsonProperty("flagged")]
-        public bool Flagged { get; set; }
+        public bool IsFlagged { get; set; }
 
         /// <summary>
         /// The activity's workout type.
         /// </summary>
         [JsonProperty("workout_type")]
-        public int WorkoutType { get; set; }
+        public int? WorkoutType { get; set; }
 
         /// <summary>
         /// The unique identifier of the upload in string format.
@@ -336,7 +371,7 @@ namespace StravaClient
         /// Whether the watts are from a power meter, false if estimated.
         /// </summary>
         [JsonProperty("device_watts")]
-        public bool DeviceWatts { get; set; }
+        public bool IsDeviceWatts { get; set; }
 
         /// <summary>
         /// Rides with power meter data only.
@@ -349,6 +384,136 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("weighted_average_watts")]
         public int WeightedAverageWatts { get; set; }
+
+        /// <summary>
+        /// Resource state, indicates level of detail.
+        /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
+        /// <summary>
+        /// Utc offset.
+        /// </summary>
+        [JsonProperty("utc_offset")]
+        public int UtcOffset { get; set; }
+
+        /// <summary>
+        /// From accepted tag.
+        /// </summary>
+        [JsonProperty("from_accepted_tag")]
+        public bool? IsFromAcceptedTag { get; set; }
+
+        /// <summary>
+        /// Has heart rate.
+        /// </summary>
+        [JsonProperty("has_heartrate")]
+        public bool HasHeartrate { get; set; }
+
+        /// <summary>
+        /// Pr count.
+        /// </summary>
+        [JsonProperty("pr_count")]
+        public int PrCount { get; set; }
+
+        /// <summary>
+        /// The effort's average cadence.
+        /// </summary>
+        [JsonProperty("average_cadence")]
+        public float AverageCadence { get; set; }
+
+        /// <summary>
+        /// The effort's average temperature.
+        /// </summary>
+        [JsonProperty("average_temp")]
+        public float AverageTemp { get; set; }
+
+        /// <summary>
+        /// Suffer score.
+        /// </summary>
+        [JsonProperty("suffer_score")]
+        public int? SufferScore { get; set; }
+
+        /// <summary>
+        /// Partner brand tag.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("partner_brand_tag")]
+        public string PartnerBrandTag
+        {
+            get => mPartnerBrandTag ?? string.Empty;
+            set => mPartnerBrandTag = value;
+        }
+
+        /// <summary>
+        /// Highlighted kudosers.
+        /// </summary>
+        [JsonProperty("highlighted_kudosers")]
+        public IEnumerable<HighLightedKudoserResponseModel> HighlightedKudosers
+        {
+            get => mHighlightedKudosers ?? Enumerable.Empty<HighLightedKudoserResponseModel>();
+            set => mHighlightedKudosers = value;
+        }
+
+        /// <summary>
+        /// Whether is segment leaderboard opt out.
+        /// </summary>
+        [JsonProperty("segment_leaderboard_opt_out")]
+        public bool IsSegmentLeaderBoardOptOut { get; set; }
+
+        /// <summary>
+        /// Whether is leaderboard opt out.
+        /// </summary>
+        [JsonProperty("leaderboard_opt_out")]
+        public bool IsLeaderBoardOptOut { get; set; }
+
+        /// <summary>
+        /// The location city of the activity.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("location_city")]
+        public string LocationCity
+        {
+            get => mLocationCity ?? string.Empty;
+            set => mLocationCity = value;
+        }
+
+        /// <summary>
+        /// The location state of the activity.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("location_state")]
+        public string LocationState
+        {
+            get => mLocationState ?? string.Empty;
+            set => mLocationState = value;
+        }
+
+        /// <summary>
+        /// The location country of the activity.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("location_country")]
+        public string LocationCountry
+        {
+            get => mLocationCountry ?? string.Empty;
+            set => mLocationCountry = value;
+        }
+
+        /// <summary>
+        /// The heart heart rate of the athlete during this effort.
+        /// </summary>
+        [JsonProperty("average_heartrate")]
+        public float AverageHeartrate { get; set; }
+
+        /// <summary>
+        /// The maximum heart rate of the athlete during this effort.
+        /// </summary>
+        [JsonProperty("max_heartrate")]
+        public float MaxHeartrate { get; set; }
 
         #endregion
 
@@ -364,9 +529,9 @@ namespace StravaClient
 
         #endregion
 
-        /// <inheritdoc/>
         #region Public Methods
-
+        
+        /// <inheritdoc/>
         public override string ToString() => Name;
 
         #endregion

@@ -9,6 +9,15 @@ namespace StravaClient
     /// </summary>
     public class SummarySegmentEffortResponseModel
     {
+        #region Private Properties
+
+        /// <summary>
+        /// The member of <see cref="Achievements"/> property
+        /// </summary>
+        private IEnumerable<object>? mAchievements;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -53,6 +62,25 @@ namespace StravaClient
         [JsonProperty("is_kom")]
         public bool IsKom { get; set; }
 
+        /// <summary>
+        /// Resource state, indicates level of detail.
+        /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
+        /// <summary>
+        /// the achievements
+        /// </summary>
+        [JsonProperty("achievements")]
+        public IEnumerable<object> Achievements 
+        { 
+            get => mAchievements ?? Enumerable.Empty<object>();
+            set => mAchievements = value; }
+
         #endregion
 
         #region Constructors
@@ -69,6 +97,7 @@ namespace StravaClient
 
         #region Public Methods
 
+        /// <inheritdoc/>
         public override string ToString() => "The effort's distance in meters : " + Distance;
 
         #endregion

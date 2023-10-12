@@ -17,21 +17,6 @@ namespace StravaClient
         private string? mName;
 
         /// <summary>
-        /// The member of <see cref="ProfileMedium"/> property
-        /// </summary>
-        private string? mProfileMedium;
-
-        /// <summary>
-        /// The member of <see cref="CoverPhoto"/> property
-        /// </summary>
-        private string? mCoverPhoto;
-
-        /// <summary>
-        /// The member of <see cref="CoverPhotoSmall"/> property
-        /// </summary>
-        private string? mCoverPhotoSmall;
-
-        /// <summary>
         /// The member of <see cref="City"/> property
         /// </summary>
         private string? mCity;
@@ -47,9 +32,9 @@ namespace StravaClient
         private string? mCountry;
 
         /// <summary>
-        /// The member of <see cref="Url"/> property
+        /// The member of <see cref="Description"/> property
         /// </summary>
-        private string? mUrl;
+        private string? mDescription;
 
         #endregion
 
@@ -68,6 +53,7 @@ namespace StravaClient
         /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
         /// </remarks>
         [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
         public ResourceState ResourceState { get; set; }
 
         /// <summary>
@@ -84,35 +70,20 @@ namespace StravaClient
         /// <summary>
         /// URL to a 60x60 pixel profile picture.
         /// </summary>
-        [AllowNull]
         [JsonProperty("profile_medium")]
-        public string ProfileMedium
-        {
-            get => mProfileMedium ?? string.Empty;
-            set => mProfileMedium = value;
-        }
+        public Uri? ProfileMedium { get; set; }
 
         /// <summary>
         /// URL to a ~1185x580 pixel cover photo.
         /// </summary>
-        [AllowNull]
         [JsonProperty("cover_photo")]
-        public string CoverPhoto
-        {
-            get => mCoverPhoto ?? string.Empty;
-            set => mCoverPhoto = value;
-        }
+        public Uri? CoverPhoto {  get; set; }
 
         /// <summary>
         /// URL to a ~1185x580 pixel cover photo.
         /// </summary>
-        [AllowNull]
         [JsonProperty("cover_photo_small")]
-        public string CoverPhotoSmall
-        {
-            get => mCoverPhotoSmall ?? string.Empty;
-            set => mCoverPhotoSmall = value;
-        }
+        public Uri? CoverPhotoSmall {  get; set; }
 
         /// <summary>
         /// The activity types that count for a club. 
@@ -182,13 +153,50 @@ namespace StravaClient
         /// <summary>
         /// The club's vanity URL.
         /// </summary>
-        [AllowNull]
         [JsonProperty("url")]
-        public string Url
+        public Uri? Url { get; set; }
+
+        /// <summary>
+        /// The club's profile.
+        /// </summary>
+        [JsonProperty("profile")]
+        public Uri? Profile {  get; set; }
+
+        /// <summary>
+        /// Sport type.
+        /// </summary>
+        [JsonProperty("sport_type")]
+        [JsonConverter(typeof(SportTypeToStringJsonConverter))]
+        public SportType SportType { get; set; }
+
+        /// <summary>
+        /// The club's description.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("description")]
+        public string Description
         {
-            get => mUrl ?? string.Empty;
-            set => mUrl = value;
+            get => mDescription ?? string.Empty;
+            set => mDescription = value;
         }
+
+        /// <summary>
+        /// The club's type.
+        /// </summary>
+        [JsonProperty("club_type")]
+        public ClubType ClubType { get; set; }
+
+        /// <summary>
+        /// The club's post count.
+        /// </summary>
+        [JsonProperty("post_count")]
+        public int PostCount { get; set; }
+
+        /// <summary>
+        /// The owner's id.
+        /// </summary>
+        [JsonProperty("owner_id")]
+        public long OwnerId { get; set; }
 
         #endregion
 

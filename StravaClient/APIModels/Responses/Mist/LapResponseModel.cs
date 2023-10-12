@@ -37,6 +37,16 @@ namespace StravaClient
         public long Id { get; set; }
 
         /// <summary>
+        /// Resource state, indicates level of detail.
+        /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
+        /// <summary>
         /// An instance of MetaActivity.
         /// </summary>
         [JsonProperty("activity")]
@@ -150,6 +160,18 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("total_elevation_gain")]
         public float TotalElevationGain { get; set; }
+
+        /// <summary>
+        /// Whether the wattage was reported by a dedicated recording device.
+        /// </summary>
+        [JsonProperty("device_watts")]
+        public bool IsDeviceWatts { get; set; }
+
+        /// <summary>
+        /// The average wattage of this lap.
+        /// </summary>
+        [JsonProperty("average_watts")]
+        public float AverageWatts { get; set; }
 
         #endregion
 

@@ -32,7 +32,7 @@ namespace StravaClient
         /// The elevation difference of this split, in meters.
         /// </summary>
         [JsonProperty("elevation_difference")]
-        public int ElevationDifference { get; set; }
+        public float ElevationDifference { get; set; }
 
         /// <summary>
         /// The pacing zone of this split.

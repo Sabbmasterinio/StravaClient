@@ -55,7 +55,7 @@ namespace StravaClient
         /// The athlete's FTP (Functional Threshold Power).
         /// </summary>
         [JsonProperty("ftp")]
-        public int Ftp { get; set; }
+        public int? Ftp { get; set; }
 
         /// <summary>
         /// The athlete's weight.

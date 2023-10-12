@@ -115,6 +115,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.ActivityStatsResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.ActivityTotalResponseModel">
             <summary>
             Represents an activity total.
@@ -158,6 +161,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.ActivityTotalResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.ActivityZoneResponseModel">
             <summary>
             Represents an activity zone response model.
@@ -188,7 +194,7 @@
             May take one of the following values: heartrate, power.
             </summary>
         </member>
-        <member name="P:StravaClient.ActivityZoneResponseModel.SensorBased">
+        <member name="P:StravaClient.ActivityZoneResponseModel.IsSensorBased">
             <summary>
             An instance of boolean.
             </summary>
@@ -227,6 +233,14 @@
             <summary>
             The member of <see cref="P:StravaClient.ClubActivityResponseModel.Athlete"/> property
             </summary>
+        </member>
+        <member name="P:StravaClient.ClubActivityResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
         </member>
         <member name="P:StravaClient.ClubActivityResponseModel.Athlete">
             <summary>
@@ -272,6 +286,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.ClubActivityResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.DetailedActivityResponseModel">
             <summary>
@@ -398,6 +415,14 @@
             The unique identifier of the activity.
             </summary>
         </member>
+        <member name="P:StravaClient.MetaActivityResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
         <member name="M:StravaClient.MetaActivityResponseModel.#ctor">
             <summary>
             Default constructor
@@ -411,6 +436,11 @@
         <member name="F:StravaClient.SummaryActivityResponseModel.mExternalId">
             <summary>
             The member of <see cref="P:StravaClient.SummaryActivityResponseModel.ExternalId"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryActivityResponseModel.mUploadId">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.UploadId"/> property
             </summary>
         </member>
         <member name="F:StravaClient.SummaryActivityResponseModel.mName">
@@ -451,6 +481,31 @@
         <member name="F:StravaClient.SummaryActivityResponseModel.mUploadIdStr">
             <summary>
             The member of <see cref="P:StravaClient.SummaryActivityResponseModel.UploadIdStr"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryActivityResponseModel.mPartnerBrandTag">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.PartnerBrandTag"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryActivityResponseModel.mHighlightedKudosers">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.HighlightedKudosers"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryActivityResponseModel.mLocationCity">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.LocationCity"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryActivityResponseModel.mLocationState">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.LocationState"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryActivityResponseModel.mLocationCountry">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.LocationCountry"/> property
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.Id">
@@ -573,27 +628,27 @@
             An instance of PolylineMap.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Trainer">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsTrainer">
             <summary>
             Whether this activity was recorded on a training machine.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Commute">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsCommute">
             <summary>
             Whether this activity is a commute.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Manual">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsManual">
             <summary>
             Whether this activity was created manually.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Private">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsPrivate">
             <summary>
             Whether this activity is private.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Flagged">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsFlagged">
             <summary>
             Whether this activity is flagged.
             </summary>
@@ -643,7 +698,7 @@
             Average power output in watts during this activity. Rides only.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.DeviceWatts">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsDeviceWatts">
             <summary>
             Whether the watts are from a power meter, false if estimated.
             </summary>
@@ -658,10 +713,101 @@
             Similar to Normalized Power. Rides with power meter data only.
             </summary>
         </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.UtcOffset">
+            <summary>
+            Utc offset.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsFromAcceptedTag">
+            <summary>
+            From accepted tag.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.HasHeartrate">
+            <summary>
+            Has heart rate.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.PrCount">
+            <summary>
+            Pr count.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.AverageCadence">
+            <summary>
+            The effort's average cadence.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.AverageTemp">
+            <summary>
+            The effort's average temperature.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.SufferScore">
+            <summary>
+            Suffer score.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.PartnerBrandTag">
+            <summary>
+            Partner brand tag.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.HighlightedKudosers">
+            <summary>
+            Highlighted kudosers.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsSegmentLeaderBoardOptOut">
+            <summary>
+            Whether is segment leaderboard opt out.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsLeaderBoardOptOut">
+            <summary>
+            Whether is leaderboard opt out.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.LocationCity">
+            <summary>
+            The location city of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.LocationState">
+            <summary>
+            The location state of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.LocationCountry">
+            <summary>
+            The location country of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.AverageHeartrate">
+            <summary>
+            The heart heart rate of the athlete during this effort.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.MaxHeartrate">
+            <summary>
+            The maximum heart rate of the athlete during this effort.
+            </summary>
+        </member>
         <member name="M:StravaClient.SummaryActivityResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.SummaryActivityResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.UpdatableActivityResponseModel">
             <summary>
@@ -683,17 +829,17 @@
             The member of <see cref="P:StravaClient.UpdatableActivityResponseModel.GearId"/> property
             </summary>
         </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.Commute">
+        <member name="P:StravaClient.UpdatableActivityResponseModel.IsCommute">
             <summary>
             Whether this activity is a commute.
             </summary>
         </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.Trainer">
+        <member name="P:StravaClient.UpdatableActivityResponseModel.IsTrainer">
             <summary>
             Whether this activity was recorded on a training machine.
             </summary>
         </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.HideFromHome">
+        <member name="P:StravaClient.UpdatableActivityResponseModel.IsHideFromHome">
             <summary>
             Whether this activity is muted.
             </summary>
@@ -723,6 +869,47 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.UpdatableActivityResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.HighLightedKudoserResponseModel">
+            <summary>
+            Represents a highlighted kudoser
+            </summary>
+        </member>
+        <member name="F:StravaClient.HighLightedKudoserResponseModel.mDisplayName">
+            <summary>
+            The member of <see cref="P:StravaClient.HighLightedKudoserResponseModel.DisplayName"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.HighLightedKudoserResponseModel.DestinationUrl">
+            <summary>
+            The destination url.
+            </summary>
+        </member>
+        <member name="P:StravaClient.HighLightedKudoserResponseModel.DisplayName">
+            <summary>
+            The display name.
+            </summary>
+        </member>
+        <member name="P:StravaClient.HighLightedKudoserResponseModel.AvatarUrl">
+            <summary>
+            The avatar url.
+            </summary>
+        </member>
+        <member name="P:StravaClient.HighLightedKudoserResponseModel.ShowName">
+            <summary>
+            Shows name or not.
+            </summary>
+        </member>
+        <member name="M:StravaClient.HighLightedKudoserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.HighLightedKudoserResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.ClubAthleteResponseModel">
             <summary>
@@ -775,10 +962,21 @@
             Whether the athlete is club owner.
             </summary>
         </member>
+        <member name="P:StravaClient.ClubAthleteResponseModel.Membership">
+            <summary>
+            The membership status of the logged-in athlete.
+            </summary>
+            <remarks>
+             May take one of the following values: member, pending.
+            </remarks>
+        </member>
         <member name="M:StravaClient.ClubAthleteResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.ClubAthleteResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.DetailedAthleteResponseModel">
             <summary>
@@ -848,6 +1046,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.DetailedAthleteResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.MetaAthleteResponseModel">
             <summary>
             Represents a meta athlete.
@@ -863,6 +1064,11 @@
             Represents a summary athlete response model.
             </summary>
         </member>
+        <member name="F:StravaClient.SummaryAthleteResponseModel.mId">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Id"/> property
+            </summary>
+        </member>
         <member name="F:StravaClient.SummaryAthleteResponseModel.mFirstname">
             <summary>
             The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Firstname"/> property
@@ -871,16 +1077,6 @@
         <member name="F:StravaClient.SummaryAthleteResponseModel.mLastname">
             <summary>
             The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Lastname"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryAthleteResponseModel.mProfileMedium">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.ProfileMedium"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryAthleteResponseModel.mProfile">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Profile"/> property
             </summary>
         </member>
         <member name="F:StravaClient.SummaryAthleteResponseModel.mCity">
@@ -896,6 +1092,11 @@
         <member name="F:StravaClient.SummaryAthleteResponseModel.mCountry">
             <summary>
             The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Country"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryAthleteResponseModel.mUsername">
+            <summary>
+            The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Username"/> property
             </summary>
         </member>
         <member name="P:StravaClient.SummaryAthleteResponseModel.Id">
@@ -969,10 +1170,53 @@
             The time at which the athlete was last updated.
             </summary>
         </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.Username">
+            <summary>
+            The athlete's username.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.IsPremium">
+            <summary>
+            Whether the athlete is premium.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.BadgeTypeId">
+            <summary>
+            The athlete's badge type id.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.MutualFriendCount">
+            <summary>
+            The athlete's mutual friend count.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.DatePreference">
+            <summary>
+            The athlete's date preference.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.Follower">
+            <summary>
+            The athlete's follower.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.Friend">
+            <summary>
+            The athlete's friend.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.AthleteType">
+            <summary>
+            The athlete's type.
+            </summary>
+        </member>
         <member name="M:StravaClient.SummaryAthleteResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.SummaryAthleteResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.DetailedClubResponseModel">
             <summary>
@@ -1040,6 +1284,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.MetaClubResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.SummaryClubResponseModel">
             <summary>
             Represents a summary club.
@@ -1048,21 +1295,6 @@
         <member name="F:StravaClient.SummaryClubResponseModel.mName">
             <summary>
             The member of <see cref="P:StravaClient.SummaryClubResponseModel.Name"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryClubResponseModel.mProfileMedium">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryClubResponseModel.ProfileMedium"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryClubResponseModel.mCoverPhoto">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryClubResponseModel.CoverPhoto"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryClubResponseModel.mCoverPhotoSmall">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryClubResponseModel.CoverPhotoSmall"/> property
             </summary>
         </member>
         <member name="F:StravaClient.SummaryClubResponseModel.mCity">
@@ -1080,9 +1312,9 @@
             The member of <see cref="P:StravaClient.SummaryClubResponseModel.Country"/> property
             </summary>
         </member>
-        <member name="F:StravaClient.SummaryClubResponseModel.mUrl">
+        <member name="F:StravaClient.SummaryClubResponseModel.mDescription">
             <summary>
-            The member of <see cref="P:StravaClient.SummaryClubResponseModel.Url"/> property
+            The member of <see cref="P:StravaClient.SummaryClubResponseModel.Description"/> property
             </summary>
         </member>
         <member name="P:StravaClient.SummaryClubResponseModel.Id">
@@ -1164,6 +1396,36 @@
             The club's vanity URL.
             </summary>
         </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.Profile">
+            <summary>
+            The club's profile.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.SportType">
+            <summary>
+            Sport type.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.Description">
+            <summary>
+            The club's description.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.ClubType">
+            <summary>
+            The club's type.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.PostCount">
+            <summary>
+            The club's post count.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.OwnerId">
+            <summary>
+            The owner's id.
+            </summary>
+        </member>
         <member name="T:StravaClient.CommentResponseModel">
             <summary>
             Represents a comment.
@@ -1174,9 +1436,19 @@
             The member of <see cref="P:StravaClient.CommentResponseModel.Text"/> property
             </summary>
         </member>
+        <member name="F:StravaClient.CommentResponseModel.mMentionsMetadata">
+            <summary>
+            The member of <see cref="P:StravaClient.CommentResponseModel.MentionsMetadata"/> property
+            </summary>
+        </member>
         <member name="F:StravaClient.CommentResponseModel.mAthlete">
             <summary>
             The member of <see cref="P:StravaClient.CommentResponseModel.Athlete"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.CommentResponseModel.mCursor">
+            <summary>
+            The member of <see cref="P:StravaClient.CommentResponseModel.Cursor"/> property
             </summary>
         </member>
         <member name="P:StravaClient.CommentResponseModel.Id">
@@ -1189,19 +1461,37 @@
             The identifier of the activity this comment is related to.
             </summary>
         </member>
+        <member name="P:StravaClient.CommentResponseModel.PostId">
+            <summary>
+            The post id.
+            </summary>
+        </member>
         <member name="P:StravaClient.CommentResponseModel.Text">
             <summary>
             The content of the comment.
             </summary>
         </member>
+        <member name="P:StravaClient.CommentResponseModel.MentionsMetadata">
+            <summary>
+            The mentions metadata.
+            </summary>
+        </member>
         <member name="P:StravaClient.CommentResponseModel.ResourceState">
             <summary>
-            The resource state.
+            Resource state, indicates level of detail.
             </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
         </member>
         <member name="P:StravaClient.CommentResponseModel.Athlete">
             <summary>
             An instance of SummaryAthlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.CommentResponseModel.Cursor">
+            <summary>
+            A cursor.
             </summary>
         </member>
         <member name="P:StravaClient.CommentResponseModel.CreatedAt">
@@ -1213,6 +1503,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.CommentResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.ErrorResponseModel">
             <summary>
@@ -1253,6 +1546,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.ErrorResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.ExplorerResponseResponseModel">
             <summary>
@@ -1362,6 +1658,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.ExplorerSegmentResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.FaultResponseModel">
             <summary>
             Represents a fault.
@@ -1394,6 +1693,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.FaultResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.DetailedGearResponseModel">
             <summary>
@@ -1439,6 +1741,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.DetailedGearResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.SummaryGearResponseModel">
             <summary>
@@ -1488,6 +1793,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.SummaryGearResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.LapResponseModel">
             <summary>
             Represents a lap.
@@ -1512,6 +1820,14 @@
             <summary>
             The unique identifier of this lap.
             </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
         </member>
         <member name="P:StravaClient.LapResponseModel.Activity">
             <summary>
@@ -1598,10 +1914,23 @@
             The elevation gain of this lap, in meters.
             </summary>
         </member>
+        <member name="P:StravaClient.LapResponseModel.IsDeviceWatts">
+            <summary>
+            Whether the wattage was reported by a dedicated recording device.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.AverageWatts">
+            <summary>
+            The average wattage of this lap.
+            </summary>
+        </member>
         <member name="M:StravaClient.LapResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.LapResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.PolylineMapResponseModel">
             <summary>
@@ -1642,6 +1971,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.PolylineMapResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.RouteResponseModel">
             <summary>
@@ -1771,6 +2103,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.RouteResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.SplitResponseModel">
             <summary>
             Represents a split.
@@ -1816,6 +2151,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.SplitResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.ZonesResponseModel">
             <summary>
             Represents zones.
@@ -1831,6 +2169,11 @@
             The member of <see cref="P:StravaClient.ZonesResponseModel.Power"/> property
             </summary>
         </member>
+        <member name="F:StravaClient.ZonesResponseModel.mDistributionBuckets">
+            <summary>
+            The member of the <see cref="P:StravaClient.ZonesResponseModel.DistributionBuckets"/> property
+            </summary>
+        </member>
         <member name="P:StravaClient.ZonesResponseModel.HeartRate">
             <summary>
             An instance of HeartRateZoneRanges.
@@ -1839,6 +2182,34 @@
         <member name="P:StravaClient.ZonesResponseModel.Power">
             <summary>
             An instance of PowerZoneRanges.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ZonesResponseModel.Type">
+            <summary>
+            May take one of the following values: heartrate, power.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ZonesResponseModel.DistributionBuckets">
+            <summary>
+            An instance of TimedZoneDistribution.
+            </summary>
+            <remarks>
+            A collection of TimedZoneRange objects. Stores 
+            the exclusive ranges representing zones and the 
+            time spent in each.
+            </remarks>
+        </member>
+        <member name="P:StravaClient.ZonesResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
+        <member name="P:StravaClient.ZonesResponseModel.IsSensorBased">
+            <summary>
+            An instance of boolean.
             </summary>
         </member>
         <member name="M:StravaClient.ZonesResponseModel.#ctor">
@@ -1854,11 +2225,6 @@
         <member name="F:StravaClient.PhotosSummaryPrimaryResponseModel.mUniqueId">
             <summary>
             The member of <see cref="P:StravaClient.PhotosSummaryPrimaryResponseModel.UniqueId"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.PhotosSummaryPrimaryResponseModel.mUrls">
-            <summary>
-            The member of <see cref="P:StravaClient.PhotosSummaryPrimaryResponseModel.Urls"/> property
             </summary>
         </member>
         <member name="P:StravaClient.PhotosSummaryPrimaryResponseModel.Id">
@@ -1878,13 +2244,16 @@
         </member>
         <member name="P:StravaClient.PhotosSummaryPrimaryResponseModel.Urls">
             <summary>
-            An instance of string.
+            Urls.
             </summary>
         </member>
         <member name="M:StravaClient.PhotosSummaryPrimaryResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.PhotosSummaryPrimaryResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.PhotosSummaryResponseModel">
             <summary>
@@ -1921,7 +2290,7 @@
             The member of the <see cref="P:StravaClient.HeartRateZoneRangesResponseModel.Zones"/> property
             </summary>
         </member>
-        <member name="P:StravaClient.HeartRateZoneRangesResponseModel.CustomZones">
+        <member name="P:StravaClient.HeartRateZoneRangesResponseModel.IsCustomZones">
             <summary>
             Whether the athlete has set their own custom heart rate zones.
             </summary>
@@ -1975,6 +2344,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.TimedZoneRangeResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.ZoneRangeResponseModel">
             <summary>
@@ -2061,7 +2433,7 @@
             The average wattage of this effort.
             </summary>
         </member>
-        <member name="P:StravaClient.DetailedSegmentEffortResponseModel.DeviceWatts">
+        <member name="P:StravaClient.DetailedSegmentEffortResponseModel.IsDeviceWatts">
             <summary>
             For riding efforts, whether the wattage was 
             reported by a dedicated recording device.
@@ -2104,6 +2476,9 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.DetailedSegmentEffortResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.DetailedSegmentResponseModel">
             <summary>
             Represents a detailed segment.
@@ -2144,7 +2519,7 @@
             The number of unique athletes who have an effort for this segment.
             </summary>
         </member>
-        <member name="P:StravaClient.DetailedSegmentResponseModel.Hazardous">
+        <member name="P:StravaClient.DetailedSegmentResponseModel.IsHazardous">
             <summary>
             Whether this segment is considered hazardous.
             </summary>
@@ -2158,6 +2533,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.DetailedSegmentResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.SummaryPRSegmentEffortResponseModel">
             <summary>
@@ -2189,9 +2567,17 @@
             Default constructor
             </summary>
         </member>
+        <member name="M:StravaClient.SummaryPRSegmentEffortResponseModel.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.SummarySegmentEffortResponseModel">
             <summary>
             Represents a summary segment.
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummarySegmentEffortResponseModel.mAchievements">
+            <summary>
+            The member of <see cref="P:StravaClient.SummarySegmentEffortResponseModel.Achievements"/> property
             </summary>
         </member>
         <member name="P:StravaClient.SummarySegmentEffortResponseModel.Id">
@@ -2229,10 +2615,26 @@
             Whether this effort is the current best on the leaderboard.
             </summary>
         </member>
+        <member name="P:StravaClient.SummarySegmentEffortResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
+        <member name="P:StravaClient.SummarySegmentEffortResponseModel.Achievements">
+            <summary>
+            the achievements
+            </summary>
+        </member>
         <member name="M:StravaClient.SummarySegmentEffortResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.SummarySegmentEffortResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.SummarySegmentResponseModel">
             <summary>
@@ -2277,6 +2679,11 @@
         <member name="F:StravaClient.SummarySegmentResponseModel.mAthleteSegmentStats">
             <summary>
             The member of <see cref="P:StravaClient.SummarySegmentResponseModel.AthleteSegmentStats"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummarySegmentResponseModel.mMap">
+            <summary>
+            The member of <see cref="P:StravaClient.SummarySegmentResponseModel.Map"/> property
             </summary>
         </member>
         <member name="P:StravaClient.SummarySegmentResponseModel.Id">
@@ -2365,6 +2772,59 @@
         <member name="P:StravaClient.SummarySegmentResponseModel.AthleteSegmentStats">
             <summary>
             An instance of SummarySegmentEffort.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.IsHazardous">
+            <summary>
+            Whether this segment is considered hazardous.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.Starred">
+            <summary>
+            Whether this route is started by the logged-in athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.CreatedAt">
+            <summary>
+            The time at which the segment was created.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.UpdatedAt">
+            <summary>
+            The time at which the segment was last updated.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.TotalElevationGain">
+            <summary>
+            The segment's total elevation gain.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.Map">
+            <summary>
+            An instance of PolylineMap.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.EffortCount">
+            <summary>
+            The total number of efforts for this segment.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.AthleteCount">
+            <summary>
+            The number of unique athletes who have an effort for this segment.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummarySegmentResponseModel.StarCount">
+            <summary>
+            The number of stars for this segment
             </summary>
         </member>
         <member name="M:StravaClient.SummarySegmentResponseModel.#ctor">
@@ -2535,9 +2995,6 @@
             <summary>
             Default constructor
             </summary>
-        </member>
-        <member name="M:StravaClient.MovingStreamResponseModel.GetFallbackValue">
-            <inheritdoc/>
         </member>
         <member name="T:StravaClient.PowerStreamResponseModel">
             <summary>
@@ -2783,6 +3240,9 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="M:StravaClient.UploadResponseModel.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.ActivityType">
             <summary>
@@ -3056,6 +3516,16 @@
         <member name="F:StravaClient.ClimbCategory.HorsCategory">
             <summary>
             Hors catégorie
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClubType">
+            <summary>
+            Provides enumeration over club types.
+            </summary>
+        </member>
+        <member name="F:StravaClient.ClubType.Company">
+            <summary>
+            Company
             </summary>
         </member>
         <member name="T:StravaClient.GearResourceState">
@@ -3587,6 +4057,19 @@
         <member name="M:StravaClient.ClimbCategoryToStringJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
+        <member name="T:StravaClient.ClubTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:StravaClient.ClubType"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.GearResourceStateToIntJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:StravaClient.GearResourceState"/> to a <see cref="T:System.Int32"/>.
@@ -3795,7 +4278,12 @@
         </member>
         <member name="P:StravaClient.StravaClientConstants.StreamSeriesTypeToStringMapper">
             <summary>
-            Maps each <see cref="T:StravaClient.StreamResolution"/> to each <see cref="T:System.String"/> representation
+            Maps each <see cref="T:StravaClient.StreamSeriesType"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.ClubTypeToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.ClubType"/> to each <see cref="T:System.String"/> representation
             </summary>
         </member>
     </members>

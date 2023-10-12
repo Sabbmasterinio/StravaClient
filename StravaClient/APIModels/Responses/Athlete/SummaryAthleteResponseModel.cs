@@ -13,6 +13,11 @@ namespace StravaClient
         #region Private Members
 
         /// <summary>
+        /// The member of <see cref="Id"/> property
+        /// </summary>
+        private string? mId;
+
+        /// <summary>
         /// The member of <see cref="Firstname"/> property
         /// </summary>
         private string? mFirstname;
@@ -21,16 +26,6 @@ namespace StravaClient
         /// The member of <see cref="Lastname"/> property
         /// </summary>
         private string? mLastname;
-
-        /// <summary>
-        /// The member of <see cref="ProfileMedium"/> property
-        /// </summary>
-        private string? mProfileMedium;
-
-        /// <summary>
-        /// The member of <see cref="Profile"/> property
-        /// </summary>
-        private string? mProfile;
 
         /// <summary>
         /// The member of <see cref="City"/> property
@@ -46,6 +41,11 @@ namespace StravaClient
         /// The member of <see cref="Country"/> property
         /// </summary>
         private string? mCountry;
+        
+        /// <summary>
+        /// The member of <see cref="Username"/> property
+        /// </summary>
+        private string? mUsername;
 
         #endregion
 
@@ -54,8 +54,13 @@ namespace StravaClient
         /// <summary>
         /// The unique identifier of the athlete.
         /// </summary>
+        [AllowNull]
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public string Id 
+        { 
+            get => mId ?? string.Empty; 
+            set => mId = value;
+        }
 
         /// <summary>
         /// Resource state, indicates level of detail. 
@@ -64,6 +69,7 @@ namespace StravaClient
         /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
         /// </remarks>
         [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
         public ResourceState ResourceState { get; set; }
 
         /// <summary>
@@ -91,24 +97,14 @@ namespace StravaClient
         /// <summary>
         /// URL to a 62x62 pixel profile picture.
         /// </summary>
-        [AllowNull]
         [JsonProperty("profile_medium")]
-        public string ProfileMedium
-        {
-            get => mProfileMedium ?? string.Empty;
-            set => mProfileMedium = value;
-        }
+        public Uri? ProfileMedium { get; set; }
 
         /// <summary>
         /// URL to a 124x124 pixel profile picture.
         /// </summary>
-        [AllowNull]
         [JsonProperty("profile")]
-        public string Profile
-        {
-            get => mProfile ?? string.Empty;
-            set => mProfile = value;
-        }
+        public Uri? Profile { get; set; }
 
         /// <summary>
         /// The athlete's city.
@@ -163,13 +159,66 @@ namespace StravaClient
         /// The time at which the athlete was created.
         /// </summary>
         [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The time at which the athlete was last updated.
         /// </summary>
-        [JsonProperty("upadted_at")]
-        public DateTime UpdatedAt { get; set; }
+        [JsonProperty("updated_at")]
+        public DateTimeOffset UpdatedAt { get; set; }
+
+        /// <summary>
+        /// The athlete's username.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("username")]
+        public string Username
+        {
+            get => mUsername ?? string.Empty;
+            set => mUsername = value;
+        }
+
+        /// <summary>
+        /// Whether the athlete is premium.
+        /// </summary>
+        [JsonProperty("premium")]
+        public bool IsPremium { get; set; }
+
+        /// <summary>
+        /// The athlete's badge type id.
+        /// </summary>
+        [JsonProperty("badge_type_id")]
+        public int BadgeTypeId { get; set; }
+
+        /// <summary>
+        /// The athlete's mutual friend count.
+        /// </summary>
+        [JsonProperty("mutual_friend_count")]
+        public int MutualFriendCount { get; set; }
+
+        /// <summary>
+        /// The athlete's date preference.
+        /// </summary>
+        [JsonProperty("date_preference")]
+        public DateOnly DatePreference { get; set; }
+        
+        /// <summary>
+        /// The athlete's follower.
+        /// </summary>
+        [JsonProperty("follower")]
+        public object? Follower { get; set; }
+        
+        /// <summary>
+        /// The athlete's friend.
+        /// </summary>
+        [JsonProperty("friend")]
+        public object? Friend { get; set; }
+
+        /// <summary>
+        /// The athlete's type.
+        /// </summary>
+        [JsonProperty("athlete_type")]
+        public int AthleteType { get; set; }
 
         #endregion
 

@@ -228,14 +228,22 @@ namespace StravaClient
             { StreamResolution.Medium, "medium" },
             { StreamResolution.High, "high" }
         }.ToImmutableDictionary();
-        
+
         /// <summary>
-        /// Maps each <see cref="StreamResolution"/> to each <see cref="string"/> representation
+        /// Maps each <see cref="StreamSeriesType"/> to each <see cref="string"/> representation
         /// </summary>
         public static IReadOnlyDictionary<StreamSeriesType, string> StreamSeriesTypeToStringMapper { get; } = new Dictionary<StreamSeriesType, string>()
         {
             { StreamSeriesType.Distance, "distance" },
             { StreamSeriesType.Time, "time" }
+        }.ToImmutableDictionary();
+        
+        /// <summary>
+        /// Maps each <see cref="ClubType"/> to each <see cref="string"/> representation
+        /// </summary>
+        public static IReadOnlyDictionary<ClubType, string> ClubTypeToStringMapper { get; } = new Dictionary<ClubType, string>()
+        {
+            { ClubType.Company, "company" }
         }.ToImmutableDictionary();
     }
 }

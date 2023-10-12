@@ -44,7 +44,7 @@ namespace StravaClient
         /// <summary>
         /// The member of <see cref="SplitsMetric"/> property
         /// </summary>
-        private SplitResponseModel? mSplitsMetric;
+        private IEnumerable<SplitResponseModel>? mSplitsMetric;
 
         /// <summary>
         /// The member of <see cref="SplitsStandard"/> property
@@ -138,9 +138,9 @@ namespace StravaClient
         /// The splits of this activity in metric units (for runs).
         /// </summary>
         [JsonProperty("splits_metric")]
-        public SplitResponseModel SplitsMetric
+        public IEnumerable<SplitResponseModel> SplitsMetric
         {
-            get => mSplitsMetric ??= new();
+            get => mSplitsMetric ??= Enumerable.Empty<SplitResponseModel>();
             set => mSplitsMetric = value;
         }
 
@@ -185,13 +185,6 @@ namespace StravaClient
         {
 
         }
-
-        #endregion
-
-        /// <inheritdoc/>
-        #region Public Methods
-
-        public override string ToString() => Description;
 
         #endregion
     }

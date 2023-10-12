@@ -101,7 +101,7 @@ namespace StravaClient
         /// reported by a dedicated recording device.
         /// </summary>
         [JsonProperty("device_watts")]
-        public bool DeviceWatts { get; set; }
+        public bool IsDeviceWatts { get; set; }
 
         /// <summary>
         /// The heart heart rate of the athlete during this effort.
@@ -130,14 +130,14 @@ namespace StravaClient
         /// belongs in the top 10 at the time of upload.
         /// </summary>
         [JsonProperty("kom_rank")]
-        public int KomRank { get; set; }
+        public int? KomRank { get; set; }
 
         /// <summary>
         /// The rank of the effort on the athlete's leaderboard if
         /// it belongs in the top 3 at the time of upload.
         /// </summary>
         [JsonProperty("pr_rank")]
-        public int PrRank { get; set; }
+        public int? PrRank { get; set; }
 
         /// <summary>
         /// Whether this effort should be hidden when viewed within an activity.

@@ -52,7 +52,7 @@ namespace StravaClient
         /// An instance of boolean.
         /// </summary>
         [JsonProperty("sensor_based")]
-        public bool SensorBased { get; set; }
+        public bool IsSensorBased { get; set; }
         
         /// <summary>
         /// An instance of integer.

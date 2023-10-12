@@ -25,7 +25,7 @@ namespace StravaClient
         #region Public Methods
 
         /// <inheritdoc/>
-        public override TEnum ReadJson(JsonReader reader, Type objectType, TEnum existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override sealed TEnum ReadJson(JsonReader reader, Type objectType, TEnum existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             var readerValue = serializer.Deserialize<TValue>(reader);
 
@@ -38,7 +38,7 @@ namespace StravaClient
         }
 
         /// <inheritdoc/>
-        public override void WriteJson(JsonWriter writer, TEnum value, JsonSerializer serializer)
+        public override sealed void WriteJson(JsonWriter writer, TEnum value, JsonSerializer serializer)
         {
             writer.WriteValue(GetMapper()[value]);
         }

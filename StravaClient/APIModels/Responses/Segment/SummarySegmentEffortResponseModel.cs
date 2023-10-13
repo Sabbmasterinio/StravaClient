@@ -36,7 +36,8 @@ namespace StravaClient
         /// The effort's elapsed time.
         /// </summary>
         [JsonProperty("elapsed_time")]
-        public int ElapsedTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan ElapsedTime { get; set; }
 
         /// <summary>
         /// The time at which the effort was started.
@@ -79,7 +80,8 @@ namespace StravaClient
         public IEnumerable<object> Achievements 
         { 
             get => mAchievements ?? Enumerable.Empty<object>();
-            set => mAchievements = value; }
+            set => mAchievements = value;
+        }
 
         #endregion
 

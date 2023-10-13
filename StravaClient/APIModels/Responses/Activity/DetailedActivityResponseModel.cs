@@ -12,6 +12,16 @@ namespace StravaClient
         #region Private Members
 
         /// <summary>
+        /// The member of <see cref="PartnerBrandTag"/> property
+        /// </summary>
+        private string? mPartnerBrandTag;
+
+        /// <summary>
+        /// The member of <see cref="HighlightedKudosers"/> property
+        /// </summary>
+        private IEnumerable<HighLightedKudoserResponseModel>? mHighlightedKudosers;
+
+        /// <summary>
         /// The member of <see cref="Description"/> property
         /// </summary>
         private string? mDescription;
@@ -64,6 +74,45 @@ namespace StravaClient
         #endregion
 
         #region Public Properties
+
+        /// <summary>
+        /// The effort's average temperature.
+        /// </summary>
+        [JsonProperty("average_temp")]
+        public float AverageTemp { get; set; }
+
+        /// <summary>
+        /// Highlighted kudosers.
+        /// </summary>
+        [JsonProperty("highlighted_kudosers")]
+        public IEnumerable<HighLightedKudoserResponseModel> HighlightedKudosers
+        {
+            get => mHighlightedKudosers ?? Enumerable.Empty<HighLightedKudoserResponseModel>();
+            set => mHighlightedKudosers = value;
+        }
+
+        /// <summary>
+        /// Whether is segment leaderboard opt out.
+        /// </summary>
+        [JsonProperty("segment_leaderboard_opt_out")]
+        public bool IsSegmentLeaderBoardOptOut { get; set; }
+
+        /// <summary>
+        /// Whether is leaderboard opt out.
+        /// </summary>
+        [JsonProperty("leaderboard_opt_out")]
+        public bool IsLeaderBoardOptOut { get; set; }
+
+        /// <summary>
+        /// Partner brand tag.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("partner_brand_tag")]
+        public string PartnerBrandTag
+        {
+            get => mPartnerBrandTag ?? string.Empty;
+            set => mPartnerBrandTag = value;
+        }
 
         /// <summary>
         /// The description of the activity.
@@ -173,6 +222,21 @@ namespace StravaClient
             get => mBestEfforts ?? Enumerable.Empty<DetailedSegmentEffortResponseModel>();
             set => mBestEfforts = value;
         }
+
+        /// <summary>
+        /// A set of starting point latitude and longitude
+        /// </summary>
+        [JsonProperty("start_latlng")]
+        [JsonConverter(typeof(CoordinatesToDoubleArrayJsonConverter))]
+        public Coordinates? StartCoordinates { get; set; }
+
+        /// <summary>
+        /// A set of ending point latitude and longitude
+        /// </summary>
+        [JsonProperty("end_latlng")]
+        [JsonConverter(typeof(CoordinatesToDoubleArrayJsonConverter))]
+        public Coordinates? EndCoordinates { get; set; }
+
 
         #endregion
 

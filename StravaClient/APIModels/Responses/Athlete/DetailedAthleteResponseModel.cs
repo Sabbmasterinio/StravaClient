@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace StravaClient
@@ -9,6 +10,11 @@ namespace StravaClient
     public class DetailedAthleteResponseModel : SummaryAthleteResponseModel
     {
         #region Private Members
+
+        /// <summary>
+        /// The member of <see cref="Username"/> property
+        /// </summary>
+        private string? mUsername;
 
         /// <summary>
         /// The member of <see cref="Clubs"/> property
@@ -28,6 +34,60 @@ namespace StravaClient
         #endregion
 
         #region Public Properties
+
+        /// <summary>
+        /// The athlete's username.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("username")]
+        public string Username
+        {
+            get => mUsername ?? string.Empty;
+            set => mUsername = value;
+        }
+
+        /// <summary>
+        /// Whether the athlete is premium.
+        /// </summary>
+        [JsonProperty("premium")]
+        public bool IsPremium { get; set; }
+
+        /// <summary>
+        /// The athlete's badge type id.
+        /// </summary>
+        [JsonProperty("badge_type_id")]
+        public int BadgeTypeId { get; set; }
+
+        /// <summary>
+        /// The athlete's mutual friend count.
+        /// </summary>
+        [JsonProperty("mutual_friend_count")]
+        public int MutualFriendCount { get; set; }
+
+        /// <summary>
+        /// The athlete's date preference.
+        /// </summary>
+        [JsonProperty("date_preference")]
+        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
+        public DateOnly DatePreference { get; set; }
+
+        /// <summary>
+        /// The athlete's follower.
+        /// </summary>
+        [JsonProperty("follower")]
+        public object? Follower { get; set; }
+
+        /// <summary>
+        /// The athlete's friend.
+        /// </summary>
+        [JsonProperty("friend")]
+        public object? Friend { get; set; }
+
+        /// <summary>
+        /// The athlete's type.
+        /// </summary>
+        [JsonProperty("athlete_type")]
+        public int AthleteType { get; set; }
 
         /// <summary>
         /// The athlete's follower count.

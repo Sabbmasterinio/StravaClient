@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace StravaClient
@@ -8,7 +9,45 @@ namespace StravaClient
     /// </summary>
     public class DetailedClubResponseModel : SummaryClubResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of <see cref="Description"/> property
+        /// </summary>
+        private string? mDescription;
+
+        #endregion
+
         #region Public Properties
+
+        /// <summary>
+        /// The club's description.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("description")]
+        public string Description
+        {
+            get => mDescription ?? string.Empty;
+            set => mDescription = value;
+        }
+
+        /// <summary>
+        /// The club's type.
+        /// </summary>
+        [JsonProperty("club_type")]
+        public ClubType ClubType { get; set; }
+
+        /// <summary>
+        /// The club's post count.
+        /// </summary>
+        [JsonProperty("post_count")]
+        public int PostCount { get; set; }
+
+        /// <summary>
+        /// The owner's id.
+        /// </summary>
+        [JsonProperty("owner_id")]
+        public long OwnerId { get; set; }
 
         /// <summary>
         /// The membership status of the logged-in athlete.

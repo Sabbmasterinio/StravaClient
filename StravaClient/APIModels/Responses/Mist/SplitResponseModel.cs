@@ -26,7 +26,8 @@ namespace StravaClient
         /// The elapsed time of this split, in seconds.
         /// </summary>
         [JsonProperty("elapsed_time")]
-        public int ElapsedTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan ElapsedTime { get; set; }
 
         /// <summary>
         /// The elevation difference of this split, in meters.
@@ -44,7 +45,8 @@ namespace StravaClient
         /// The moving time of this split, in seconds.
         /// </summary>
         [JsonProperty("moving_time")]
-        public int MovingTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan MovingTime { get; set; }
 
         /// <summary>
         /// N/A

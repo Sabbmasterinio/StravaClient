@@ -28,12 +28,11 @@ namespace StravaClient
         public override sealed TEnum ReadJson(JsonReader reader, Type objectType, TEnum existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             var readerValue = serializer.Deserialize<TValue>(reader);
-
+            
             foreach (var item in GetMapper())
                 if (Equals(item.Value, readerValue))
                     return item.Key;
 
-            //throw new InvalidOperationException($"The value '{reader}' is not contained in the {nameof(StravaClientConstants.ResourceStateToIntMapper)}!");
             return default;
         }
 

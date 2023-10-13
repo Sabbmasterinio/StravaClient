@@ -21,7 +21,8 @@ namespace StravaClient
         /// The elapsed time of the PR effort.
         /// </summary>
         [JsonProperty("pr_elapsed_time")]
-        public int PrElapsedTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan PrElapsedTime { get; set; }
 
         /// <summary>
         /// The time at which the PR effort was started.

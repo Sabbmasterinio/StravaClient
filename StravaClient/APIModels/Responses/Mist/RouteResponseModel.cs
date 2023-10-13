@@ -126,7 +126,7 @@ namespace StravaClient
         /// Whether this route is starred by the logged-in athlete.
         /// </summary>
         [JsonProperty("starred")]
-        public bool Starred { get; set; }
+        public bool IsStarred { get; set; }
 
         /// <summary>
         /// An epoch timestamp of when the route was created.
@@ -167,7 +167,8 @@ namespace StravaClient
         /// Estimated time in seconds for the authenticated athlete to complete route.
         /// </summary>
         [JsonProperty("estimated_moving_time")]
-        public int EstimatedMovingTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan EstimatedMovingTime { get; set; }
 
         /// <summary>
         /// The segments traversed by this route.

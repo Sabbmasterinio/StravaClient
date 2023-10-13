@@ -68,13 +68,15 @@ namespace StravaClient
         /// The activity's moving time, in seconds.
         /// </summary>
         [JsonProperty("moving_time")]
-        public int MovingTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan MovingTime { get; set; }
 
         /// <summary>
         /// The activity's elapsed time, in seconds.
         /// </summary>
         [JsonProperty("elapsed_time")]
-        public int ElapsedTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan ElapsedTime { get; set; }
 
         /// <summary>
         /// The activity's total elevation gain.

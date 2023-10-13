@@ -400,6 +400,16 @@
             A collection of DetailedSegmentEffort objects.
             </summary>
         </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.StartCoordinates">
+            <summary>
+            A set of starting point latitude and longitude
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.EndCoordinates">
+            <summary>
+            A set of ending point latitude and longitude
+            </summary>
+        </member>
         <member name="M:StravaClient.DetailedActivityResponseModel.#ctor">
             <summary>
             Default constructor
@@ -461,16 +471,6 @@
         <member name="F:StravaClient.SummaryActivityResponseModel.mTimeZone">
             <summary>
             The member of <see cref="P:StravaClient.SummaryActivityResponseModel.TimeZone"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryActivityResponseModel.mStartLatlng">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.StartLatlng"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryActivityResponseModel.mEndLatlng">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.EndLatlng"/> property
             </summary>
         </member>
         <member name="F:StravaClient.SummaryActivityResponseModel.mMap">
@@ -581,16 +581,6 @@
         <member name="P:StravaClient.SummaryActivityResponseModel.TimeZone">
             <summary>
             The timezone of the activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.StartLatlng">
-            <summary>
-            An instance of LatLng.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.EndLatlng">
-            <summary>
-            An instance of LatLng.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.AchievementCount">
@@ -1059,6 +1049,12 @@
             The unique identifier of the athlete.
             </summary>
         </member>
+        <member name="P:StravaClient.MetaAthleteResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".</remarks>
+        </member>
         <member name="T:StravaClient.SummaryAthleteResponseModel">
             <summary>
             Represents a summary athlete response model.
@@ -1315,6 +1311,11 @@
         <member name="F:StravaClient.SummaryClubResponseModel.mDescription">
             <summary>
             The member of <see cref="P:StravaClient.SummaryClubResponseModel.Description"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.SummaryClubResponseModel.mActivityTypes">
+            <summary>
+            The member of the <see cref="P:StravaClient.SummaryClubResponseModel.ActivityTypes"/> property
             </summary>
         </member>
         <member name="P:StravaClient.SummaryClubResponseModel.Id">
@@ -2759,7 +2760,7 @@
             The segment's country.
             </summary>
         </member>
-        <member name="P:StravaClient.SummarySegmentResponseModel.Private">
+        <member name="P:StravaClient.SummarySegmentResponseModel.IsPrivate">
             <summary>
             Whether this segment is private.
             </summary>
@@ -3969,6 +3970,236 @@
             Time
             </summary>
         </member>
+        <member name="T:StravaClient.Coordinates">
+            <summary>
+            Represents a struct of latitude and longitude
+            </summary>
+        </member>
+        <member name="P:StravaClient.Coordinates.Longitude">
+            <summary>
+            Longitude in decimal degrees.
+            </summary>
+        </member>
+        <member name="P:StravaClient.Coordinates.Latitude">
+            <summary>
+            Latitude in decimal degrees.
+            </summary>
+        </member>
+        <member name="M:StravaClient.Coordinates.#ctor(System.Double,System.Double)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="latitude">Longitude in decimal degrees.</param>
+            <param name="longitude">Latitude in decimal degrees.</param>
+        </member>
+        <member name="M:StravaClient.Coordinates.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.ExtensionMethods">
+            <summary>
+            Extension methods
+            </summary>
+        </member>
+        <member name="F:StravaClient.ExtensionMethods.mRandom">
+            <summary>
+            Used for selecting random numbers
+            </summary>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.IsNullOrEmpty(System.Collections.IEnumerable)">
+            <summary>
+            Checks if the specified <paramref name="enumerable"/> is <see cref="!:null"/> or 
+            if it doesn't have any items.
+            </summary>
+            <param name="enumerable">The enumerable</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.ToNonNullEnumerable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Ensures that the returned enumerable is not empty by returning the <paramref name="enumerable"/>
+            if it is not empty, otherwise a <see cref="M:System.Linq.Enumerable.Empty``1"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="enumerable">The enumerable</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.ToNonNullList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Ensures that the returned enumerable is not empty by returning the <paramref name="enumerable"/>
+            if it is not empty, otherwise a <see cref="T:System.Collections.Generic.List`1"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="enumerable">The enumerable</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Random``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Selects a random item from the specified <paramref name="source"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            One-line for each
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="action">The action to run</param>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.NotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns the specified <paramref name="source"/> if it's not null or empty,
+            otherwise it throws an <see cref="T:System.ArgumentNullException"/>
+            </summary>
+            <param name="source">The source</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.String,System.String,System.String})">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="extractor">The string extractor that is used to convert an item to a string</param>
+            <param name="func">Delegate that places the extracted strings in order</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="extractor">The string extractor that is used to convert an item to a string</param>
+            <param name="separator">The separator</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.String,System.String,System.String})">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>.
+            NOTE: This method converts the items of the <paramref name="source"/> to <see cref="T:System.String"/>
+                  using the <see cref="M:System.Object.ToString"/> method!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="func">Delegate that places the extracted strings in order</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>.
+            NOTE: This method converts the items of the <paramref name="source"/> to <see cref="T:System.String"/>
+                  using the <see cref="M:System.Object.ToString"/> method!
+            NOTE: This method uses ", " as the items separator!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="separator">The separator</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.AsList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Checks if the specified <paramref name="source"/> is of type 
+            <see cref="T:System.Collections.Generic.List`1"/> and if so, it casts it to that list and
+            returns it, otherwise, it creates a list from that <paramref name="source"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.UnorderedEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="first"></param>
+            <param name="second"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.IndexOf``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Finds the index of the first item matching an expression in an enumerable.
+            </summary>
+            <param name="items">The enumerable to search.</param>
+            <param name="predicate">The expression to test the items against.</param>
+            <returns>The index of the first matching item, or -1 if no items match.</returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Finds the index of the first item that equals the <paramref name="element"/>.
+            NOTE: The <see cref="M:System.Object.Equals(System.Object)"/> is used for comparing the elements
+            </summary>
+            <param name="items">The enumerable to search.</param>
+            <param name="element">The element that is searched</param>
+            <returns>The index of the first matching item, or -1 if no items match.</returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Sum(System.Collections.Generic.IEnumerable{System.TimeSpan})">
+            <summary>
+            Computes the sum of a sequence of <see cref="T:System.TimeSpan"/> values.
+            </summary>
+            <param name="source">A sequence of <see cref="T:System.TimeSpan"/> values to calculate the sum of.</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.TimeSpan})">
+            <summary>
+            Computes the sum of the sequence of <see cref="T:System.TimeSpan"/> values that are obtained by
+            invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">A sequence of <see cref="T:System.TimeSpan"/> values to calculate the sum of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The sum of the values in the sequence.</returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.TimeSpan}})">
+            <summary>
+            Computes the sum of a sequence of <see cref="!:TimeSpan?"/> values.
+            </summary>
+            <param name="source">A sequence of <see cref="!:TimeSpan?"/> values to calculate the sum of.</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.TimeSpan}})">
+            <summary>
+            Computes the sum of the sequence of <see cref="!:TimeSpan?"/> values that are obtained by
+            invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="T">The type of the items of the enumerable</typeparam>
+            <param name="source">A sequence of values that are used for calculating the sum.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The sum of the values in the sequence.</returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Except``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Produces the set difference of two sequences according to a specified <paramref name="propertySelector"/> function.
+            </summary>
+            <typeparam name="T">The type of the element</typeparam>
+            <typeparam name="TKey">The type of the key</typeparam>
+            <param name="first">The collection whose keys that are not also in second will be returned</param>
+            <param name="second">The collection whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence</param>
+            <param name="propertySelector">A function to extract the key for each element</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Produces the set difference of two sequences according to a specified <paramref name="propertySelector"/> function.
+            </summary>
+            <typeparam name="T">The type of the element</typeparam>
+            <param name="first">The collection whose keys that are not also in second will be returned</param>
+            <param name="second">The collection whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence</param>
+            <param name="propertySelector">A function to extract the key for each element</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.CreateCombinations``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Creates and returns all the possible combinations of the specified <paramref name="sequences"/>.
+            NOTE: Each combination contains one item from each sequence!
+            NOTE: Order is not taken into consideration!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="sequences">The sequences</param>
+            <returns></returns>
+        </member>
         <member name="T:StravaClient.ActivityTypeToStringJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:StravaClient.ActivityType"/> to a <see cref="T:System.String"/>.
@@ -4007,6 +4238,40 @@
         </member>
         <member name="M:StravaClient.AthleteSexToStringJsonConverter.GetMapper">
             <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.ActivityTypeToStringArrayJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:System.Enum"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityTypeToStringArrayJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityTypeToStringArrayJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting set of <typeparamref name="TEnum"/> to a set of <typeparamref name="TValue"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IEnumerable{`0},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IEnumerable{`0},Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.GetMapper">
+            <summary>
+            Gets a mapper that maps the enum values to other values.
+            </summary>
         </member>
         <member name="T:StravaClient.BaseEnumToValueJsonConverter`2">
             <summary>
@@ -4068,6 +4333,43 @@
             </summary>
         </member>
         <member name="M:StravaClient.ClubTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.CoordinatesToDoubleArrayJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="!:Coordinates?"/> to a <see cref="!:double[]"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.CoordinatesToDoubleArrayJsonConverter.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.CoordinatesToDoubleArrayJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Nullable{StravaClient.Coordinates},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.CoordinatesToDoubleArrayJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Nullable{StravaClient.Coordinates},Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.DateOnlyToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.DateOnly"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="F:StravaClient.DateOnlyToStringJsonConverter.DateFormat">
+            <summary>
+            The date format that is used for deserializing and serializing the date value.
+            </summary>
+        </member>
+        <member name="M:StravaClient.DateOnlyToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.DateOnlyToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.DateOnly,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.DateOnlyToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateOnly,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
         </member>
         <member name="T:StravaClient.GearResourceStateToIntJsonConverter">
@@ -4198,6 +4500,28 @@
             </summary>
         </member>
         <member name="M:StravaClient.StreamSeriesTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.TimeSpanToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.TimeSpan"/> to an <see cref="T:System.Int32"/> that represents
+            the time span in seconds.
+            </summary>
+        </member>
+        <member name="F:StravaClient.TimeSpanToIntJsonConverter.DateFormat">
+            <summary>
+            The date format that is used for deserializing and serializing the date value.
+            </summary>
+        </member>
+        <member name="M:StravaClient.TimeSpanToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.TimeSpanToIntJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.TimeSpan,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.TimeSpanToIntJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.TimeSpan,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
         </member>
         <member name="T:StravaClient.StravaClientConstants">

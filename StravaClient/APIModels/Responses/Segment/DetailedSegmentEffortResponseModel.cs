@@ -70,7 +70,8 @@ namespace StravaClient
         /// The effort's moving time.
         /// </summary>
         [JsonProperty("moving_time")]
-        public int MovingTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan MovingTime { get; set; }
 
         /// <summary>
         /// The start index of this effort in its activity's stream.

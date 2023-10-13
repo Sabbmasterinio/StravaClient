@@ -41,11 +41,6 @@ namespace StravaClient
         /// The member of <see cref="Country"/> property
         /// </summary>
         private string? mCountry;
-        
-        /// <summary>
-        /// The member of <see cref="Username"/> property
-        /// </summary>
-        private string? mUsername;
 
         #endregion
 
@@ -166,59 +161,6 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTimeOffset UpdatedAt { get; set; }
-
-        /// <summary>
-        /// The athlete's username.
-        /// </summary>
-        [AllowNull]
-        [JsonProperty("username")]
-        public string Username
-        {
-            get => mUsername ?? string.Empty;
-            set => mUsername = value;
-        }
-
-        /// <summary>
-        /// Whether the athlete is premium.
-        /// </summary>
-        [JsonProperty("premium")]
-        public bool IsPremium { get; set; }
-
-        /// <summary>
-        /// The athlete's badge type id.
-        /// </summary>
-        [JsonProperty("badge_type_id")]
-        public int BadgeTypeId { get; set; }
-
-        /// <summary>
-        /// The athlete's mutual friend count.
-        /// </summary>
-        [JsonProperty("mutual_friend_count")]
-        public int MutualFriendCount { get; set; }
-
-        /// <summary>
-        /// The athlete's date preference.
-        /// </summary>
-        [JsonProperty("date_preference")]
-        public DateOnly DatePreference { get; set; }
-        
-        /// <summary>
-        /// The athlete's follower.
-        /// </summary>
-        [JsonProperty("follower")]
-        public object? Follower { get; set; }
-        
-        /// <summary>
-        /// The athlete's friend.
-        /// </summary>
-        [JsonProperty("friend")]
-        public object? Friend { get; set; }
-
-        /// <summary>
-        /// The athlete's type.
-        /// </summary>
-        [JsonProperty("athlete_type")]
-        public int AthleteType { get; set; }
 
         #endregion
 

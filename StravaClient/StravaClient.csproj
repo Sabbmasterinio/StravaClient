@@ -11,17 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="JsonConverters\NewFolder\**" />
-	  <EmbeddedResource Remove="JsonConverters\NewFolder\**" />
-	  <None Remove="JsonConverters\NewFolder\**" />
-	</ItemGroup>
-
-	<ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="JsonConverters\Base\" />
-	</ItemGroup>
 
 </Project>

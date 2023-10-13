@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
@@ -42,16 +43,6 @@ namespace StravaClient
         private string? mTimeZone;
 
         /// <summary>
-        /// The member of <see cref="StartLatlng"/> property
-        /// </summary>
-        private IEnumerable<float>? mStartLatlng;
-
-        /// <summary>
-        /// The member of <see cref="EndLatlng"/> property
-        /// </summary>
-        private IEnumerable<float>? mEndLatlng;
-
-        /// <summary>
         /// The member of <see cref="Map"/> property
         /// </summary>
         private PolylineMapResponseModel? mMap;
@@ -60,16 +51,6 @@ namespace StravaClient
         /// The member of <see cref="UploadIdStr"/> property
         /// </summary>
         private string? mUploadIdStr;
-
-        /// <summary>
-        /// The member of <see cref="PartnerBrandTag"/> property
-        /// </summary>
-        private string? mPartnerBrandTag;
-        
-        /// <summary>
-        /// The member of <see cref="HighlightedKudosers"/> property
-        /// </summary>
-        private IEnumerable<HighLightedKudoserResponseModel>? mHighlightedKudosers;
         
         /// <summary>
         /// The member of <see cref="LocationCity"/> property
@@ -149,13 +130,15 @@ namespace StravaClient
         /// The activity's moving time, in seconds.
         /// </summary>
         [JsonProperty("moving_time")]
-        public int MovingTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan MovingTime { get; set; }
 
         /// <summary>
         /// The activity's elapsed time, in seconds.
         /// </summary>
         [JsonProperty("elapsed_time")]
-        public int ElapsedTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan ElapsedTime { get; set; }
 
         /// <summary>
         /// The activity's total elevation gain.
@@ -203,28 +186,6 @@ namespace StravaClient
         {
             get => mTimeZone ?? string.Empty;
             set => mTimeZone = value;
-        }
-
-        /// <summary>
-        /// An instance of LatLng.
-        /// </summary>
-        [JsonProperty("start_latlng")]
-        public IEnumerable<float> StartLatlng
-        {
-            get => mStartLatlng ?? Enumerable.Empty<float>();
-
-            set => mStartLatlng = value;
-        }
-
-        /// <summary>
-        /// An instance of LatLng.
-        /// </summary>
-        [JsonProperty("end_latlng")]
-        public IEnumerable<float> EndLatlng
-        {
-            get => mEndLatlng ?? Enumerable.Empty<float>();
-
-            set => mEndLatlng = value;
         }
 
         /// <summary>
@@ -426,49 +387,10 @@ namespace StravaClient
         public float AverageCadence { get; set; }
 
         /// <summary>
-        /// The effort's average temperature.
-        /// </summary>
-        [JsonProperty("average_temp")]
-        public float AverageTemp { get; set; }
-
-        /// <summary>
         /// Suffer score.
         /// </summary>
         [JsonProperty("suffer_score")]
         public int? SufferScore { get; set; }
-
-        /// <summary>
-        /// Partner brand tag.
-        /// </summary>
-        [AllowNull]
-        [JsonProperty("partner_brand_tag")]
-        public string PartnerBrandTag
-        {
-            get => mPartnerBrandTag ?? string.Empty;
-            set => mPartnerBrandTag = value;
-        }
-
-        /// <summary>
-        /// Highlighted kudosers.
-        /// </summary>
-        [JsonProperty("highlighted_kudosers")]
-        public IEnumerable<HighLightedKudoserResponseModel> HighlightedKudosers
-        {
-            get => mHighlightedKudosers ?? Enumerable.Empty<HighLightedKudoserResponseModel>();
-            set => mHighlightedKudosers = value;
-        }
-
-        /// <summary>
-        /// Whether is segment leaderboard opt out.
-        /// </summary>
-        [JsonProperty("segment_leaderboard_opt_out")]
-        public bool IsSegmentLeaderBoardOptOut { get; set; }
-
-        /// <summary>
-        /// Whether is leaderboard opt out.
-        /// </summary>
-        [JsonProperty("leaderboard_opt_out")]
-        public bool IsLeaderBoardOptOut { get; set; }
 
         /// <summary>
         /// The location city of the activity.
@@ -524,7 +446,7 @@ namespace StravaClient
         /// </summary>
         public SummaryActivityResponseModel() : base()
         {
-
+            
         }
 
         #endregion

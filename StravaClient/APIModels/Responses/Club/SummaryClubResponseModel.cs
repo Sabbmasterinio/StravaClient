@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
@@ -32,9 +33,9 @@ namespace StravaClient
         private string? mCountry;
 
         /// <summary>
-        /// The member of <see cref="Description"/> property
+        /// The member of the <see cref="ActivityTypes"/> property
         /// </summary>
-        private string? mDescription;
+        private IEnumerable<ActivityType>? mActivityTypes;
 
         #endregion
 
@@ -90,8 +91,13 @@ namespace StravaClient
         /// This takes precedence over sport_type.
         /// </summary>
         [JsonProperty("activity_types")]
-        [JsonConverter(typeof(ActivityTypeToStringJsonConverter))]
-        public ActivityType ActivityTypes { get; set; }
+        [JsonConverter(typeof(ActivityTypeEnumerableToStringEnumerableJsonConverter))]
+        public IEnumerable<ActivityType> ActivityTypes
+        {
+            get => mActivityTypes ?? Enumerable.Empty<ActivityType>();
+
+            set => mActivityTypes = value;
+        }
 
         /// <summary>
         /// The club's city.
@@ -168,35 +174,6 @@ namespace StravaClient
         [JsonProperty("sport_type")]
         [JsonConverter(typeof(SportTypeToStringJsonConverter))]
         public SportType SportType { get; set; }
-
-        /// <summary>
-        /// The club's description.
-        /// </summary>
-        [AllowNull]
-        [JsonProperty("description")]
-        public string Description
-        {
-            get => mDescription ?? string.Empty;
-            set => mDescription = value;
-        }
-
-        /// <summary>
-        /// The club's type.
-        /// </summary>
-        [JsonProperty("club_type")]
-        public ClubType ClubType { get; set; }
-
-        /// <summary>
-        /// The club's post count.
-        /// </summary>
-        [JsonProperty("post_count")]
-        public int PostCount { get; set; }
-
-        /// <summary>
-        /// The owner's id.
-        /// </summary>
-        [JsonProperty("owner_id")]
-        public long OwnerId { get; set; }
 
         #endregion
 

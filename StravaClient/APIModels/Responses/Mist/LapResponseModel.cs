@@ -88,7 +88,8 @@ namespace StravaClient
         /// The lap's elapsed time, in seconds.
         /// </summary>
         [JsonProperty("elapsed_time")]
-        public int ElapsedTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan ElapsedTime { get; set; }
 
         /// <summary>
         /// The start index of this effort in its activity's stream.
@@ -118,7 +119,8 @@ namespace StravaClient
         /// The lap's moving time, in seconds.
         /// </summary>
         [JsonProperty("moving_time")]
-        public int MovingTime { get; set; }
+        [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
+        public TimeSpan MovingTime { get; set; }
 
         /// <summary>
         /// The name of the lap.

@@ -181,7 +181,7 @@ namespace StravaClient
         /// Whether this segment is private.
         /// </summary>
         [JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool IsPrivate { get; set; }
 
         /// <summary>
         /// An instance of SummaryPRSegmentEffort.
@@ -220,10 +220,10 @@ namespace StravaClient
         public bool IsHazardous { get; set; }
 
         /// <summary>
-        /// Whether this route is started by the logged-in athlete.
+        /// Whether this route is starred by the logged-in athlete.
         /// </summary>
         [JsonProperty("starred")]
-        public bool Starred { get; set; }
+        public bool IsStarred { get; set; }
 
         /// <summary>
         /// The time at which the segment was created.

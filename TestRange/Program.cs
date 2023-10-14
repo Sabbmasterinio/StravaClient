@@ -3,9 +3,46 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using StravaClient;
+using System;
 using System.Collections.Immutable;
 using System.Net.Http.Headers;
 using System.Reflection;
+using static System.Net.WebRequestMethods;
+using System.Xml.Linq;
+using System.Diagnostics;
+
+//using var client = new HttpClient();
+//client.BaseAddress = new Uri(url);
+
+
+
+
+
+//// Configure OAuth2 access token for authorization: strava_oauth
+//Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+//var apiInstance = new ActivitiesApi();
+//var name = name_example;  // String | The name of the activity.
+//var sportType = sportType_example;  // String | Sport type of activity. For example - Run, MountainBikeRide, Ride, etc.
+//var startDateLocal = 2013 - 10 - 20T19: 20:30 + 01:00;  // Date | ISO 8601 formatted date time.
+//var elapsedTime = 56;  // Integer | In seconds.
+//var type = type_example;  // String | Type of activity. For example - Run, Ride etc. (optional) 
+//var description = description_example;  // String | Description of the activity. (optional) 
+//var distance = 3.4;  // Float | In meters. (optional) 
+//var trainer = 56;  // Integer | Set to 1 to mark as a trainer activity. (optional) 
+//var commute = 56;  // Integer | Set to 1 to mark as commute. (optional) 
+
+//try
+//{
+//    // Create an Activity
+//    DetailedActivity result = apiInstance.createActivity(name, sportType, startDateLocal, elapsedTime, type, description, distance, trainer, commute);
+//    Debug.WriteLine(result);
+//}
+//catch (Exception e)
+//{
+//    Debug.Print("Exception when calling ActivitiesApi.createActivity: " + e.Message);
+//}
+
 
 Console.WriteLine(  nameof(StravaClientConstants.ResourceStateToIntMapper));
 

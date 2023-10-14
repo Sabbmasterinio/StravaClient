@@ -12,13 +12,26 @@ namespace StravaClient
     /// </summary>
     public class CommentsByActivityIdAPIArgs
     {
+        #region Private members
+
+        /// <summary>
+        /// The member of <see cref="PageSize"/> property
+        /// </summary>
+        private int mPageSize = 30;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
         /// Number of items per page. Defaults to 30.
         /// </summary>
         [JsonProperty("page_size")]
-        public int? PageSize { get; set; }
+        public int PageSize
+        {
+            get => mPageSize;
+            set => mPageSize = value;
+        }
 
         /// <summary>
         /// Cursor of the last item in the previous page of results,

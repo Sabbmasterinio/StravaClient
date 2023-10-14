@@ -8,11 +8,16 @@ using System.Threading.Tasks;
 namespace StravaClient
 {
     /// <summary>
-    /// Arguments used for retrieving segment efforts by segment id.
+    /// Represents a page parameters for API arguments.
     /// </summary>
-    public class EffortsBySegmentIdAPIArgs
+    public class BasePageParameters
     {
         #region Private members
+
+        /// <summary>
+        /// The member of <see cref="Page"/> property
+        /// </summary>
+        private int mPage = 1;
 
         /// <summary>
         /// The member of <see cref="PerPage"/> property
@@ -24,16 +29,14 @@ namespace StravaClient
         #region Public Properties
 
         /// <summary>
-        /// Start date of the effort in ISO 8601 formatted date time.
+        /// Page number. Defaults to 1.
         /// </summary>
-        [JsonProperty("start_date_local")]
-        public DateTimeOffset? StartDateLocal { get; set; }
-        
-        /// <summary>
-        /// End date of the effort in ISO 8601 formatted date time.
-        /// </summary>
-        [JsonProperty("end_date_local")]
-        public DateTimeOffset? EndDateLocal { get; set; }
+        [JsonProperty("page")]
+        public int Page
+        {
+            get => mPage;
+            set => mPage = value;
+        }
 
         /// <summary>
         /// Number of items per page. Defaults to 30.
@@ -52,7 +55,7 @@ namespace StravaClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public EffortsBySegmentIdAPIArgs() : base()
+        public BasePageParameters() : base()
         {
 
         }

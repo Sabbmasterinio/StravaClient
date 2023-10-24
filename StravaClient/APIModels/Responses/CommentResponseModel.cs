@@ -56,6 +56,16 @@ namespace StravaClient
         public long? PostId { get; set; }
 
         /// <summary>
+        /// Resource state, indicates level of detail.
+        /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
+        /// <summary>
         /// The content of the comment.
         /// </summary>
         [AllowNull]
@@ -78,14 +88,10 @@ namespace StravaClient
         }
 
         /// <summary>
-        /// Resource state, indicates level of detail.
+        /// The time at which this comment was created.
         /// </summary>
-        /// <remarks>
-        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
-        /// </remarks>
-        [JsonProperty("resource_state")]
-        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
-        public ResourceState ResourceState { get; set; }
+        [JsonProperty("created_at")]
+        public DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// An instance of SummaryAthlete.
@@ -106,12 +112,6 @@ namespace StravaClient
             get => mCursor ?? string.Empty;
             set => mCursor = value;
         }
-
-        /// <summary>
-        /// The time at which this comment was created.
-        /// </summary>
-        [JsonProperty("created_at")]
-        public DateTimeOffset CreatedAt { get; set; }
 
         #endregion
 

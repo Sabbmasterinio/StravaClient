@@ -47,6 +47,17 @@ namespace StravaClient
         public ResourceState ResourceState { get; set; }
 
         /// <summary>
+        /// The name of the lap.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("name")]
+        public string Name
+        {
+            get => mName ?? string.Empty;
+            set => mName = value;
+        }
+
+        /// <summary>
         /// An instance of MetaActivity.
         /// </summary>
         [JsonProperty("activity")]
@@ -67,24 +78,6 @@ namespace StravaClient
         }
 
         /// <summary>
-        /// The lap's average cadence.
-        /// </summary>
-        [JsonProperty("average_cadence")]
-        public float AverageCadence { get; set; }
-
-        /// <summary>
-        /// The lap's average speed.
-        /// </summary>
-        [JsonProperty("average_speed")]
-        public float AverageSpeed { get; set; }
-
-        /// <summary>
-        /// The lap's distance, in meters.
-        /// </summary>
-        [JsonProperty("distance")]
-        public float Distance { get; set; }
-
-        /// <summary>
         /// The lap's elapsed time, in seconds.
         /// </summary>
         [JsonProperty("elapsed_time")]
@@ -92,58 +85,11 @@ namespace StravaClient
         public TimeSpan ElapsedTime { get; set; }
 
         /// <summary>
-        /// The start index of this effort in its activity's stream.
-        /// </summary>
-        [JsonProperty("start_index")]
-        public int StartIndex { get; set; }
-
-        /// <summary>
-        /// The end index of this effort in its activity's stream.
-        /// </summary>
-        [JsonProperty("end_index")]
-        public int EndIndex { get; set; }
-
-        /// <summary>
-        /// The index of this lap in the activity it belongs to.
-        /// </summary>
-        [JsonProperty("lap_index")]
-        public int LapIndex { get; set; }
-
-        /// <summary>
-        /// The maximum speed of this lap, in meters per second.
-        /// </summary>
-        [JsonProperty("max_speed")]
-        public float MaxSpeed { get; set; }
-
-        /// <summary>
         /// The lap's moving time, in seconds.
         /// </summary>
         [JsonProperty("moving_time")]
         [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
         public TimeSpan MovingTime { get; set; }
-
-        /// <summary>
-        /// The name of the lap.
-        /// </summary>
-        [AllowNull]
-        [JsonProperty("name")]
-        public string Name
-        {
-            get => mName ?? string.Empty;
-            set => mName = value;
-        }
-
-        /// <summary>
-        /// The athlete's pace zone during this lap.
-        /// </summary>
-        [JsonProperty("pace_zone")]
-        public int PaceZone { get; set; }
-
-        /// <summary>
-        /// An instance of integer.
-        /// </summary>
-        [JsonProperty("split")]
-        public int Split { get; set; }
 
         /// <summary>
         /// The time at which the lap was started.
@@ -158,10 +104,46 @@ namespace StravaClient
         public DateTimeOffset StartDateLocal { get; set; }
 
         /// <summary>
+        /// The lap's distance, in meters.
+        /// </summary>
+        [JsonProperty("distance")]
+        public float Distance { get; set; }
+
+        /// <summary>
+        /// The start index of this effort in its activity's stream.
+        /// </summary>
+        [JsonProperty("start_index")]
+        public int StartIndex { get; set; }
+
+        /// <summary>
+        /// The end index of this effort in its activity's stream.
+        /// </summary>
+        [JsonProperty("end_index")]
+        public int EndIndex { get; set; }
+
+        /// <summary>
         /// The elevation gain of this lap, in meters.
         /// </summary>
         [JsonProperty("total_elevation_gain")]
         public float TotalElevationGain { get; set; }
+
+        /// <summary>
+        /// The lap's average speed.
+        /// </summary>
+        [JsonProperty("average_speed")]
+        public float AverageSpeed { get; set; }
+
+        /// <summary>
+        /// The maximum speed of this lap, in meters per second.
+        /// </summary>
+        [JsonProperty("max_speed")]
+        public float MaxSpeed { get; set; }
+
+        /// <summary>
+        /// The lap's average cadence.
+        /// </summary>
+        [JsonProperty("average_cadence")]
+        public float AverageCadence { get; set; }
 
         /// <summary>
         /// Whether the wattage was reported by a dedicated recording device.
@@ -174,6 +156,24 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("average_watts")]
         public float AverageWatts { get; set; }
+
+        /// <summary>
+        /// The index of this lap in the activity it belongs to.
+        /// </summary>
+        [JsonProperty("lap_index")]
+        public int LapIndex { get; set; }
+
+        /// <summary>
+        /// An instance of integer.
+        /// </summary>
+        [JsonProperty("split")]
+        public int Split { get; set; }
+
+        /// <summary>
+        /// The athlete's pace zone during this lap.
+        /// </summary>
+        [JsonProperty("pace_zone")]
+        public int PaceZone { get; set; }
 
         #endregion
 

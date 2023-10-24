@@ -5,77 +5,48 @@ using System.Text.Json;
 namespace StravaClient
 {
     /// <summary>
-    /// Represents an updatable activity.
+    /// Request model used for creating and updating an activity.
     /// </summary>
-    public class UpdatableActivityResponseModel
+    public class ActivityRequestModel
     {
-        #region Private Members
-
-        /// <summary>
-        /// The member of <see cref="Description"/> property
-        /// </summary>
-        private string? mDescription;
-        
-        /// <summary>
-        /// The member of <see cref="Name"/> property
-        /// </summary>
-        private string? mName;
-        
-        /// <summary>
-        /// The member of <see cref="GearId"/> property
-        /// </summary>
-        private string? mGearId;
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
         /// Whether this activity is a commute.
         /// </summary>
         [JsonProperty("commute")]
-        public bool IsCommute { get; set; }
+        public bool? IsCommute { get; set; }
 
         /// <summary>
         /// Whether this activity was recorded on a training machine.
         /// </summary>
         [JsonProperty("trainer")]
-        public bool IsTrainer { get; set; }
+        public bool? IsTrainer { get; set; }
 
         /// <summary>
         /// Whether this activity is muted.
         /// </summary>
         [JsonProperty("hide_from_home")]
-        public bool IsHideFromHome { get; set; }
+        public bool? IsHideFromHome { get; set; }
 
         /// <summary>
         /// The description of the activity.
         /// </summary>
-        [AllowNull]
         [JsonProperty("description")]
-        public string Description
-        {
-            get => mDescription ?? string.Empty;
-            set => mDescription = value;
-        }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The name of the activity.
         /// </summary>
-        [AllowNull]
         [JsonProperty("name")]
-        public string Name
-        {
-            get => mName ?? string.Empty;
-            set => mName = value;
-        }
+        public string? Name { get; set; }
 
         /// <summary>
         /// An instance of SportType.
         /// </summary>
         [JsonProperty("sport_type")]
         [JsonConverter(typeof(SportTypeToStringJsonConverter))]
-        public SportType SportType { get; set; }
+        public SportType? SportType { get; set; }
 
         /// <summary>
         /// Identifier for the gear associated with the activity.
@@ -83,11 +54,7 @@ namespace StravaClient
         /// </summary>
         [AllowNull]
         [JsonProperty("gear_id")]
-        public string GearId 
-        { 
-            get => mGearId ?? string.Empty; 
-            set => mGearId = value;
-        }
+        public string? GearId { get; set; }
 
         #endregion
 
@@ -96,17 +63,10 @@ namespace StravaClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public UpdatableActivityResponseModel() : base()
+        public ActivityRequestModel() : base()
         {
 
         }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <inheritdoc/>
-        public override string ToString() => Name;
 
         #endregion
     }

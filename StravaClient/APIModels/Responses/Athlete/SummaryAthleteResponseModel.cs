@@ -145,6 +145,12 @@ namespace StravaClient
         public AthleteSex Sex { get; set; }
 
         /// <summary>
+        /// Whether the athlete is premium.
+        /// </summary>
+        [JsonProperty("premium")]
+        public bool IsPremium { get; set; }
+
+        /// <summary>
         /// Whether the athlete has any Summit subscription.
         /// </summary>
         [JsonProperty("summit")]

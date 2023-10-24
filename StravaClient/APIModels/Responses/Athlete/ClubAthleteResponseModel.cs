@@ -62,29 +62,6 @@ namespace StravaClient
         }
 
         /// <summary>
-        /// The athlete's member status.
-        /// </summary>
-        [AllowNull]
-        [JsonProperty("member")]
-        public string Member
-        {
-            get => mMember ?? string.Empty;
-            set => mMember = value;
-        }
-
-        /// <summary>
-        /// Whether the athlete is a club admin.
-        /// </summary>
-        [JsonProperty("admin")]
-        public bool Admin { get; set; }
-
-        /// <summary>
-        /// Whether the athlete is club owner.
-        /// </summary>
-        [JsonProperty("owner")]
-        public bool Owner { get; set; }
-
-        /// <summary>
         /// The membership status of the logged-in athlete.
         /// </summary>
         /// <remarks>
@@ -93,6 +70,18 @@ namespace StravaClient
         [JsonProperty("membership")]
         [JsonConverter(typeof(MembershipToStringJsonConverter))]
         public Membership Membership { get; set; }
+
+        /// <summary>
+        /// Whether the athlete is a club admin.
+        /// </summary>
+        [JsonProperty("admin")]
+        public bool IsAdmin { get; set; }
+
+        /// <summary>
+        /// Whether the athlete is club owner.
+        /// </summary>
+        [JsonProperty("owner")]
+        public bool IsOwner { get; set; }
 
         #endregion
 

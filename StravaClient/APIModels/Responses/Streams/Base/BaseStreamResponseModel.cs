@@ -13,6 +13,13 @@ namespace StravaClient
         /// <summary>
         /// The number of data points in this stream.
         /// </summary>
+        [JsonProperty("series_type")]
+        [JsonConverter(typeof(StreamSeriesTypeToStringJsonConverter))]
+        public StreamSeriesType SeriesType { get; set; }
+
+        /// <summary>
+        /// The number of data points in this stream.
+        /// </summary>
         [JsonProperty("original_size")]
         public int OriginalSize { get; set; }
         
@@ -22,13 +29,6 @@ namespace StravaClient
         [JsonProperty("resolution")]
         [JsonConverter(typeof(StreamResolutionToStringJsonConverter))]
         public StreamResolution Resolution { get; set; }
-        
-        /// <summary>
-        /// The number of data points in this stream.
-        /// </summary>
-        [JsonProperty("series_type")]
-        [JsonConverter(typeof(StreamSeriesTypeToStringJsonConverter))]
-        public StreamSeriesType SeriesType { get; set; }
 
         #endregion
 

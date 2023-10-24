@@ -37,6 +37,12 @@ namespace StravaClient
         }
 
         /// <summary>
+        /// Whether this gear's is the owner's default one.
+        /// </summary>
+        [JsonProperty("primary")]
+        public bool IsPrimary { get; set; }
+        
+        /// <summary>
         /// Resource state, indicates level of detail. 
         /// </summary>
         /// <remarks>
@@ -47,10 +53,10 @@ namespace StravaClient
         public GearResourceState ResourceState { get; set; }
 
         /// <summary>
-        /// Whether this gear's is the owner's default one.
+        /// The distance logged with this gear.
         /// </summary>
-        [JsonProperty("primary")]
-        public bool IsPrimary { get; set; }
+        [JsonProperty("distance")]
+        public float Distance { get; set; }
 
         /// <summary>
         /// The gear's name.
@@ -62,12 +68,6 @@ namespace StravaClient
             get => mName ?? string.Empty;
             set => mName = value;
         }
-
-        /// <summary>
-        /// The distance logged with this gear.
-        /// </summary>
-        [JsonProperty("distance")]
-        public float Distance { get; set; }
 
         #endregion
 

@@ -1,4 +1,6 @@
-﻿namespace StravaClient
+﻿using Newtonsoft.Json;
+
+namespace StravaClient
 {
     /// <summary>
     /// A <see cref="BaseDataStreamResponseModel{T}"/> that is used for contains a set of enumerable data
@@ -25,4 +27,5 @@
 
         #endregion
     }
+    
 }

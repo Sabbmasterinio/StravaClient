@@ -63,6 +63,16 @@ namespace StravaClient
             set => mSummaryPolyline = value;
         }
 
+        /// <summary>
+        /// Resource state, indicates level of detail.
+        /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
         #endregion
 
         #region Constructors

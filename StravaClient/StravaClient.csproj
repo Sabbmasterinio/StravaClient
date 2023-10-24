@@ -11,11 +11,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Response\" />
-	</ItemGroup>
 
 </Project>

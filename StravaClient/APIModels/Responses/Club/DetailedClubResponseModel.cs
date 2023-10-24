@@ -12,6 +12,11 @@ namespace StravaClient
         #region Private Members
 
         /// <summary>
+        /// The member of the <see cref="ActivityTypes"/> property
+        /// </summary>
+        private IEnumerable<ActivityType>? mActivityTypes;
+
+        /// <summary>
         /// The member of <see cref="Description"/> property
         /// </summary>
         private string? mDescription;
@@ -19,6 +24,41 @@ namespace StravaClient
         #endregion
 
         #region Public Properties
+
+        /// <summary>
+        /// The activity types that count for a club. 
+        /// This takes precedence over sport_type.
+        /// </summary>
+        [JsonProperty("activity_types")]
+        [JsonConverter(typeof(ActivityTypeEnumerableToStringEnumerableJsonConverter))]
+        public IEnumerable<ActivityType> ActivityTypes
+        {
+            get => mActivityTypes ?? Enumerable.Empty<ActivityType>();
+
+            set => mActivityTypes = value;
+        }
+
+        /// <summary>
+        /// The membership status of the logged-in athlete.
+        /// </summary>
+        /// <remarks>
+        ///  May take one of the following values: member, pending.
+        /// </remarks>
+        [JsonProperty("membership")]
+        [JsonConverter(typeof(MembershipToStringJsonConverter))]
+        public Membership Membership { get; set; }
+
+        /// <summary>
+        /// Whether the currently logged-in athlete is an administrator of this club.
+        /// </summary>
+        [JsonProperty("admin")]
+        public bool IsAdmin { get; set; }
+
+        /// <summary>
+        /// Whether the currently logged-in athlete is the owner of this club.
+        /// </summary>
+        [JsonProperty("owner")]
+        public bool IsOwner { get; set; }
 
         /// <summary>
         /// The club's description.
@@ -48,28 +88,6 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("owner_id")]
         public long OwnerId { get; set; }
-
-        /// <summary>
-        /// The membership status of the logged-in athlete.
-        /// </summary>
-        /// <remarks>
-        ///  May take one of the following values: member, pending.
-        /// </remarks>
-        [JsonProperty("membership")]
-        [JsonConverter(typeof(MembershipToStringJsonConverter))]
-        public Membership Membership { get; set; }
-
-        /// <summary>
-        /// Whether the currently logged-in athlete is an administrator of this club.
-        /// </summary>
-        [JsonProperty("admin")]
-        public bool IsAdmin { get; set; }
-
-        /// <summary>
-        /// Whether the currently logged-in athlete is the owner of this club.
-        /// </summary>
-        [JsonProperty("owner")]
-        public bool IsOwner { get; set; }
 
         /// <summary>
         /// The number of athletes in the club that the logged-in athlete follows.

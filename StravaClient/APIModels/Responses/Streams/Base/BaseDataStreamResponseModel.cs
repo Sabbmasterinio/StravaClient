@@ -1,4 +1,6 @@
-﻿namespace StravaClient
+﻿using Newtonsoft.Json;
+
+namespace StravaClient
 {
     /// <summary>
     /// A <see cref="BaseStreamResponseModel"/> that contains a set of <see cref="Data"/>
@@ -23,7 +25,8 @@
         /// <remarks>
         /// Check the remarks of the summary comments of the derived class for more information.
         /// </remarks>
-        public T Data
+        [JsonProperty("data")]
+        public virtual T Data
         {
             get => mData ??= GetFallbackValue();
 

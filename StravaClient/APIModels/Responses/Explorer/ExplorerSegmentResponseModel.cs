@@ -17,16 +17,6 @@ namespace StravaClient
         private string? mName;
 
         /// <summary>
-        /// The member of <see cref="StartLatitudeLongitude"/> property
-        /// </summary>
-        private IEnumerable<float>? mStartLatlng;
-
-        /// <summary>
-        /// The member of <see cref="EndLatitudeLongitude"/> property
-        /// </summary>
-        private IEnumerable<float>? mEndLatlng;
-
-        /// <summary>
         /// The member of <see cref="Points"/> property
         /// </summary>
         private string? mPoints;
@@ -85,24 +75,13 @@ namespace StravaClient
         /// An instance of LatLng.
         /// </summary>
         [JsonProperty("start_latlng")]
-        public IEnumerable<float> StartLatitudeLongitude
-        {
-            get => mStartLatlng ?? Enumerable.Empty<float>();
-
-            set => mStartLatlng = value;
-        }
-
+        public Coordinates StartLatitudeLongitude { get; set; }
 
         /// <summary>
         /// An instance of LatLng.
         /// </summary>
         [JsonProperty("end_latlng")]
-        public IEnumerable<float> EndLatitudeLongitude
-        {
-            get => mEndLatlng ?? Enumerable.Empty<float>();
-
-            set => mEndLatlng = value;
-        }
+        public Coordinates EndLatitudeLongitude { get; set; }
 
         /// <summary>
         /// The segments's elevation difference, in meters.
@@ -126,6 +105,22 @@ namespace StravaClient
             get => mPoints ?? string.Empty;
             set => mPoints = value;
         }
+
+        /// <summary>
+        /// Resource state, indicates level of detail.
+        /// </summary>
+        /// <remarks>
+        /// Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+        /// </remarks>
+        [JsonProperty("resource_state")]
+        [JsonConverter(typeof(ResourceStateToIntJsonConverter))]
+        public ResourceState ResourceState { get; set; }
+
+        /// <summary>
+        /// Whether this route is starred by the logged-in athlete.
+        /// </summary>
+        [JsonProperty("starred")]
+        public bool IsStarred { get; set; }
 
         #endregion
 

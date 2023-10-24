@@ -1,16 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StravaClient
 {
     /// <summary>
-    /// Arguments used for updating logged in athlete.
+    /// Request model used for updating the logged in athlete.
     /// </summary>
-    public class UpdateLoggedInAthleteAPIArgs
+    public class UpdateLoggedInAthleteRequestModel
     {
         #region Public Properties
 
@@ -27,7 +22,7 @@ namespace StravaClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public UpdateLoggedInAthleteAPIArgs() : base()
+        public UpdateLoggedInAthleteRequestModel() : base()
         {
 
         }

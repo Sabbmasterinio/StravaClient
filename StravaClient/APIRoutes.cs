@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StravaClient
+﻿namespace StravaClient
 {
     public static class APIRoutes
     {
-        public const string ActivitiesRoute = "/activities";
+        public const string BaseRoute = "https://www.strava.com/api/v3";
+
+        public const string ActivitiesRoute = $"/activities";
 
         public static string GetActivityRoute(string id) => $"{ActivitiesRoute}/{id}";
 
@@ -46,7 +42,7 @@ namespace StravaClient
 
         public static string GetGearRoute(string id) => $"/gear/{id}";
 
-        public const string RoutesRoute = $"/routes";
+        public const string RoutesRoute = "/routes";
 
         public static string GetRoutesExportGpxRoute(string id) => $"{RoutesRoute}/{id}/export_gpx";
 
@@ -58,9 +54,15 @@ namespace StravaClient
 
         public const string SegmentEffortsRoute = $"/segment_efforts";
 
+        public static string GetSegmentEffortById(string id) => $"{SegmentEffortsRoute}/{id}";
+
         public const string SegmentExlporeRoute = $"/segments/explore";
 
-        public const string SegmentStarredRoute = $"/segments/starred";
+        public const string StarredSegmentsRoute = $"/segments/starred";
+
+        public static string SegmentStar(string id) => $"/segments/{id}/starred";
+
+        public static string SegmentByIdRoute(string id) => $"/segments/{id}";
 
         public const string StreamsRoute = "/streams";
 

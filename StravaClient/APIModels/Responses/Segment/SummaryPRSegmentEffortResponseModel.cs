@@ -15,20 +15,20 @@ namespace StravaClient
         /// The unique identifier of the activity related to the PR effort.
         /// </summary>
         [JsonProperty("pr_activity_id")]
-        public long PrActivityId { get; set; }
+        public long PersonalRecordActivityId { get; set; }
 
         /// <summary>
         /// The elapsed time of the PR effort.
         /// </summary>
         [JsonProperty("pr_elapsed_time")]
         [JsonConverter(typeof(TimeSpanToIntJsonConverter))]
-        public TimeSpan PrElapsedTime { get; set; }
+        public TimeSpan PersonalRecordElapsedTime { get; set; }
 
         /// <summary>
         /// The time at which the PR effort was started.
         /// </summary>
         [JsonProperty("pr_date")]
-        public DateTimeOffset PrDate { get; set; }
+        public DateTimeOffset PersonalRecordDate { get; set; }
 
         /// <summary>
         /// Number of efforts by the authenticated athlete on this segment.

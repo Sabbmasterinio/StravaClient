@@ -17,16 +17,6 @@ namespace StravaClient
         private string? mName;
 
         /// <summary>
-        /// The member of <see cref="StartLatlng"/> property
-        /// </summary>
-        private IEnumerable<float>? mStartLatlng;
-
-        /// <summary>
-        /// The member of <see cref="EndLatlng"/> property
-        /// </summary>
-        private IEnumerable<float>? mEndLatlng;
-
-        /// <summary>
         /// The member of <see cref="City"/> property
         /// </summary>
         private string? mCity;
@@ -41,15 +31,20 @@ namespace StravaClient
         /// </summary>
         private string? mCountry;
 
-        /// <summary>
-        /// The member of <see cref="AthletePrEffort"/> property
-        /// </summary>
-        private SummaryPRSegmentEffortResponseModel? mAthletePrEffort;
+        ///// <summary>
+        ///// The member of <see cref="AthletePrEffort"/> property
+        ///// </summary>
+        //private SummaryPRSegmentEffortResponseModel? mAthletePrEffort;
 
+        ///// <summary>
+        ///// The member of <see cref="AthleteSegmentStats"/> property
+        ///// </summary>
+        //private SummarySegmentEffortResponseModel? mAthleteSegmentStats;
+        
         /// <summary>
         /// The member of <see cref="AthleteSegmentStats"/> property
         /// </summary>
-        private SummarySegmentEffortResponseModel? mAthleteSegmentStats;
+        private SummaryPRSegmentEffortResponseModel? mAthleteSegmentStats;
         
         /// <summary>
         /// The member of <see cref="Map"/> property
@@ -118,21 +113,14 @@ namespace StravaClient
         /// An instance of LatLng.
         /// </summary>
         [JsonProperty("start_latlng")]
-        public IEnumerable<float> StartLatlng
-        {
-            get => mStartLatlng ?? Enumerable.Empty<float>();
-            set => mStartLatlng = value;
-        }
+        [JsonConverter(typeof(CoordinatesToDoubleArrayJsonConverter))]
+        public Coordinates StartLatlng { get; set; }
 
         /// <summary>
         /// An instance of LatLng.
         /// </summary>
         [JsonProperty("end_latlng")]
-        public IEnumerable<float> EndLatlng
-        {
-            get => mEndLatlng ?? Enumerable.Empty<float>();
-            set => mEndLatlng = value;
-        }
+        public Coordinates EndLatlng { get; set; }
 
         /// <summary>
         /// The category of the climb [0, 5]. Higher is harder.
@@ -183,21 +171,31 @@ namespace StravaClient
         [JsonProperty("private")]
         public bool IsPrivate { get; set; }
 
-        /// <summary>
-        /// An instance of SummaryPRSegmentEffort.
-        /// </summary>
-        [JsonProperty("athlete_pr_effort")]
-        public SummaryPRSegmentEffortResponseModel AthletePrEffort
-        {
-            get => mAthletePrEffort ??= new();
-            set => mAthletePrEffort = value;
-        }
+        ///// <summary>
+        ///// An instance of SummaryPRSegmentEffort.
+        ///// </summary>
+        //[JsonProperty("athlete_pr_effort")]
+        //public SummaryPRSegmentEffortResponseModel AthletePrEffort
+        //{
+        //    get => mAthletePrEffort ??= new();
+        //    set => mAthletePrEffort = value;
+        //}
 
+        ///// <summary>
+        ///// An instance of SummarySegmentEffort.
+        ///// </summary>
+        //[JsonProperty("athlete_segment_stats")]
+        //public SummarySegmentEffortResponseModel AthleteSegmentStats
+        //{
+        //    get => mAthleteSegmentStats ??= new();
+        //    set => mAthleteSegmentStats = value;
+        //}
+        
         /// <summary>
         /// An instance of SummarySegmentEffort.
         /// </summary>
         [JsonProperty("athlete_segment_stats")]
-        public SummarySegmentEffortResponseModel AthleteSegmentStats
+        public SummaryPRSegmentEffortResponseModel AthleteSegmentStats
         {
             get => mAthleteSegmentStats ??= new();
             set => mAthleteSegmentStats = value;
@@ -229,13 +227,13 @@ namespace StravaClient
         /// The time at which the segment was created.
         /// </summary>
         [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The time at which the segment was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
-        public DateTime UpdatedAt { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
 
         /// <summary>
         /// The segment's total elevation gain.

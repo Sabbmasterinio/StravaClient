@@ -47,12 +47,6 @@ namespace StravaClient
         }
 
         /// <summary>
-        /// Whether the athlete is premium.
-        /// </summary>
-        [JsonProperty("premium")]
-        public bool IsPremium { get; set; }
-
-        /// <summary>
         /// The athlete's badge type id.
         /// </summary>
         [JsonProperty("badge_type_id")]

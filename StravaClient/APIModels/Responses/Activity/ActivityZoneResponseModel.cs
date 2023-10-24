@@ -58,19 +58,19 @@ namespace StravaClient
         /// An instance of integer.
         /// </summary>
         [JsonProperty("points")]
-        public bool Points { get; set; }
+        public int Points { get; set; }
         
         /// <summary>
         /// An instance of boolean.
         /// </summary>
         [JsonProperty("custom_zones")]
-        public bool CustomZones { get; set; }
+        public bool HasCustomZones { get; set; }
         
         /// <summary>
         /// An instance of integer.
         /// </summary>
         [JsonProperty("max")]
-        public bool Max { get; set; }
+        public int Max { get; set; }
 
         #endregion
 

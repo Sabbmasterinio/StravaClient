@@ -4,6 +4,509 @@
         <name>StravaClient</name>
     </assembly>
     <members>
+        <member name="T:StravaClient.BasePageParameters">
+            <summary>
+            Represents a page parameters for API arguments.
+            </summary>
+        </member>
+        <member name="F:StravaClient.BasePageParameters.mPage">
+            <summary>
+            The member of <see cref="P:StravaClient.BasePageParameters.Page"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.BasePageParameters.mPerPage">
+            <summary>
+            The member of <see cref="P:StravaClient.BasePageParameters.PerPage"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.BasePageParameters.Page">
+            <summary>
+            Page number. Defaults to 1.
+            </summary>
+        </member>
+        <member name="P:StravaClient.BasePageParameters.PerPage">
+            <summary>
+            Number of items per page. Defaults to 30.
+            </summary>
+        </member>
+        <member name="M:StravaClient.BasePageParameters.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ActivityByIdAPIArgs">
+            <summary>
+            Arguments used for retrieving activities by id.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityByIdAPIArgs.IncludeAllEfforts">
+            <summary>
+            To include all segments efforts.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityByIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ActivityStreamsAPIArgs">
+            <summary>
+            Arguments used for retrieving activity streams.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStreamsAPIArgs.Keys">
+            <summary>
+            Desired stream types. May take one of the following values:
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityStreamsAPIArgs.IsKeyByType">
+            <summary>
+            Must be true.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityStreamsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.AthleteActivitiesAPIArgs">
+            <summary>
+            Arguments used for retrieving activities of an athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.AthleteActivitiesAPIArgs.Before">
+            <summary>
+            An epoch timestamp to use for filtering activities
+            that have taken place before a certain time.
+            </summary>
+        </member>
+        <member name="P:StravaClient.AthleteActivitiesAPIArgs.After">
+            <summary>
+            An epoch timestamp to use for filtering activities
+            that have taken place after a certain time.
+            </summary>
+        </member>
+        <member name="M:StravaClient.AthleteActivitiesAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClubActivitiesByIdAPIArgs">
+            <summary>
+            Arguments used for retrieving club activities by id.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubActivitiesByIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClubAdminsByIdAPIArgs">
+            <summary>
+            Arguments used for retrieving club admin by id.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubAdminsByIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClubMembersByIdAPIArgs">
+            <summary>
+            Arguments used for retrieving members of a club by id.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubMembersByIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ClubsLoggedInAthleteAPIArgs">
+            <summary>
+            Arguments used for retrieving clubs with logged in athlete.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ClubsLoggedInAthleteAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.CommentsByActivityIdAPIArgs">
+            <summary>
+            Arguments used for retrieving comments by activity id.
+            </summary>
+        </member>
+        <member name="F:StravaClient.CommentsByActivityIdAPIArgs.mPageSize">
+            <summary>
+            The member of <see cref="P:StravaClient.CommentsByActivityIdAPIArgs.PageSize"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.CommentsByActivityIdAPIArgs.PageSize">
+            <summary>
+            Number of items per page. Defaults to 30.
+            </summary>
+        </member>
+        <member name="P:StravaClient.CommentsByActivityIdAPIArgs.AfterCursor">
+            <summary>
+            Cursor of the last item in the previous page of results,
+            used to request the subsequent page of results. When 
+            omitted, the first page of results is fetched.
+            </summary>
+        </member>
+        <member name="M:StravaClient.CommentsByActivityIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.EffortsBySegmentIdAPIArgs">
+            <summary>
+            Arguments used for retrieving segment efforts by segment id.
+            </summary>
+        </member>
+        <member name="F:StravaClient.EffortsBySegmentIdAPIArgs.mPerPage">
+            <summary>
+            The member of <see cref="P:StravaClient.EffortsBySegmentIdAPIArgs.PerPage"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.EffortsBySegmentIdAPIArgs.StartDateLocal">
+            <summary>
+            Start date of the effort in ISO 8601 formatted date time.
+            </summary>
+        </member>
+        <member name="P:StravaClient.EffortsBySegmentIdAPIArgs.EndDateLocal">
+            <summary>
+            End date of the effort in ISO 8601 formatted date time.
+            </summary>
+        </member>
+        <member name="P:StravaClient.EffortsBySegmentIdAPIArgs.PerPage">
+            <summary>
+            Number of items per page. Defaults to 30.
+            </summary>
+        </member>
+        <member name="M:StravaClient.EffortsBySegmentIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.KudoersByActivityIdAPIArgs">
+            <summary>
+            Arguments used for retrieving kudoers by activity id.
+            </summary>
+        </member>
+        <member name="M:StravaClient.KudoersByActivityIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.RoutesByAthleteIdAPIArgs">
+            <summary>
+            Arguments used for retrieving routes by athlete id.
+            </summary>
+        </member>
+        <member name="M:StravaClient.RoutesByAthleteIdAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.SegmentEffortStreamsAPIArgs">
+            <summary>
+            Arguments used for retrieving a set of streams for a segment effort.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentEffortStreamsAPIArgs.Keys">
+            <summary>
+            Desired stream types. May take one of the following values:
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentEffortStreamsAPIArgs.IsKeyByType">
+            <summary>
+            Must be true.
+            </summary>
+        </member>
+        <member name="M:StravaClient.SegmentEffortStreamsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.SegmentsExploreAPIArgs">
+            <summary>
+            Arguments used for retrieving segments explore.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentsExploreAPIArgs.Bounds">
+            <summary>
+            The latitude and longitude for two points describing a
+            rectangular boundary for the search: 
+            [southwest corner latitude, southwest corner longitude, northeast corner latitude, northeast corner longitude].
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentsExploreAPIArgs.ActivityType">
+            <summary>
+            Desired activity type. May take one of the following values: running, riding.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentsExploreAPIArgs.MinCat">
+            <summary>
+            The minimum climbing category.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentsExploreAPIArgs.MaxCat">
+            <summary>
+            The maximum climbing category.
+            </summary>
+        </member>
+        <member name="M:StravaClient.SegmentsExploreAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.SegmentStreamsAPIArgs">
+            <summary>
+            Arguments used for retrieving the given segment's streams.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentStreamsAPIArgs.Keys">
+            <summary>
+            Desired stream types. May take one of the following values:
+            </summary>
+        </member>
+        <member name="P:StravaClient.SegmentStreamsAPIArgs.IsKeyByType">
+            <summary>
+            Must be true.
+            </summary>
+        </member>
+        <member name="M:StravaClient.SegmentStreamsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.StarredSegmentsAPIArgs">
+            <summary>
+            Arguments used for retrieving logged in athlete starred segments.
+            </summary>
+        </member>
+        <member name="M:StravaClient.StarredSegmentsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ActivityAPIArgs">
+            <summary>
+            Arguments used for retrieving activities.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.Name">
+            <summary>
+            The name of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.Type">
+            <summary>
+            Type of activity. For example - Run, Ride etc.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.SportType">
+            <summary>
+            Sport type of activity. For example - Run, MountainBikeRide, Ride, etc.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.StartDateLocal">
+            <summary>
+            The start date of the activity in ISO 8601 formatted date time.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.ElapsedTime">
+            <summary>
+            The elapsed time of the activity in seconds.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.Description">
+            <summary>
+            Description of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.Distance">
+            <summary>
+            Distance in meters.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.IsTrainer">
+            <summary>
+            Set to 1 to mark as a trainer activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityAPIArgs.IsCommute">
+            <summary>
+            et to 1 to mark as commute.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.UploadAPIArgs">
+            <summary>
+            Arguments used for uploading a new data file.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.File">
+            <summary>
+            The uploaded file.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.Name">
+            <summary>
+            The desired name of the resulting activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.Description">
+            <summary>
+            The desired name of the resulting activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.Trainer">
+            <summary>
+            Whether the resulting activity should be marked
+            as having been performed on a trainer.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.Commute">
+            <summary>
+            Whether the resulting activity should be tagged as a commute.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.DataType">
+            <summary>
+            The format of the uploaded file. May take one of the following values:
+            fit, fit.gz, tcx, tcx.gz, gpx, gpx.gz .
+            </summary>
+        </member>
+        <member name="P:StravaClient.UploadAPIArgs.ExternalId">
+            <summary>
+            The desired external identifier of the resulting activity.
+            </summary>
+        </member>
+        <member name="M:StravaClient.UploadAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.StarSegmentAPIArgs">
+            <summary>
+            Arguments used for the star of the segment.
+            </summary>
+        </member>
+        <member name="P:StravaClient.StarSegmentAPIArgs.IsStarred">
+            <summary>
+            If true, star the segment; if false, unstar the segment.
+            </summary>
+        </member>
+        <member name="M:StravaClient.StarSegmentAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.ActivityRequestModel">
+            <summary>
+            Request model used for creating and updating an activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.IsCommute">
+            <summary>
+            Whether this activity is a commute.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.IsTrainer">
+            <summary>
+            Whether this activity was recorded on a training machine.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.IsHideFromHome">
+            <summary>
+            Whether this activity is muted.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.Description">
+            <summary>
+            The description of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.Name">
+            <summary>
+            The name of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.SportType">
+            <summary>
+            An instance of SportType.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ActivityRequestModel.GearId">
+            <summary>
+            Identifier for the gear associated with the activity.
+            ‘none’ clears gear from activity.
+            </summary>
+        </member>
+        <member name="M:StravaClient.ActivityRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.RefreshTokenRequestModel">
+            <summary>
+            Request model used for getting a new token.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenRequestModel.ClientId">
+            <summary>
+            The application’s ID, obtained during registration.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenRequestModel.ClientSecret">
+            <summary>
+            The application’s secret, obtained during registration.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenRequestModel.GrantType">
+            <summary>
+            The grant type for the request. When refreshing an access token, must always be "refresh_token".
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenRequestModel.RefreshToken">
+            <summary>
+            The refresh token for this user, to be used to get the next access token for this user. 
+            </summary>
+            <remarks>
+            Please expect that this value can change anytime you retrieve a new access token.
+            Once a new refresh token code has been returned, the older code will no longer work.
+            </remarks>
+        </member>
+        <member name="M:StravaClient.RefreshTokenRequestModel.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StravaClient.RefreshTokenRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.UpdateLoggedInAthleteRequestModel">
+            <summary>
+            Request model used for updating the logged in athlete.
+            </summary>
+        </member>
+        <member name="P:StravaClient.UpdateLoggedInAthleteRequestModel.Weight">
+            <summary>
+            The weight of the athlete in kilograms.
+            </summary>
+        </member>
+        <member name="M:StravaClient.UpdateLoggedInAthleteRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:StravaClient.ActivityStatsResponseModel">
             <summary>
             Represents activity stats.
@@ -204,7 +707,7 @@
             An instance of integer.
             </summary>
         </member>
-        <member name="P:StravaClient.ActivityZoneResponseModel.CustomZones">
+        <member name="P:StravaClient.ActivityZoneResponseModel.HasCustomZones">
             <summary>
             An instance of boolean.
             </summary>
@@ -295,6 +798,16 @@
             Represents a detailed activity.
             </summary>
         </member>
+        <member name="F:StravaClient.DetailedActivityResponseModel.mPartnerBrandTag">
+            <summary>
+            The member of <see cref="P:StravaClient.DetailedActivityResponseModel.PartnerBrandTag"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.DetailedActivityResponseModel.mHighlightedKudosers">
+            <summary>
+            The member of <see cref="P:StravaClient.DetailedActivityResponseModel.HighlightedKudosers"/> property
+            </summary>
+        </member>
         <member name="F:StravaClient.DetailedActivityResponseModel.mDescription">
             <summary>
             The member of <see cref="P:StravaClient.DetailedActivityResponseModel.Description"/> property
@@ -343,6 +856,36 @@
         <member name="F:StravaClient.DetailedActivityResponseModel.mBestEfforts">
             <summary>
             The member of <see cref="P:StravaClient.DetailedActivityResponseModel.BestEfforts"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.DetailedActivityResponseModel.mUploadIdStr">
+            <summary>
+            The member of <see cref="P:StravaClient.DetailedActivityResponseModel.UploadIdStr"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.AverageTemp">
+            <summary>
+            The effort's average temperature.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.HighlightedKudosers">
+            <summary>
+            Highlighted kudosers.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.IsSegmentLeaderBoardOptOut">
+            <summary>
+            Whether is segment leaderboard opt out.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.IsLeaderBoardOptOut">
+            <summary>
+            Whether is leaderboard opt out.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.PartnerBrandTag">
+            <summary>
+            Partner brand tag.
             </summary>
         </member>
         <member name="P:StravaClient.DetailedActivityResponseModel.Description">
@@ -400,14 +943,24 @@
             A collection of DetailedSegmentEffort objects.
             </summary>
         </member>
-        <member name="P:StravaClient.DetailedActivityResponseModel.StartCoordinates">
+        <member name="P:StravaClient.DetailedActivityResponseModel.ElevationHigh">
             <summary>
-            A set of starting point latitude and longitude
+            The activity's highest elevation, in meters.
             </summary>
         </member>
-        <member name="P:StravaClient.DetailedActivityResponseModel.EndCoordinates">
+        <member name="P:StravaClient.DetailedActivityResponseModel.ElevationLow">
             <summary>
-            A set of ending point latitude and longitude
+            The activity's lowest elevation, in meters.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.UploadIdStr">
+            <summary>
+            The unique identifier of the upload in string format.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedActivityResponseModel.HideFromHome">
+            <summary>
+            Whether the activity is muted.
             </summary>
         </member>
         <member name="M:StravaClient.DetailedActivityResponseModel.#ctor">
@@ -478,21 +1031,6 @@
             The member of <see cref="P:StravaClient.SummaryActivityResponseModel.Map"/> property
             </summary>
         </member>
-        <member name="F:StravaClient.SummaryActivityResponseModel.mUploadIdStr">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.UploadIdStr"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryActivityResponseModel.mPartnerBrandTag">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.PartnerBrandTag"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryActivityResponseModel.mHighlightedKudosers">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryActivityResponseModel.HighlightedKudosers"/> property
-            </summary>
-        </member>
         <member name="F:StravaClient.SummaryActivityResponseModel.mLocationCity">
             <summary>
             The member of <see cref="P:StravaClient.SummaryActivityResponseModel.LocationCity"/> property
@@ -508,20 +1046,13 @@
             The member of <see cref="P:StravaClient.SummaryActivityResponseModel.LocationCountry"/> property
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Id">
+        <member name="P:StravaClient.SummaryActivityResponseModel.ResourceState">
             <summary>
-            The unique identifier of the activity.
+            Resource state, indicates level of detail.
             </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.ExternalId">
-            <summary>
-            The identifier provided at upload time.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.UploadId">
-            <summary>
-            The identifier of the upload that resulted in this activity.
-            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.Athlete">
             <summary>
@@ -553,19 +1084,29 @@
             The activity's total elevation gain.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.ElevationHigh">
-            <summary>
-            The activity's highest elevation, in meters.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.ElevationLow">
-            <summary>
-            The activity's lowest elevation, in meters.
-            </summary>
-        </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.SportType">
             <summary>
             An instance of SportType.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.WorkoutType">
+            <summary>
+            The activity's workout type.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.Id">
+            <summary>
+            The unique identifier of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.ExternalId">
+            <summary>
+            The identifier provided at upload time.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.UploadId">
+            <summary>
+            The identifier of the upload that resulted in this activity.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.StartDate">
@@ -581,6 +1122,36 @@
         <member name="P:StravaClient.SummaryActivityResponseModel.TimeZone">
             <summary>
             The timezone of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.UtcOffset">
+            <summary>
+            Utc offset.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.StartCoordinates">
+            <summary>
+            A set of starting point latitude and longitude
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.EndCoordinates">
+            <summary>
+            A set of ending point latitude and longitude
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.LocationCity">
+            <summary>
+            The location city of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.LocationState">
+            <summary>
+            The location state of the activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.LocationCountry">
+            <summary>
+            The location country of the activity.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.AchievementCount">
@@ -606,11 +1177,6 @@
         <member name="P:StravaClient.SummaryActivityResponseModel.PhotoCount">
             <summary>
             The number of Instagram photos for this activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.TotalPhotoCount">
-            <summary>
-            The number of Instagram and Strava photos for this activity.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.Map">
@@ -643,14 +1209,14 @@
             Whether this activity is flagged.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.WorkoutType">
+        <member name="P:StravaClient.SummaryActivityResponseModel.GearId">
             <summary>
-            The activity's workout type.
+            The id of the gear for the activity.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.UploadIdStr">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsFromAcceptedTag">
             <summary>
-            The unique identifier of the upload in string format.
+            From accepted tag.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.AverageSpeed">
@@ -663,24 +1229,9 @@
             The activity's max speed, in meters per second.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.HasKudoed">
+        <member name="P:StravaClient.SummaryActivityResponseModel.AverageCadence">
             <summary>
-            Whether the logged-in athlete has kudoed this activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.HideFromHome">
-            <summary>
-            Whether the activity is muted.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.GearId">
-            <summary>
-            The id of the gear for the activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.Kilojoules">
-            <summary>
-            The total work done in kilojoules during this activity. Rides only.
+            The effort's average cadence.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.AverageWatts">
@@ -688,97 +1239,24 @@
             Average power output in watts during this activity. Rides only.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.IsDeviceWatts">
-            <summary>
-            Whether the watts are from a power meter, false if estimated.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.MaxWatts">
-            <summary>
-            Rides with power meter data only.
-            </summary>
-        </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.WeightedAverageWatts">
             <summary>
             Similar to Normalized Power. Rides with power meter data only.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.ResourceState">
+        <member name="P:StravaClient.SummaryActivityResponseModel.Kilojoules">
             <summary>
-            Resource state, indicates level of detail.
-            </summary>
-            <remarks>
-            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
-            </remarks>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.UtcOffset">
-            <summary>
-            Utc offset.
+            The total work done in kilojoules during this activity. Rides only.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.IsFromAcceptedTag">
+        <member name="P:StravaClient.SummaryActivityResponseModel.IsDeviceWatts">
             <summary>
-            From accepted tag.
+            Whether the watts are from a power meter, false if estimated.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.HasHeartrate">
             <summary>
             Has heart rate.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.PrCount">
-            <summary>
-            Pr count.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.AverageCadence">
-            <summary>
-            The effort's average cadence.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.AverageTemp">
-            <summary>
-            The effort's average temperature.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.SufferScore">
-            <summary>
-            Suffer score.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.PartnerBrandTag">
-            <summary>
-            Partner brand tag.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.HighlightedKudosers">
-            <summary>
-            Highlighted kudosers.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.IsSegmentLeaderBoardOptOut">
-            <summary>
-            Whether is segment leaderboard opt out.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.IsLeaderBoardOptOut">
-            <summary>
-            Whether is leaderboard opt out.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.LocationCity">
-            <summary>
-            The location city of the activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.LocationState">
-            <summary>
-            The location state of the activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryActivityResponseModel.LocationCountry">
-            <summary>
-            The location country of the activity.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryActivityResponseModel.AverageHeartrate">
@@ -791,76 +1269,37 @@
             The maximum heart rate of the athlete during this effort.
             </summary>
         </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.MaxWatts">
+            <summary>
+            Rides with power meter data only.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.PrCount">
+            <summary>
+            Pr count.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.TotalPhotoCount">
+            <summary>
+            The number of Instagram and Strava photos for this activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.HasKudoed">
+            <summary>
+            Whether the logged-in athlete has kudoed this activity.
+            </summary>
+        </member>
+        <member name="P:StravaClient.SummaryActivityResponseModel.SufferScore">
+            <summary>
+            Suffer score.
+            </summary>
+        </member>
         <member name="M:StravaClient.SummaryActivityResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
         <member name="M:StravaClient.SummaryActivityResponseModel.ToString">
-            <inheritdoc/>
-        </member>
-        <member name="T:StravaClient.UpdatableActivityResponseModel">
-            <summary>
-            Represents an updatable activity.
-            </summary>
-        </member>
-        <member name="F:StravaClient.UpdatableActivityResponseModel.mDescription">
-            <summary>
-            The member of <see cref="P:StravaClient.UpdatableActivityResponseModel.Description"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.UpdatableActivityResponseModel.mName">
-            <summary>
-            The member of <see cref="P:StravaClient.UpdatableActivityResponseModel.Name"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.UpdatableActivityResponseModel.mGearId">
-            <summary>
-            The member of <see cref="P:StravaClient.UpdatableActivityResponseModel.GearId"/> property
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.IsCommute">
-            <summary>
-            Whether this activity is a commute.
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.IsTrainer">
-            <summary>
-            Whether this activity was recorded on a training machine.
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.IsHideFromHome">
-            <summary>
-            Whether this activity is muted.
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.Description">
-            <summary>
-            The description of the activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.Name">
-            <summary>
-            The name of the activity.
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.SportType">
-            <summary>
-            An instance of SportType.
-            </summary>
-        </member>
-        <member name="P:StravaClient.UpdatableActivityResponseModel.GearId">
-            <summary>
-            Identifier for the gear associated with the activity.
-            ‘none’ clears gear from activity.
-            </summary>
-        </member>
-        <member name="M:StravaClient.UpdatableActivityResponseModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:StravaClient.UpdatableActivityResponseModel.ToString">
             <inheritdoc/>
         </member>
         <member name="T:StravaClient.HighLightedKudoserResponseModel">
@@ -918,7 +1357,7 @@
         </member>
         <member name="F:StravaClient.ClubAthleteResponseModel.mMember">
             <summary>
-            The member of <see cref="P:StravaClient.ClubAthleteResponseModel.Member"/> property
+            The member of <see cref="!:Member"/> property
             </summary>
         </member>
         <member name="P:StravaClient.ClubAthleteResponseModel.ResourceState">
@@ -937,21 +1376,6 @@
             The athlete's last initial.
             </summary>
         </member>
-        <member name="P:StravaClient.ClubAthleteResponseModel.Member">
-            <summary>
-            The athlete's member status.
-            </summary>
-        </member>
-        <member name="P:StravaClient.ClubAthleteResponseModel.Admin">
-            <summary>
-            Whether the athlete is a club admin.
-            </summary>
-        </member>
-        <member name="P:StravaClient.ClubAthleteResponseModel.Owner">
-            <summary>
-            Whether the athlete is club owner.
-            </summary>
-        </member>
         <member name="P:StravaClient.ClubAthleteResponseModel.Membership">
             <summary>
             The membership status of the logged-in athlete.
@@ -959,6 +1383,16 @@
             <remarks>
              May take one of the following values: member, pending.
             </remarks>
+        </member>
+        <member name="P:StravaClient.ClubAthleteResponseModel.IsAdmin">
+            <summary>
+            Whether the athlete is a club admin.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ClubAthleteResponseModel.IsOwner">
+            <summary>
+            Whether the athlete is club owner.
+            </summary>
         </member>
         <member name="M:StravaClient.ClubAthleteResponseModel.#ctor">
             <summary>
@@ -971,6 +1405,11 @@
         <member name="T:StravaClient.DetailedAthleteResponseModel">
             <summary>
             Represents a detailed athlete.
+            </summary>
+        </member>
+        <member name="F:StravaClient.DetailedAthleteResponseModel.mUsername">
+            <summary>
+            The member of <see cref="P:StravaClient.DetailedAthleteResponseModel.Username"/> property
             </summary>
         </member>
         <member name="F:StravaClient.DetailedAthleteResponseModel.mClubs">
@@ -986,6 +1425,41 @@
         <member name="F:StravaClient.DetailedAthleteResponseModel.mShoes">
             <summary>
             The member of <see cref="P:StravaClient.DetailedAthleteResponseModel.Shoes"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.Username">
+            <summary>
+            The athlete's username.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.BadgeTypeId">
+            <summary>
+            The athlete's badge type id.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.MutualFriendCount">
+            <summary>
+            The athlete's mutual friend count.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.DatePreference">
+            <summary>
+            The athlete's date preference.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.Follower">
+            <summary>
+            The athlete's follower.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.Friend">
+            <summary>
+            The athlete's friend.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedAthleteResponseModel.AthleteType">
+            <summary>
+            The athlete's type.
             </summary>
         </member>
         <member name="P:StravaClient.DetailedAthleteResponseModel.FollowerCount">
@@ -1090,11 +1564,6 @@
             The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Country"/> property
             </summary>
         </member>
-        <member name="F:StravaClient.SummaryAthleteResponseModel.mUsername">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryAthleteResponseModel.Username"/> property
-            </summary>
-        </member>
         <member name="P:StravaClient.SummaryAthleteResponseModel.Id">
             <summary>
             The unique identifier of the athlete.
@@ -1151,6 +1620,11 @@
             May take one of the following values: M, F.
             </remarks>
         </member>
+        <member name="P:StravaClient.SummaryAthleteResponseModel.IsPremium">
+            <summary>
+            Whether the athlete is premium.
+            </summary>
+        </member>
         <member name="P:StravaClient.SummaryAthleteResponseModel.Summit">
             <summary>
             Whether the athlete has any Summit subscription.
@@ -1166,46 +1640,6 @@
             The time at which the athlete was last updated.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.Username">
-            <summary>
-            The athlete's username.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.IsPremium">
-            <summary>
-            Whether the athlete is premium.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.BadgeTypeId">
-            <summary>
-            The athlete's badge type id.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.MutualFriendCount">
-            <summary>
-            The athlete's mutual friend count.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.DatePreference">
-            <summary>
-            The athlete's date preference.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.Follower">
-            <summary>
-            The athlete's follower.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.Friend">
-            <summary>
-            The athlete's friend.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryAthleteResponseModel.AthleteType">
-            <summary>
-            The athlete's type.
-            </summary>
-        </member>
         <member name="M:StravaClient.SummaryAthleteResponseModel.#ctor">
             <summary>
             Default constructor
@@ -1217,6 +1651,22 @@
         <member name="T:StravaClient.DetailedClubResponseModel">
             <summary>
             Represents a detailed club.
+            </summary>
+        </member>
+        <member name="F:StravaClient.DetailedClubResponseModel.mActivityTypes">
+            <summary>
+            The member of the <see cref="P:StravaClient.DetailedClubResponseModel.ActivityTypes"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.DetailedClubResponseModel.mDescription">
+            <summary>
+            The member of <see cref="P:StravaClient.DetailedClubResponseModel.Description"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedClubResponseModel.ActivityTypes">
+            <summary>
+            The activity types that count for a club. 
+            This takes precedence over sport_type.
             </summary>
         </member>
         <member name="P:StravaClient.DetailedClubResponseModel.Membership">
@@ -1235,6 +1685,26 @@
         <member name="P:StravaClient.DetailedClubResponseModel.IsOwner">
             <summary>
             Whether the currently logged-in athlete is the owner of this club.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedClubResponseModel.Description">
+            <summary>
+            The club's description.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedClubResponseModel.ClubType">
+            <summary>
+            The club's type.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedClubResponseModel.PostCount">
+            <summary>
+            The club's post count.
+            </summary>
+        </member>
+        <member name="P:StravaClient.DetailedClubResponseModel.OwnerId">
+            <summary>
+            The owner's id.
             </summary>
         </member>
         <member name="P:StravaClient.DetailedClubResponseModel.FollowingCount">
@@ -1308,16 +1778,6 @@
             The member of <see cref="P:StravaClient.SummaryClubResponseModel.Country"/> property
             </summary>
         </member>
-        <member name="F:StravaClient.SummaryClubResponseModel.mDescription">
-            <summary>
-            The member of <see cref="P:StravaClient.SummaryClubResponseModel.Description"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummaryClubResponseModel.mActivityTypes">
-            <summary>
-            The member of the <see cref="P:StravaClient.SummaryClubResponseModel.ActivityTypes"/> property
-            </summary>
-        </member>
         <member name="P:StravaClient.SummaryClubResponseModel.Id">
             <summary>
             The club's unique identifier.
@@ -1341,6 +1801,11 @@
             URL to a 60x60 pixel profile picture.
             </summary>
         </member>
+        <member name="P:StravaClient.SummaryClubResponseModel.Profile">
+            <summary>
+            The club's profile.
+            </summary>
+        </member>
         <member name="P:StravaClient.SummaryClubResponseModel.CoverPhoto">
             <summary>
             URL to a ~1185x580 pixel cover photo.
@@ -1349,12 +1814,6 @@
         <member name="P:StravaClient.SummaryClubResponseModel.CoverPhotoSmall">
             <summary>
             URL to a ~1185x580 pixel cover photo.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.ActivityTypes">
-            <summary>
-            The activity types that count for a club. 
-            This takes precedence over sport_type.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryClubResponseModel.City">
@@ -1372,7 +1831,7 @@
             The club's country.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.Private">
+        <member name="P:StravaClient.SummaryClubResponseModel.IsPrivate">
             <summary>
             Whether the club is private.
             </summary>
@@ -1382,12 +1841,12 @@
             Whether the club is private.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.Featured">
+        <member name="P:StravaClient.SummaryClubResponseModel.IsFeatured">
             <summary>
             Whether the club is featured or not.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.Verified">
+        <member name="P:StravaClient.SummaryClubResponseModel.IsVerified">
             <summary>
             Whether the club is verified or not.
             </summary>
@@ -1395,36 +1854,6 @@
         <member name="P:StravaClient.SummaryClubResponseModel.Url">
             <summary>
             The club's vanity URL.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.Profile">
-            <summary>
-            The club's profile.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.SportType">
-            <summary>
-            Sport type.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.Description">
-            <summary>
-            The club's description.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.ClubType">
-            <summary>
-            The club's type.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.PostCount">
-            <summary>
-            The club's post count.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryClubResponseModel.OwnerId">
-            <summary>
-            The owner's id.
             </summary>
         </member>
         <member name="T:StravaClient.CommentResponseModel">
@@ -1467,6 +1896,14 @@
             The post id.
             </summary>
         </member>
+        <member name="P:StravaClient.CommentResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
         <member name="P:StravaClient.CommentResponseModel.Text">
             <summary>
             The content of the comment.
@@ -1477,13 +1914,10 @@
             The mentions metadata.
             </summary>
         </member>
-        <member name="P:StravaClient.CommentResponseModel.ResourceState">
+        <member name="P:StravaClient.CommentResponseModel.CreatedAt">
             <summary>
-            Resource state, indicates level of detail.
+            The time at which this comment was created.
             </summary>
-            <remarks>
-            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
-            </remarks>
         </member>
         <member name="P:StravaClient.CommentResponseModel.Athlete">
             <summary>
@@ -1493,11 +1927,6 @@
         <member name="P:StravaClient.CommentResponseModel.Cursor">
             <summary>
             A cursor.
-            </summary>
-        </member>
-        <member name="P:StravaClient.CommentResponseModel.CreatedAt">
-            <summary>
-            The time at which this comment was created.
             </summary>
         </member>
         <member name="M:StravaClient.CommentResponseModel.#ctor">
@@ -1581,16 +2010,6 @@
             The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.Name"/> property
             </summary>
         </member>
-        <member name="F:StravaClient.ExplorerSegmentResponseModel.mStartLatlng">
-            <summary>
-            The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.StartLatitudeLongitude"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.ExplorerSegmentResponseModel.mEndLatlng">
-            <summary>
-            The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.EndLatitudeLongitude"/> property
-            </summary>
-        </member>
         <member name="F:StravaClient.ExplorerSegmentResponseModel.mPoints">
             <summary>
             The member of <see cref="P:StravaClient.ExplorerSegmentResponseModel.Points"/> property
@@ -1652,6 +2071,19 @@
         <member name="P:StravaClient.ExplorerSegmentResponseModel.Points">
             <summary>
             The polyline of the segment.
+            </summary>
+        </member>
+        <member name="P:StravaClient.ExplorerSegmentResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
+        </member>
+        <member name="P:StravaClient.ExplorerSegmentResponseModel.IsStarred">
+            <summary>
+            Whether this route is starred by the logged-in athlete.
             </summary>
         </member>
         <member name="M:StravaClient.ExplorerSegmentResponseModel.#ctor">
@@ -1766,6 +2198,11 @@
             The gear's unique identifier.
             </summary>
         </member>
+        <member name="P:StravaClient.SummaryGearResponseModel.IsPrimary">
+            <summary>
+            Whether this gear's is the owner's default one.
+            </summary>
+        </member>
         <member name="P:StravaClient.SummaryGearResponseModel.ResourceState">
             <summary>
             Resource state, indicates level of detail. 
@@ -1774,19 +2211,14 @@
             Possible values: 2 -> "summary", 3 -> "detail".
             </remarks>
         </member>
-        <member name="P:StravaClient.SummaryGearResponseModel.IsPrimary">
+        <member name="P:StravaClient.SummaryGearResponseModel.Distance">
             <summary>
-            Whether this gear's is the owner's default one.
+            The distance logged with this gear.
             </summary>
         </member>
         <member name="P:StravaClient.SummaryGearResponseModel.Name">
             <summary>
             The gear's name.
-            </summary>
-        </member>
-        <member name="P:StravaClient.SummaryGearResponseModel.Distance">
-            <summary>
-            The distance logged with this gear.
             </summary>
         </member>
         <member name="M:StravaClient.SummaryGearResponseModel.#ctor">
@@ -1830,6 +2262,11 @@
             Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
             </remarks>
         </member>
+        <member name="P:StravaClient.LapResponseModel.Name">
+            <summary>
+            The name of the lap.
+            </summary>
+        </member>
         <member name="P:StravaClient.LapResponseModel.Activity">
             <summary>
             An instance of MetaActivity.
@@ -1840,64 +2277,14 @@
             An instance of MetaAthlete.
             </summary>
         </member>
-        <member name="P:StravaClient.LapResponseModel.AverageCadence">
-            <summary>
-            The lap's average cadence.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.AverageSpeed">
-            <summary>
-            The lap's average speed.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.Distance">
-            <summary>
-            The lap's distance, in meters.
-            </summary>
-        </member>
         <member name="P:StravaClient.LapResponseModel.ElapsedTime">
             <summary>
             The lap's elapsed time, in seconds.
             </summary>
         </member>
-        <member name="P:StravaClient.LapResponseModel.StartIndex">
-            <summary>
-            The start index of this effort in its activity's stream.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.EndIndex">
-            <summary>
-            The end index of this effort in its activity's stream.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.LapIndex">
-            <summary>
-            The index of this lap in the activity it belongs to.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.MaxSpeed">
-            <summary>
-            The maximum speed of this lap, in meters per second.
-            </summary>
-        </member>
         <member name="P:StravaClient.LapResponseModel.MovingTime">
             <summary>
             The lap's moving time, in seconds.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.Name">
-            <summary>
-            The name of the lap.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.PaceZone">
-            <summary>
-            The athlete's pace zone during this lap.
-            </summary>
-        </member>
-        <member name="P:StravaClient.LapResponseModel.Split">
-            <summary>
-            An instance of integer.
             </summary>
         </member>
         <member name="P:StravaClient.LapResponseModel.StartDate">
@@ -1910,9 +2297,39 @@
             The time at which the lap was started in the local timezone.
             </summary>
         </member>
+        <member name="P:StravaClient.LapResponseModel.Distance">
+            <summary>
+            The lap's distance, in meters.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.StartIndex">
+            <summary>
+            The start index of this effort in its activity's stream.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.EndIndex">
+            <summary>
+            The end index of this effort in its activity's stream.
+            </summary>
+        </member>
         <member name="P:StravaClient.LapResponseModel.TotalElevationGain">
             <summary>
             The elevation gain of this lap, in meters.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.AverageSpeed">
+            <summary>
+            The lap's average speed.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.MaxSpeed">
+            <summary>
+            The maximum speed of this lap, in meters per second.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.AverageCadence">
+            <summary>
+            The lap's average cadence.
             </summary>
         </member>
         <member name="P:StravaClient.LapResponseModel.IsDeviceWatts">
@@ -1923,6 +2340,21 @@
         <member name="P:StravaClient.LapResponseModel.AverageWatts">
             <summary>
             The average wattage of this lap.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.LapIndex">
+            <summary>
+            The index of this lap in the activity it belongs to.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.Split">
+            <summary>
+            An instance of integer.
+            </summary>
+        </member>
+        <member name="P:StravaClient.LapResponseModel.PaceZone">
+            <summary>
+            The athlete's pace zone during this lap.
             </summary>
         </member>
         <member name="M:StravaClient.LapResponseModel.#ctor">
@@ -1967,6 +2399,14 @@
             <summary>
             The polyline of the map, only returned on detailed representation of an object.
             </summary>
+        </member>
+        <member name="P:StravaClient.PolylineMapResponseModel.ResourceState">
+            <summary>
+            Resource state, indicates level of detail.
+            </summary>
+            <remarks>
+            Possible values: 1 -> "meta", 2 -> "summary", 3 -> "detail".
+            </remarks>
         </member>
         <member name="M:StravaClient.PolylineMapResponseModel.#ctor">
             <summary>
@@ -2051,12 +2491,12 @@
             The name of this route.
             </summary>
         </member>
-        <member name="P:StravaClient.RouteResponseModel.Private">
+        <member name="P:StravaClient.RouteResponseModel.IsPrivate">
             <summary>
             Whether this route is private.
             </summary>
         </member>
-        <member name="P:StravaClient.RouteResponseModel.Starred">
+        <member name="P:StravaClient.RouteResponseModel.IsStarred">
             <summary>
             Whether this route is starred by the logged-in athlete.
             </summary>
@@ -2369,6 +2809,40 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:StravaClient.RefreshTokenResponseModel">
+            <summary>
+            Represents a new token response model.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenResponseModel.AccessToken">
+            <summary>
+            The short-lived access token.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenResponseModel.ExpiresAt">
+            <summary>
+            The number of seconds since the epoch when the provided access token will expire.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenResponseModel.ExpiresIn">
+            <summary>
+            Seconds until the short-lived access token will expire.
+            </summary>
+        </member>
+        <member name="P:StravaClient.RefreshTokenResponseModel.RefreshToken">
+            <summary>
+            The refresh token for this user, to be used to get the next access token for this user. 
+            </summary>
+            <remarks>
+            Please expect that this value can change anytime you retrieve a new access token.
+            Once a new refresh token code has been returned, the older code will no longer work.
+            </remarks>
+        </member>
+        <member name="M:StravaClient.RefreshTokenResponseModel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:StravaClient.DetailedSegmentEffortResponseModel">
             <summary>
             Represents a detailed segment effort.
@@ -2392,6 +2866,11 @@
         <member name="F:StravaClient.DetailedSegmentEffortResponseModel.mSegment">
             <summary>
             The member of <see cref="P:StravaClient.DetailedSegmentEffortResponseModel.Segment"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.DetailedSegmentEffortResponseModel.mAthleteSegmentStats">
+            <summary>
+            The member of <see cref="P:StravaClient.DetailedSegmentEffortResponseModel.AthleteSegmentStats"/> property
             </summary>
         </member>
         <member name="P:StravaClient.DetailedSegmentEffortResponseModel.Name">
@@ -2472,6 +2951,11 @@
             Whether this effort should be hidden when viewed within an activity.
             </summary>
         </member>
+        <member name="P:StravaClient.DetailedSegmentEffortResponseModel.AthleteSegmentStats">
+            <summary>
+            An instance of SummarySegmentEffort.
+            </summary>
+        </member>
         <member name="M:StravaClient.DetailedSegmentEffortResponseModel.#ctor">
             <summary>
             Default constructor
@@ -2543,17 +3027,17 @@
             Represents a summary pr segment effort.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryPRSegmentEffortResponseModel.PrActivityId">
+        <member name="P:StravaClient.SummaryPRSegmentEffortResponseModel.PersonalRecordActivityId">
             <summary>
             The unique identifier of the activity related to the PR effort.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryPRSegmentEffortResponseModel.PrElapsedTime">
+        <member name="P:StravaClient.SummaryPRSegmentEffortResponseModel.PersonalRecordElapsedTime">
             <summary>
             The elapsed time of the PR effort.
             </summary>
         </member>
-        <member name="P:StravaClient.SummaryPRSegmentEffortResponseModel.PrDate">
+        <member name="P:StravaClient.SummaryPRSegmentEffortResponseModel.PersonalRecordDate">
             <summary>
             The time at which the PR effort was started.
             </summary>
@@ -2647,16 +3131,6 @@
             The member of <see cref="P:StravaClient.SummarySegmentResponseModel.Name"/> property
             </summary>
         </member>
-        <member name="F:StravaClient.SummarySegmentResponseModel.mStartLatlng">
-            <summary>
-            The member of <see cref="P:StravaClient.SummarySegmentResponseModel.StartLatlng"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummarySegmentResponseModel.mEndLatlng">
-            <summary>
-            The member of <see cref="P:StravaClient.SummarySegmentResponseModel.EndLatlng"/> property
-            </summary>
-        </member>
         <member name="F:StravaClient.SummarySegmentResponseModel.mCity">
             <summary>
             The member of <see cref="P:StravaClient.SummarySegmentResponseModel.City"/> property
@@ -2670,11 +3144,6 @@
         <member name="F:StravaClient.SummarySegmentResponseModel.mCountry">
             <summary>
             The member of <see cref="P:StravaClient.SummarySegmentResponseModel.Country"/> property
-            </summary>
-        </member>
-        <member name="F:StravaClient.SummarySegmentResponseModel.mAthletePrEffort">
-            <summary>
-            The member of <see cref="P:StravaClient.SummarySegmentResponseModel.AthletePrEffort"/> property
             </summary>
         </member>
         <member name="F:StravaClient.SummarySegmentResponseModel.mAthleteSegmentStats">
@@ -2765,11 +3234,6 @@
             Whether this segment is private.
             </summary>
         </member>
-        <member name="P:StravaClient.SummarySegmentResponseModel.AthletePrEffort">
-            <summary>
-            An instance of SummaryPRSegmentEffort.
-            </summary>
-        </member>
         <member name="P:StravaClient.SummarySegmentResponseModel.AthleteSegmentStats">
             <summary>
             An instance of SummarySegmentEffort.
@@ -2788,9 +3252,9 @@
             Whether this segment is considered hazardous.
             </summary>
         </member>
-        <member name="P:StravaClient.SummarySegmentResponseModel.Starred">
+        <member name="P:StravaClient.SummarySegmentResponseModel.IsStarred">
             <summary>
-            Whether this route is started by the logged-in athlete.
+            Whether this route is starred by the logged-in athlete.
             </summary>
         </member>
         <member name="P:StravaClient.SummarySegmentResponseModel.CreatedAt">
@@ -2895,17 +3359,17 @@
             Represents a base stream.
             </summary>
         </member>
+        <member name="P:StravaClient.BaseStreamResponseModel.SeriesType">
+            <summary>
+            The number of data points in this stream.
+            </summary>
+        </member>
         <member name="P:StravaClient.BaseStreamResponseModel.OriginalSize">
             <summary>
             The number of data points in this stream.
             </summary>
         </member>
         <member name="P:StravaClient.BaseStreamResponseModel.Resolution">
-            <summary>
-            The number of data points in this stream.
-            </summary>
-        </member>
-        <member name="P:StravaClient.BaseStreamResponseModel.SeriesType">
             <summary>
             The number of data points in this stream.
             </summary>
@@ -2942,6 +3406,22 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:StravaClient.CoordinatesStreamResponseModel">
+            <summary>
+            Represents a lat lng stream.
+            </summary>
+            <remarks>
+            Data: The sequence of latitude/longitude values for this stream.
+            </remarks>
+        </member>
+        <member name="P:StravaClient.CoordinatesStreamResponseModel.Data">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.CoordinatesStreamResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:StravaClient.DistanceStreamResponseModel">
             <summary>
             Represents a distance stream.
@@ -2967,22 +3447,6 @@
             <summary>
             Default constructor
             </summary>
-        </member>
-        <member name="T:StravaClient.LatLngStreamResponseModel">
-            <summary>
-            Represents a lat lng stream.
-            </summary>
-            <remarks>
-            Data: The sequence of lat/long values for this stream.
-            </remarks>
-        </member>
-        <member name="M:StravaClient.LatLngStreamResponseModel.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:StravaClient.LatLngStreamResponseModel.GetFallbackValue">
-            <inheritdoc/>
         </member>
         <member name="T:StravaClient.MovingStreamResponseModel">
             <summary>
@@ -3177,6 +3641,9 @@
             Data: The sequence of time values for this stream.
             </remarks>
         </member>
+        <member name="P:StravaClient.TimeStreamResponseModel.Data">
+            <inheritdoc/>
+        </member>
         <member name="M:StravaClient.TimeStreamResponseModel.#ctor">
             <summary>
             Default constructor
@@ -3244,6 +3711,22 @@
         </member>
         <member name="M:StravaClient.UploadResponseModel.ToString">
             <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.ArgumentNameAttribute">
+            <summary>
+            Provides argument name meta data to an item
+            </summary>
+        </member>
+        <member name="P:StravaClient.ArgumentNameAttribute.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:StravaClient.ArgumentNameAttribute.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="name">The name</param>
         </member>
         <member name="T:StravaClient.ActivityType">
             <summary>
@@ -3527,6 +4010,36 @@
         <member name="F:StravaClient.ClubType.Company">
             <summary>
             Company
+            </summary>
+        </member>
+        <member name="T:StravaClient.DataType">
+            <summary>
+            Provides enumeration over the file data type.
+            </summary>
+        </member>
+        <member name="T:StravaClient.ErrorType">
+            <summary>
+            Provides enumeration over the error types
+            </summary>
+        </member>
+        <member name="F:StravaClient.ErrorType.Error">
+            <summary>
+            A standard error
+            </summary>
+        </member>
+        <member name="F:StravaClient.ErrorType.Warning">
+            <summary>
+            A warning
+            </summary>
+        </member>
+        <member name="F:StravaClient.ErrorType.Information">
+            <summary>
+            An informative message
+            </summary>
+        </member>
+        <member name="F:StravaClient.ErrorType.Hidden">
+            <summary>
+            An error that should get hidden
             </summary>
         </member>
         <member name="T:StravaClient.GearResourceState">
@@ -3970,9 +4483,69 @@
             Time
             </summary>
         </member>
+        <member name="T:StravaClient.StreamSetType">
+            <summary>
+            Provides enumeration over the type of a stream set.
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Time">
+            <summary>
+            Time
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Distance">
+            <summary>
+            Distance
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Coordinates">
+            <summary>
+            Coordinates
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Altitude">
+            <summary>
+            Altitude
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.VelocitySmooth">
+            <summary>
+            Velocity smooth
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Heartrate">
+            <summary>
+            Heartrate
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Cadence">
+            <summary>
+            Cadence
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Watts">
+            <summary>
+            Watts
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Temperature">
+            <summary>
+            Temperature
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.Moving">
+            <summary>
+            Moving
+            </summary>
+        </member>
+        <member name="F:StravaClient.StreamSetType.GradeSmooth">
+            <summary>
+            Grade smooth
+            </summary>
+        </member>
         <member name="T:StravaClient.Coordinates">
             <summary>
-            Represents a struct of latitude and longitude
+            Represents a struct of latitude and longitude.
             </summary>
         </member>
         <member name="P:StravaClient.Coordinates.Longitude">
@@ -4000,10 +4573,19 @@
             Extension methods
             </summary>
         </member>
-        <member name="F:StravaClient.ExtensionMethods.mRandom">
+        <member name="M:StravaClient.ExtensionMethods.AggregateExceptionMessages(System.Exception)">
             <summary>
-            Used for selecting random numbers
+            Aggregates the <see cref="P:System.Exception.Message"/> in the <paramref name="exception"/> exception stack trace
             </summary>
+            <param name="exception">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.IsNullOrEmpty(System.String)">
+            <summary>
+            Checks whether the string is null or empty
+            </summary>
+            <param name="value">The value</param>
+            <returns>Returns true if the string is null or empty, false otherwise</returns>
         </member>
         <member name="M:StravaClient.ExtensionMethods.IsNullOrEmpty(System.Collections.IEnumerable)">
             <summary>
@@ -4011,48 +4593,6 @@
             if it doesn't have any items.
             </summary>
             <param name="enumerable">The enumerable</param>
-            <returns></returns>
-        </member>
-        <member name="M:StravaClient.ExtensionMethods.ToNonNullEnumerable``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Ensures that the returned enumerable is not empty by returning the <paramref name="enumerable"/>
-            if it is not empty, otherwise a <see cref="M:System.Linq.Enumerable.Empty``1"/>
-            </summary>
-            <typeparam name="T">The type of the items</typeparam>
-            <param name="enumerable">The enumerable</param>
-            <returns></returns>
-        </member>
-        <member name="M:StravaClient.ExtensionMethods.ToNonNullList``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Ensures that the returned enumerable is not empty by returning the <paramref name="enumerable"/>
-            if it is not empty, otherwise a <see cref="T:System.Collections.Generic.List`1"/>
-            </summary>
-            <typeparam name="T">The type of the items</typeparam>
-            <param name="enumerable">The enumerable</param>
-            <returns></returns>
-        </member>
-        <member name="M:StravaClient.ExtensionMethods.Random``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Selects a random item from the specified <paramref name="source"/>
-            </summary>
-            <typeparam name="T">The type of the items</typeparam>
-            <param name="source">The source</param>
-            <returns></returns>
-        </member>
-        <member name="M:StravaClient.ExtensionMethods.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
-            <summary>
-            One-line for each
-            </summary>
-            <typeparam name="T">The type of the items</typeparam>
-            <param name="source">The source</param>
-            <param name="action">The action to run</param>
-        </member>
-        <member name="M:StravaClient.ExtensionMethods.NotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the specified <paramref name="source"/> if it's not null or empty,
-            otherwise it throws an <see cref="T:System.ArgumentNullException"/>
-            </summary>
-            <param name="source">The source</param>
             <returns></returns>
         </member>
         <member name="M:StravaClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.String,System.String,System.String})">
@@ -4098,107 +4638,784 @@
             <param name="separator">The separator</param>
             <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.AsList``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:StravaClient.ExtensionMethods.ToISO8601String(System.DateOnly)">
             <summary>
-            Checks if the specified <paramref name="source"/> is of type 
-            <see cref="T:System.Collections.Generic.List`1"/> and if so, it casts it to that list and
-            returns it, otherwise, it creates a list from that <paramref name="source"/>
+            Returns a string that represents the specified <paramref name="value"/> using the ISO8601 format
             </summary>
-            <typeparam name="T">The type of the items</typeparam>
-            <param name="source">The source</param>
+            <param name="value">The value</param>
             <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.UnorderedEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:StravaClient.ExtensionMethods.ToISO8601String(System.DateTimeOffset)">
+            <summary>
+            Returns a string that represents the specified <paramref name="dto"/> using the ISO8601 format
+            </summary>
+            <param name="dto">The date time offset</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.ToISO8601String(System.TimeOnly)">
+            <summary>
+            Returns a string that represents the specified <paramref name="value"/> using the ISO8601 format
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.ToISO8601String(System.DateTime)">
+            <summary>
+            Returns a string that represents the specified <paramref name="dt"/> using the ISO8601 format
+            </summary>
+            <param name="dt">The date time</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.FirstCharToLower(System.String)">
+            <summary>
+            Returns the specified <paramref name="s"/> with the first char converted to lower case
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.IsDate(System.Type)">
+            <summary>
+            Checks if the specified <paramref name="type"/> is a type that represents a date
+            </summary>
+            <param name="type">The type</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.IsEnumerable(System.Type)">
+            <summary>
+            Checks whether the specified <paramref name="type"/> implements the <see cref="T:System.Collections.IEnumerable"/>
+            or it's it self the <see cref="T:System.Collections.IEnumerable"/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.NotNullOrEmpty(System.String)">
+            <summary>
+            Returns the specified <paramref name="value"/> if it's not null or empty,
+            otherwise it throws an <see cref="T:System.ArgumentNullException"/>
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.CreateWebRequestResultAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:StravaClient.WebRequestResult"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            </summary>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.CreateWebRequestResultFromStreamAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:StravaClient.WebRequestResult`1"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            read as stream
+            </summary>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.ExtensionMethods.CreateWebRequestResultAsync``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:StravaClient.WebRequestResult`1"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            </summary>
+            <typeparam name="TResponse">The type of response to create</typeparam>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="T:StravaClient.Failable">
+            <summary>
+            The default implementation of the <see cref="T:StravaClient.IFailable"/> interface
+            </summary>
+        </member>
+        <member name="F:StravaClient.Failable.mException">
+            <summary>
+            The member of the <see cref="P:StravaClient.Failable.Exception"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.IsSuccessful">
+            <summary>
+            A flag indicating whether the task was successful or not
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.Success">
+            <summary>
+            The instance of the <see cref="T:StravaClient.Failable"/> that indicates a successful operation
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.OperationAbortedErrorMessage">
+            <summary>
+            Error message indicating that the operation was aborted
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:StravaClient.Failable"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="M:StravaClient.Failable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.Failable.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:StravaClient.Failable.FromException(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable"/> from the specified <paramref name="ex"/>
+            </summary>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.FromErrorMessage(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable"/> from the specified <paramref name="errorMessage"/>
+            </summary>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.FromResult``1(``0)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable`1"/> that represents the specified <paramref name="result"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.FromException``1(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable`1"/> that represents the specified <paramref name="ex"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.FromErrorMessage``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable`1"/> that represents the specified <paramref name="errorMessage"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.FromAbortedOperation``1">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable`1"/> that represents an aborted operation
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable.op_Implicit(System.String)~StravaClient.Failable">
+            <summary>
+            Creates a <see cref="T:StravaClient.Failable"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:StravaClient.Failable.op_Implicit(System.Exception)~StravaClient.Failable">
+            <summary>
+            Creates a <see cref="T:StravaClient.Failable"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="T:StravaClient.SuccessOnlyFailable">
+            <summary>
+            An internal implementation of the <see cref="T:StravaClient.Failable"/> that always has
+            a successful state
+            </summary>
+        </member>
+        <member name="P:StravaClient.SuccessOnlyFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:StravaClient.SuccessOnlyFailable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.OperationAbortedOnlyFailable">
+            <summary>
+            An internal implementation of the <see cref="T:StravaClient.Failable"/> that is used for 
+            indicating an aborted operation
+            </summary>
+        </member>
+        <member name="P:StravaClient.OperationAbortedOnlyFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:StravaClient.OperationAbortedOnlyFailable.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="M:StravaClient.OperationAbortedOnlyFailable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.Failable`1">
+            <summary>
+            The default implementation of the <see cref="T:StravaClient.IFailable`1"/> interface
+            </summary>
+            <typeparam name="TResult">The type of the result</typeparam>
+        </member>
+        <member name="F:StravaClient.Failable`1.ExceptionMessage">
+            <summary>
+            The error message for the exception
+            </summary>
+        </member>
+        <member name="F:StravaClient.Failable`1.mResult">
+            <summary>
+            The member of the <see cref="P:StravaClient.Failable`1.Result"/>
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable`1.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="P:StravaClient.Failable`1.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:StravaClient.Failable`1"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="M:StravaClient.Failable`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.Failable`1.#ctor(`0)">
+            <summary>
+            Result based constructor
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="M:StravaClient.Failable`1.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:StravaClient.Failable`1.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.Failable`1.op_Implicit(System.String)~StravaClient.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:StravaClient.Failable`1"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:StravaClient.Failable`1.op_Implicit(System.Exception)~StravaClient.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:StravaClient.Failable`1"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:StravaClient.Failable`1.op_Implicit(`0)~StravaClient.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:StravaClient.Failable`1"/> using the specified result as its result
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="T:StravaClient.OperationAbortedOnlyFailable`1">
+            <summary>
+            An internal implementation of the <see cref="T:StravaClient.Failable`1"/> that is used for 
+            indicating an aborted operation
+            </summary>
+        </member>
+        <member name="P:StravaClient.OperationAbortedOnlyFailable`1.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:StravaClient.OperationAbortedOnlyFailable`1.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="M:StravaClient.OperationAbortedOnlyFailable`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:StravaClient.IFailable">
+            <summary>
+            Provides abstractions for an object that can fail its task
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable.Success">
+            <summary>
+            The instance of the <see cref="T:StravaClient.IFailable"/> that indicates a successful operation
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:StravaClient.IFailable"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable.IsSuccessful">
+            <summary>
+            A flag indicating whether the task was successful or not
+            </summary>
+        </member>
+        <member name="M:StravaClient.IFailable.FromException(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.IFailable"/> from the specified <paramref name="ex"/>
+            </summary>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.IFailable.FromErrorMessage(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.IFailable"/> from the specified <paramref name="errorMessage"/>
+            </summary>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.IFailable.FromResult``1(``0)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.IFailable`1"/> that represents the specified <paramref name="result"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.IFailable.FromException``1(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.IFailable`1"/> that represents the specified <paramref name="ex"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.IFailable.FromErrorMessage``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.Failable`1"/> that represents the specified <paramref name="errorMessage"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.IFailable.FromAbortedOperation``1">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.IFailable`1"/> that represents an aborted operation
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:StravaClient.IFailable`1">
+            <summary>
+            A <see cref="T:StravaClient.IFailable"/> that contains a result
+            </summary>
+            <typeparam name="TResult">The type of the result</typeparam>
+        </member>
+        <member name="P:StravaClient.IFailable`1.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:StravaClient.IFailable`1"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="P:StravaClient.IFailable`1.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="T:StravaClient.WebRequestResult">
+            <summary>
+            A web response from a call to get generic object data from a HTTP server
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestResult.DefaultHeaders">
+            <summary>
+            The default headers
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestResult.ExceptionMessage">
+            <summary>
+            The error message for the exception
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestResult.mException">
+            <summary>
+            The member of the <see cref="P:StravaClient.WebRequestResult.Exception"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestResult.mResult">
+            <summary>
+            The member of the <see cref="P:StravaClient.WebRequestResult.Result"/>
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.ErrorMessage">
+            <summary>
+            If something failed, this is the error message.
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.IsSuccessful">
+            <summary>
+            A flag indicating whether the request was successful 
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.StatusCode">
+            <summary>
+            The status code
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.StatusDescription">
+            <summary>
+            The status description
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.ContentType">
+            <summary>
+            The type of content returned by the server
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.Headers">
+            <summary>
+            All the response headers
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.RawServerResponse">
+            <summary>
+            The raw server response body
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestResult.Result">
+            <summary>
+            The actual server response as an object
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestResult.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestResult.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:StravaClient.WebRequestResult.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestResult.op_Implicit(System.String)~StravaClient.WebRequestResult">
+            <summary>
+            Creates a <see cref="T:StravaClient.WebRequestResult"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:StravaClient.WebRequestResult.op_Implicit(System.Exception)~StravaClient.WebRequestResult">
+            <summary>
+            Creates a <see cref="T:StravaClient.Failable"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="T:StravaClient.WebRequestResult`1">
+            <summary>
+            A web response from a call to get specific data from a HTTP server
+            </summary>
+            <typeparam name="TResult">The type of data to deserialize the raw body into</typeparam>
+        </member>
+        <member name="P:StravaClient.WebRequestResult`1.Result">
+            <summary>
+            Casts the underlying object to the specified type
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.#ctor(`0)">
+            <summary>
+            Result based constructor
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.ToUnsuccessfulWebRequestResult``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="customErrorMessage">The custom error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.ToSuccessfulWebRequestResult``1(System.Func{`0,``0})">
+            <summary>
+            Creates and returns a <see cref="T:StravaClient.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="valueConverter">The method that converts an instance of type <typeparamref name="TResult"/> to <typeparamref name="T"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.op_Implicit(System.String)~StravaClient.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:StravaClient.WebRequestResult`1"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.op_Implicit(System.Exception)~StravaClient.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:StravaClient.WebRequestResult`1"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:StravaClient.WebRequestResult`1.op_Implicit(`0)~StravaClient.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:StravaClient.WebRequestResult`1"/> using the specified result as its result
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="T:StravaClient.IFailableHelpers">
+            <summary>
+            Helper methods for <see cref="T:StravaClient.IFailable"/>
+            </summary>
+        </member>
+        <member name="M:StravaClient.IFailableHelpers.GetStringRepresentation(StravaClient.IFailable)">
+            <summary>
+            Gets the string representation of the specified <paramref name="failable"/>
+            </summary>
+            <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.IFailableHelpers.GetStringRepresentation``1(StravaClient.IFailable{``0})">
+            <summary>
+            Gets the string representation of the specified <paramref name="failable"/>
+            </summary>
+            <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="F:StravaClient.RouteHelpers.mTypeToQueryArgumentsMapper">
+            <summary>
+            Maps a type to its query arguments
+            </summary>
+        </member>
+        <member name="M:StravaClient.RouteHelpers.AttachParameters``1(System.String,``0)">
+            <summary>
+            Attaches the parameters that are specified as properties in the <paramref name="args"/>
+            to the specified <paramref name="url"/>.
+            NOTE: A custom property name can be set using the <see cref="T:StravaClient.ArgumentNameAttribute"/>!
+            </summary>
+            <param name="url">The URL</param>
+            <param name="args">The arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.RouteHelpers.AttachParametersCore(System.String,System.Object,System.Type)">
+            <summary>
+            Attaches the parameters that are specified as properties in the <paramref name="args"/>
+            to the specified <paramref name="url"/>.
+            NOTE: A custom property name can be set using the <see cref="T:StravaClient.ArgumentNameAttribute"/>!
+            </summary>
+            <param name="url">The URL</param>
+            <param name="args">The arguments</param>
+            <param name="argumentType">The type of the argument</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.RouteHelpers.GetNonNullableType(System.Type)">
+            <summary>
+            Gets the T from the <see cref="T:System.Nullable`1"/> of the specified <paramref name="type"/>
+            when the <paramref name="type"/> is nullable, otherwise it returns the type
+            </summary>
+            <param name="type">The type</param>
+            <returns></returns>
+        </member>
+        <member name="T:StravaClient.RouteHelpers.PropertyQueryArgumentInfo">
+            <summary>
+            The information for the query argument that is related to a property
+            </summary>
+        </member>
+        <member name="F:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.mMapperProperties">
+            <summary>
+            The properties that define mappers
+            </summary>
+        </member>
+        <member name="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo">
+            <summary>
+            The property
+            </summary>
+        </member>
+        <member name="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.IsDate">
+            <summary>
+            A flag indicating whether the <see cref="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo"/> is a date property
+            </summary>
+        </member>
+        <member name="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.IsEnumerable">
+            <summary>
+            A flag indicating whether the <see cref="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo"/> is an enumerable property
+            </summary>
+        </member>
+        <member name="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.Mapper">
             <summary>
             
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="first"></param>
-            <param name="second"></param>
-            <param name="comparer"></param>
+        </member>
+        <member name="M:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.#ctor(System.Reflection.PropertyInfo,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="name">The name</param>
+            <param name="propertyInfo">A flag indicating whether the <see cref="P:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo"/> is an enumerable property</param>
+        </member>
+        <member name="M:StravaClient.RouteHelpers.PropertyQueryArgumentInfo.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
             <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.IndexOf``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+        <member name="T:StravaClient.IAPIStringFormattable">
             <summary>
-            Finds the index of the first item matching an expression in an enumerable.
+            Provides abstractions for an object that can be formatted to a string suitable to be placed in a URL.
             </summary>
-            <param name="items">The enumerable to search.</param>
-            <param name="predicate">The expression to test the items against.</param>
-            <returns>The index of the first matching item, or -1 if no items match.</returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+        <member name="M:StravaClient.IAPIStringFormattable.ToAPIString">
             <summary>
-            Finds the index of the first item that equals the <paramref name="element"/>.
-            NOTE: The <see cref="M:System.Object.Equals(System.Object)"/> is used for comparing the elements
+            Returns a string suitable to be placed in a URL.
             </summary>
-            <param name="items">The enumerable to search.</param>
-            <param name="element">The element that is searched</param>
-            <returns>The index of the first matching item, or -1 if no items match.</returns>
-        </member>
-        <member name="M:StravaClient.ExtensionMethods.Sum(System.Collections.Generic.IEnumerable{System.TimeSpan})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.TimeSpan"/> values.
-            </summary>
-            <param name="source">A sequence of <see cref="T:System.TimeSpan"/> values to calculate the sum of.</param>
             <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.TimeSpan})">
+        <member name="T:StravaClient.ActivityTypeEnumerableToStringEnumerableJsonConverter">
             <summary>
-            Computes the sum of the sequence of <see cref="T:System.TimeSpan"/> values that are obtained by
-            invoking a transform function on each element of the input sequence.
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a set of <see cref="T:StravaClient.ActivityType"/>s to a set of <see cref="T:System.String"/>s.
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="source">A sequence of <see cref="T:System.TimeSpan"/> values to calculate the sum of.</param>
-            <param name="selector">A transform function to apply to each element.</param>
-            <returns>The sum of the values in the sequence.</returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.TimeSpan}})">
+        <member name="M:StravaClient.ActivityTypeEnumerableToStringEnumerableJsonConverter.#ctor">
             <summary>
-            Computes the sum of a sequence of <see cref="!:TimeSpan?"/> values.
+            Default constructor
             </summary>
-            <param name="source">A sequence of <see cref="!:TimeSpan?"/> values to calculate the sum of.</param>
-            <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.TimeSpan}})">
-            <summary>
-            Computes the sum of the sequence of <see cref="!:TimeSpan?"/> values that are obtained by
-            invoking a transform function on each element of the input sequence.
-            </summary>
-            <typeparam name="T">The type of the items of the enumerable</typeparam>
-            <param name="source">A sequence of values that are used for calculating the sum.</param>
-            <param name="selector">A transform function to apply to each element.</param>
-            <returns>The sum of the values in the sequence.</returns>
+        <member name="M:StravaClient.ActivityTypeEnumerableToStringEnumerableJsonConverter.GetMapper">
+            <inheritdoc/>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.Except``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+        <member name="T:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2">
             <summary>
-            Produces the set difference of two sequences according to a specified <paramref name="propertySelector"/> function.
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting set of <typeparamref name="TEnum"/> to a set of <typeparamref name="TValue"/>.
             </summary>
-            <typeparam name="T">The type of the element</typeparam>
-            <typeparam name="TKey">The type of the key</typeparam>
-            <param name="first">The collection whose keys that are not also in second will be returned</param>
-            <param name="second">The collection whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence</param>
-            <param name="propertySelector">A function to extract the key for each element</param>
-            <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.#ctor">
             <summary>
-            Produces the set difference of two sequences according to a specified <paramref name="propertySelector"/> function.
+            Default Constructor
             </summary>
-            <typeparam name="T">The type of the element</typeparam>
-            <param name="first">The collection whose keys that are not also in second will be returned</param>
-            <param name="second">The collection whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence</param>
-            <param name="propertySelector">A function to extract the key for each element</param>
-            <returns></returns>
         </member>
-        <member name="M:StravaClient.ExtensionMethods.CreateCombinations``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IEnumerable{`0},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IEnumerable{`0},Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.GetMapper">
             <summary>
-            Creates and returns all the possible combinations of the specified <paramref name="sequences"/>.
-            NOTE: Each combination contains one item from each sequence!
-            NOTE: Order is not taken into consideration!
+            Gets a mapper that maps the enum values to other values.
             </summary>
-            <typeparam name="T">The type of the items</typeparam>
-            <param name="sequences">The sequences</param>
-            <returns></returns>
+        </member>
+        <member name="T:StravaClient.CoordinatesEnumerableToDoubleArrayEnumerableJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.Collections.Generic.IEnumerable`1"/> to a <see cref="!:IEnumerable&lt;double[]&gt;"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.CoordinatesEnumerableToDoubleArrayEnumerableJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.CoordinatesEnumerableToDoubleArrayEnumerableJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IEnumerable{StravaClient.Coordinates},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.CoordinatesEnumerableToDoubleArrayEnumerableJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IEnumerable{StravaClient.Coordinates},Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.TimeSpanEnumerableToIntArrayEnumerableJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.Collections.Generic.IEnumerable`1"/> to a <see cref="!:IEnumerable&lt;int&gt;"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.TimeSpanEnumerableToIntArrayEnumerableJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.TimeSpanEnumerableToIntArrayEnumerableJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IEnumerable{System.TimeSpan},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.TimeSpanEnumerableToIntArrayEnumerableJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IEnumerable{System.TimeSpan},Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
         </member>
         <member name="T:StravaClient.ActivityTypeToStringJsonConverter">
             <summary>
@@ -4238,40 +5455,6 @@
         </member>
         <member name="M:StravaClient.AthleteSexToStringJsonConverter.GetMapper">
             <inheritdoc/>
-        </member>
-        <member name="T:StravaClient.ActivityTypeToStringArrayJsonConverter">
-            <summary>
-            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:System.Enum"/> to a <see cref="T:System.String"/>.
-            </summary>
-        </member>
-        <member name="M:StravaClient.ActivityTypeToStringArrayJsonConverter.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:StravaClient.ActivityTypeToStringArrayJsonConverter.GetMapper">
-            <inheritdoc/>
-        </member>
-        <member name="T:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2">
-            <summary>
-            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting set of <typeparamref name="TEnum"/> to a set of <typeparamref name="TValue"/>.
-            </summary>
-        </member>
-        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.#ctor">
-            <summary>
-            Default Constructor
-            </summary>
-        </member>
-        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IEnumerable{`0},System.Boolean,Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc/>
-        </member>
-        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IEnumerable{`0},Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc/>
-        </member>
-        <member name="M:StravaClient.BaseEnumEnumerableToValuesEnumerableConverter`2.GetMapper">
-            <summary>
-            Gets a mapper that maps the enum values to other values.
-            </summary>
         </member>
         <member name="T:StravaClient.BaseEnumToValueJsonConverter`2">
             <summary>
@@ -4370,6 +5553,30 @@
             <inheritdoc/>
         </member>
         <member name="M:StravaClient.DateOnlyToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateOnly,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.DateTimeOffsetToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.DateTimeOffset"/> to an <see cref="T:System.Int32"/>.
+            </summary>
+            <remarks>
+            Note that the calculation for the date time is based in seconds since the epoch (1/1/1970).
+            </remarks>
+        </member>
+        <member name="F:StravaClient.DateTimeOffsetToIntJsonConverter.EpochDate">
+            <summary>
+            The date format that is used for deserializing and serializing the date value.
+            </summary>
+        </member>
+        <member name="M:StravaClient.DateTimeOffsetToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.DateTimeOffsetToIntJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.DateTimeOffset,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:StravaClient.DateTimeOffsetToIntJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateTimeOffset,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
         </member>
         <member name="T:StravaClient.GearResourceStateToIntJsonConverter">
@@ -4502,15 +5709,23 @@
         <member name="M:StravaClient.StreamSeriesTypeToStringJsonConverter.GetMapper">
             <inheritdoc/>
         </member>
+        <member name="T:StravaClient.StreamSetTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:StravaClient.ClubType"/> to a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:StravaClient.StreamSetTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.StreamSetTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
         <member name="T:StravaClient.TimeSpanToIntJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.TimeSpan"/> to an <see cref="T:System.Int32"/> that represents
             the time span in seconds.
-            </summary>
-        </member>
-        <member name="F:StravaClient.TimeSpanToIntJsonConverter.DateFormat">
-            <summary>
-            The date format that is used for deserializing and serializing the date value.
             </summary>
         </member>
         <member name="M:StravaClient.TimeSpanToIntJsonConverter.#ctor">
@@ -4523,6 +5738,566 @@
         </member>
         <member name="M:StravaClient.TimeSpanToIntJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.TimeSpan,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
+        </member>
+        <member name="T:StravaClient.StravaClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:StravaClient.StravaClient.mAccessToken">
+            <summary>
+            The member of <see cref="P:StravaClient.StravaClient.AccessToken"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.StravaClient.mClientSecret">
+            <summary>
+            The member of <see cref="P:StravaClient.StravaClient.ClientSecret"/> property
+            </summary>
+        </member>
+        <member name="F:StravaClient.StravaClient.mRefreshToken">
+            <summary>
+            The member of <see cref="P:StravaClient.StravaClient.RefreshToken"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClient.ClientId">
+            <summary>
+            The application’s ID, obtained during registration.
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClient.ClientSecret">
+            <summary>
+            The application’s secret, obtained during registration.
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClient.AccessToken">
+            <summary>
+            The access token.
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClient.RefreshToken">
+            <summary>
+            The refresh token.
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClient.ExpiresAt">
+            <summary>
+            The expiration date of the key.
+            </summary>
+        </member>
+        <member name="M:StravaClient.StravaClient.#ctor(System.Int32,System.String,System.String,System.DateTimeOffset,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StravaClient.StravaClient.AddActivityAsync(StravaClient.ActivityRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetActivityByIdAsync(System.String,StravaClient.ActivityByIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetCommentsByActivityIdAsync(System.String,StravaClient.CommentsByActivityIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetKudoersByActivityIdAsync(System.String,StravaClient.KudoersByActivityIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetLapsByActivityIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetAthleteActivitiesAsync(StravaClient.AthleteActivitiesAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetZonesByActivityIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.UpdateActivityByIdAsync(System.String,StravaClient.ActivityRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetAthleteAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetAthleteZonesAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetAthleteStatsAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.UpdateAthleteZonesAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetClubActivitiesByIdAsync(System.String,StravaClient.ClubActivitiesByIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetClubAdminsByIdAsync(System.String,StravaClient.ClubAdminsByIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetClubsByIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetClubMembersByIdAsync(System.String,StravaClient.ClubMembersByIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetClubsLoggedInAthleteAsync(StravaClient.ClubsLoggedInAthleteAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetGearByIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetRouteByIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetRoutesByAthleteIdAsync(System.String,StravaClient.RoutesByAthleteIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetEffortsBySegmentIdAsync(StravaClient.EffortsBySegmentIdAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetSegmentEffortByIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetExploreSegmentsAsync(StravaClient.SegmentsExploreAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetStarredSegmentsAsync(StravaClient.StarredSegmentsAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetSegmentByIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.UpdateStarSegment(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetActivityStreamsAsync(System.String,StravaClient.ActivityStreamsAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetRouteStreamsAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetSegmentEffortsStreamsAsync(System.String,StravaClient.SegmentEffortStreamsAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetSegmentStreamsAsync(System.String,StravaClient.SegmentStreamsAPIArgs)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetUploadsAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="uploadId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.RequestNewToken(System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="clientId"></param>
+            <param name="clientSecret"></param>
+            <param name="refreshToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.StravaClient.GetRouteWithAPIKey(System.String)">
+            <summary>
+            Attaches the <see cref="P:StravaClient.StravaClient.AccessToken"/> to the specified <paramref name="url"/>
+            </summary>
+            <param name="url">The URL</param>
+            <returns></returns>
+        </member>
+        <member name="T:StravaClient.WebRequestsClient`1">
+            <summary>
+            Client that provides HTTP calls for sending and receiving information from a HTTP server
+            </summary>
+            <typeparam name="TAuthenticationArgs">
+            The type of the authentication args.
+            NOTE: The authentication args determine the authentication scheme that will be used against the server!
+            </typeparam>
+        </member>
+        <member name="F:StravaClient.WebRequestsClient`1.PATCH">
+            <summary>
+            The name of the PATCH HTTP method
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestsClient`1.MediaTypeJson">
+            <summary>
+            The json request and response preferred media type
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestsClient`1.DeserializationErrorMessage">
+            <summary>
+            The standard deserialization error message
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestsClient`1.mClient">
+            <summary>
+            THe member of the <see cref="P:StravaClient.WebRequestsClient`1.Client"/> property
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestsClient`1.Client">
+            <summary>
+            The HTTP client that is used for sending the HTTP requests
+            NOTE: HTTP client is recommended to be injected as a Singleton in DI
+                  https://stackoverflow.com/questions/4015324/how-to-make-http-post-web-request
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.PostAsync(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.PostBytesAsync(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:StravaClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.GetAsync(System.String,`0)">
+            <summary>
+            GETs a web request to a URL and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.GetBytesAsync(System.String,`0)">
+            <summary>
+            GETs the bytes that are returned in the <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.DownloadFileAsync(System.String,System.String,`0)">
+            <summary>
+            Downloads the file from the specified <paramref name="url"/> and saves it at the specified <paramref name="fileName"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="fileName">The file path combined with the file name</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.PutAsync(System.String,System.Object,`0)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.PutBytesAsync(System.String,System.Object,`0)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:StravaClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.PostAsync``1(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:StravaClient.WebRequestResult`1"/>
+            </summary>
+            <typeparam name="TResponse">The type of the response</typeparam>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.GetAsync``1(System.String,`0)">
+            <summary>
+            GETs a web request to a URL and returns a <see cref="T:StravaClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.PutAsync``1(System.String,System.Object,`0)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:StravaClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ShouldLogRequests">
+            <summary>
+            Gets a flag indicating whether the requests should be logged or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.CreateClient">
+            <summary>
+            Creates and returns an <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ConfigureClient(System.Net.Http.HttpClient)">
+            <summary>
+            Configures the specified <paramref name="client"/>
+            </summary>
+            <param name="client">The client</param>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ConfigureStringContent(System.Net.Http.StringContent)">
+            <summary>
+            Configures the specified <paramref name="stringContent"/>
+            </summary>
+            <param name="stringContent">The content</param>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.Serialize(System.Object)">
+            <summary>
+            Serializes the specified <paramref name="obj"/> to a string
+            before sending the request
+            </summary>
+            <param name="obj">The object</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the specified <paramref name="rawServerResponse"/> to the requested type
+            </summary>
+            <typeparam name="TResponse">The type to deserialize to</typeparam>
+            <param name="rawServerResponse">The raw server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.GetMediaType">
+            <summary>
+            Gets the media type header that is attached to the request before sending it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.GetEncoding">
+            <summary>
+            Gets the encoding that is attached to the request before sending it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.CreateAuthenticationHeader(`0)">
+            <summary>
+            Creates and returns a <see cref="T:System.Net.Http.Headers.AuthenticationHeaderValue"/> using the
+            specified <paramref name="authenticationArgs"/>
+            </summary>
+            <param name="authenticationArgs">The authentication arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ParseErrorMessage(StravaClient.WebRequestResult)">
+            <summary>
+            Attempts to parse the error message contained in the <paramref name="result"/>
+            </summary>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ParseDeserializationErrorMessage(StravaClient.WebRequestResult,System.Type,System.Exception)">
+            <summary>
+            Attempts to parse the error message contained in the specified <paramref name="deserializationException"/>
+            that was thrown when attempting to deserialize the <paramref name="result"/> to the specified <paramref name="deserializationType"/>
+            </summary>
+            <param name="deserializationType">The type that response should have been deserialized to</param>
+            <param name="deserializationException">The deserialization exception that was thrown</param>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.HandleNullAuthenticationArgs">
+            <summary>
+            Handles the null arguments
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.CreateStringContent(System.Object)">
+            <summary>
+            Creates and returns the <see cref="T:System.Net.Http.StringContent"/> that represents
+            the specified <paramref name="content"/>
+            </summary>
+            <param name="content">The content</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ParseErrorMessageCore(StravaClient.WebRequestResult)">
+            <summary>
+            Attempts to parse the error message contained in the <paramref name="response"/>
+            </summary>
+            <param name="response">The Web request result</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.ParseErrorMessageCore(StravaClient.WebRequestResult,System.Type,System.Exception)">
+            <summary>
+            Attempts to parse the error message contained in the specified <paramref name="deserializationException"/>
+            that was thrown when attempting to deserialize the <paramref name="response"/> to the specified <paramref name="deserializationType"/>
+            </summary>
+            <param name="deserializationType">The type that response should have been deserialized to</param>
+            <param name="deserializationException">The deserialization exception that was thrown</param>
+            <param name="response">The Web request result</param>
+            <returns></returns>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient`1.SetAuthorizationHeader(`0)">
+            <summary>
+            Sets the specified <paramref name="authentication"/> if any to the <see cref="P:StravaClient.WebRequestsClient`1.Client"/>
+            </summary>
+            <param name="authentication">The token</param>
+        </member>
+        <member name="T:StravaClient.WebRequestsClient">
+            <summary>
+            The JWT token based implementation of the <see cref="T:StravaClient.WebRequestsClient`1"/>
+            </summary>
+        </member>
+        <member name="F:StravaClient.WebRequestsClient.mInstance">
+            <summary>
+            The member of the <see cref="P:StravaClient.WebRequestsClient.Instance"/>
+            </summary>
+        </member>
+        <member name="P:StravaClient.WebRequestsClient.Instance">
+            <summary>
+            A single instance of the <see cref="T:StravaClient.WebRequestsClient"/>
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:StravaClient.WebRequestsClient.CreateAuthenticationHeader(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:System.Net.Http.Headers.AuthenticationHeaderValue"/> using the
+            specified <paramref name="authenticationArgs"/>
+            </summary>
+            <param name="authenticationArgs">The authentication arguments</param>
+            <returns></returns>
         </member>
         <member name="T:StravaClient.StravaClientConstants">
             <summary>
@@ -4608,6 +6383,11 @@
         <member name="P:StravaClient.StravaClientConstants.ClubTypeToStringMapper">
             <summary>
             Maps each <see cref="T:StravaClient.ClubType"/> to each <see cref="T:System.String"/> representation
+            </summary>
+        </member>
+        <member name="P:StravaClient.StravaClientConstants.StreamSetTypeToStringMapper">
+            <summary>
+            Maps each <see cref="T:StravaClient.StreamSetType"/> to each <see cref="T:System.String"/> representation
             </summary>
         </member>
     </members>

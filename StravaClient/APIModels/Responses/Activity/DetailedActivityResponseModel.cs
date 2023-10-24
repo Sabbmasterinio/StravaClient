@@ -71,6 +71,11 @@ namespace StravaClient
         /// </summary>
         private IEnumerable<DetailedSegmentEffortResponseModel>? mBestEfforts;
 
+        /// <summary>
+        /// The member of <see cref="UploadIdStr"/> property
+        /// </summary>
+        private string? mUploadIdStr;
+
         #endregion
 
         #region Public Properties
@@ -224,19 +229,33 @@ namespace StravaClient
         }
 
         /// <summary>
-        /// A set of starting point latitude and longitude
+        /// The activity's highest elevation, in meters.
         /// </summary>
-        [JsonProperty("start_latlng")]
-        [JsonConverter(typeof(CoordinatesToDoubleArrayJsonConverter))]
-        public Coordinates? StartCoordinates { get; set; }
+        [JsonProperty("elev_high")]
+        public float ElevationHigh { get; set; }
 
         /// <summary>
-        /// A set of ending point latitude and longitude
+        /// The activity's lowest elevation, in meters.
         /// </summary>
-        [JsonProperty("end_latlng")]
-        [JsonConverter(typeof(CoordinatesToDoubleArrayJsonConverter))]
-        public Coordinates? EndCoordinates { get; set; }
+        [JsonProperty("elev_low")]
+        public float ElevationLow { get; set; }
 
+        /// <summary>
+        /// The unique identifier of the upload in string format.
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("upload_id_str")]
+        public string UploadIdStr
+        {
+            get => mUploadIdStr ?? string.Empty;
+            set => mUploadIdStr = value;
+        }
+
+        /// <summary>
+        /// Whether the activity is muted.
+        /// </summary>
+        [JsonProperty("hide_from_home")]
+        public bool HideFromHome { get; set; }
 
         #endregion
 

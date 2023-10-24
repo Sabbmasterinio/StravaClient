@@ -245,5 +245,24 @@ namespace StravaClient
         {
             { ClubType.Company, "company" }
         }.ToImmutableDictionary();
+        
+        /// <summary>
+        /// Maps each <see cref="StreamSetType"/> to each <see cref="string"/> representation
+        /// </summary>
+        public static IReadOnlyDictionary<StreamSetType, string> StreamSetTypeToStringMapper { get; } = new Dictionary<StreamSetType, string>()
+        {
+            { StreamSetType.Time, "time" },
+            { StreamSetType.Distance, "distance" },
+            { StreamSetType.Coordinates, "latlng" },
+            { StreamSetType.Altitude, "altitude" },
+            { StreamSetType.VelocitySmooth, "velocity_smooth" },
+            { StreamSetType.Heartrate, "heartrate" },
+            { StreamSetType.Cadence, "cadence" },
+            { StreamSetType.Watts, "watts" },
+            { StreamSetType.Temperature, "temp" },
+            { StreamSetType.Moving, "moving" },
+            { StreamSetType.GradeSmooth, "grade_smooth" }
+        }.ToImmutableDictionary();
+
     }
 }

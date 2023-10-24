@@ -8,15 +8,6 @@ namespace StravaClient
     /// </summary>
     public class TimeSpanToIntJsonConverter : JsonConverter<TimeSpan>
     {
-        #region Constants
-
-        /// <summary>
-        /// The date format that is used for deserializing and serializing the date value.
-        /// </summary>
-        public const string DateFormat = "MM/dd/yyyy";
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -29,7 +20,7 @@ namespace StravaClient
 
         #endregion
 
-        #region Public Properties
+        #region Public Methods
 
         /// <inheritdoc/>
         public override TimeSpan ReadJson(JsonReader reader, Type objectType, TimeSpan existingValue, bool hasExistingValue, JsonSerializer serializer)

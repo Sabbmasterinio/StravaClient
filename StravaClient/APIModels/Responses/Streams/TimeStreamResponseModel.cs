@@ -1,4 +1,6 @@
-﻿namespace StravaClient
+﻿using Newtonsoft.Json;
+
+namespace StravaClient
 {
     /// <summary>
     /// Represents a time stream.
@@ -8,6 +10,15 @@
     /// </remarks>
     public class TimeStreamResponseModel : BaseEnumerableDataStreamResponseModel<TimeSpan>
     {
+        #region Public Properties
+
+        /// <inheritdoc/>
+        [JsonProperty("data")]
+        [JsonConverter(typeof(TimeSpanEnumerableToIntArrayEnumerableJsonConverter))]
+        public override IEnumerable<TimeSpan> Data { get => base.Data; set => base.Data = value; }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -15,7 +26,6 @@
         /// </summary>
         public TimeStreamResponseModel() : base()
         {
-
         }
 
         #endregion

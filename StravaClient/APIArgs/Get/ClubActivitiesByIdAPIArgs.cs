@@ -11,7 +11,7 @@ namespace StravaClient
     /// <summary>
     /// Arguments used for retrieving club activities by id.
     /// </summary>
-    internal class ClubActivitiesByIdAPIArgs : BasePageParameters
+    public class ClubActivitiesByIdAPIArgs : BasePageParameters
     {
         #region Constructors
 

@@ -20,7 +20,7 @@ namespace StravaClient
         /// [southwest corner latitude, southwest corner longitude, northeast corner latitude, northeast corner longitude].
         /// </summary>
         [JsonProperty("bounds")]
-        public Coordinates[]? Bounds{ get; set; }
+        public IEnumerable<Coordinates>? Bounds{ get; set; }
 
         /// <summary>
         /// Desired activity type. May take one of the following values: running, riding.

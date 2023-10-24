@@ -14,10 +14,6 @@ using System.Diagnostics;
 //using var client = new HttpClient();
 //client.BaseAddress = new Uri(url);
 
-
-
-
-
 //// Configure OAuth2 access token for authorization: strava_oauth
 //Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -43,42 +39,43 @@ using System.Diagnostics;
 //    Debug.Print("Exception when calling ActivitiesApi.createActivity: " + e.Message);
 //}
 
-
 Console.WriteLine(  nameof(StravaClientConstants.ResourceStateToIntMapper));
 
 var json = $$$"""
+               [
                {
-                 "id" : 1,
-                 "resource_state" : 3,
-                 "name" : "Team Strava Cycling",
-                 "profile_medium" : "https://dgalywyr863hv.cloudfront.net/pictures/clubs/1/1582/4/medium.jpg",
-                 "profile" : "https://dgalywyr863hv.cloudfront.net/pictures/clubs/1/1582/4/large.jpg",
-                 "cover_photo" : "https://dgalywyr863hv.cloudfront.net/pictures/clubs/1/4328276/1/large.jpg",
-                 "cover_photo_small" : "https://dgalywyr863hv.cloudfront.net/pictures/clubs/1/4328276/1/small.jpg",
-                 "sport_type" : "cycling",
-                 "activity_types" : [ "Ride", "VirtualRide", "EBikeRide", "Velomobile", "Handcycle" ],
-                 "city" : "San Francisco",
-                 "state" : "California",
-                 "country" : "United States",
-                 "private" : true,
-                 "member_count" : 116,
-                 "featured" : false,
-                 "verified" : false,
-                 "url" : "team-strava-bike",
-                 "membership" : "member",
-                 "admin" : false,
-                 "owner" : false,
-                 "description" : "Private club for Cyclists who work at Strava.",
-                 "club_type" : "company",
-                 "post_count" : 29,
-                 "owner_id" : 759,
-                 "following_count" : 107
+                 "type": "latlng",
+                 "data": [
+                   [
+                     37.833112,
+                     -122.483436
+                   ],
+                   [
+                     37.832964,
+                     -122.483406
+                   ]
+                 ],
+                 "series_type": "distance",
+                 "original_size": 2,
+                 "resolution": "high"
                }
+               ]
                """;
+//GetMissingJsonProperties<BaseEnumerableDataStreamResponseModel<float>>(json);
 
-//GetMissingJsonProperties<IEnumerable<SummaryActivityResponseModel>>(json);
+var result = JsonConvert.DeserializeObject<IEnumerable<CoordinatesStreamResponseModel>>(json)!;
 
-var result = JsonConvert.DeserializeObject<DetailedClubResponseModel>(json)!;
+
+var apiKey = await System.IO.File.ReadAllTextAsync(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "GoogleMapsAPIKey.txt"));
+
+//var client = new GoogleMapsClient.GoogleMapsClient(apiKey);
+
+//var placesResult = await client.NearbySearchAsync(new NearbySearchAPIArgs(new Coordinates(40.629269, 22.947412), 1500)
+//{
+
+//    Keyword = "restaurant"
+
+//});
 
 
 json = JsonConvert.SerializeObject(result);

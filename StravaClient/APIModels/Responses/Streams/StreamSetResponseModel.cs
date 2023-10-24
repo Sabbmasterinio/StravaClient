@@ -9,7 +9,7 @@ namespace StravaClient
     public class StreamSetResponseModel
     {
         #region Private Members
-
+        
         /// <summary>
         /// The member of <see cref="Time"/> property
         /// </summary>
@@ -23,7 +23,7 @@ namespace StravaClient
         /// <summary>
         /// The member of <see cref="Latlng"/> property
         /// </summary>
-        private LatLngStreamResponseModel? mLatlng;
+        private CoordinatesStreamResponseModel? mLatlng;
         
         /// <summary>
         /// The member of <see cref="Altitude"/> property
@@ -93,22 +93,22 @@ namespace StravaClient
         /// An instance of LatLngStream.
         /// </summary>
         [JsonProperty("latlng")]
-        public LatLngStreamResponseModel Latlng 
+        public CoordinatesStreamResponseModel Latlng 
         { 
             get => mLatlng ??= new();
             set => mLatlng = value;
         }
-        
+
         /// <summary>
         /// An instance of AltitudeStream.
         /// </summary>
         [JsonProperty("altitude")]
-        public AltitudeStreamResponseModel Altitude 
-        { 
+        public AltitudeStreamResponseModel Altitude
+        {
             get => mAltitude ??= new();
             set => mAltitude = value;
         }
-        
+
         /// <summary>
         /// An instance of SmoothVelocityStream.
         /// </summary>

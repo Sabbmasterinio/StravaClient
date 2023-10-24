@@ -32,11 +32,6 @@ namespace StravaClient
         /// </summary>
         private string? mCountry;
 
-        /// <summary>
-        /// The member of the <see cref="ActivityTypes"/> property
-        /// </summary>
-        private IEnumerable<ActivityType>? mActivityTypes;
-
         #endregion
 
         #region Public Properties
@@ -75,6 +70,12 @@ namespace StravaClient
         public Uri? ProfileMedium { get; set; }
 
         /// <summary>
+        /// The club's profile.
+        /// </summary>
+        [JsonProperty("profile")]
+        public Uri? Profile { get; set; }
+
+        /// <summary>
         /// URL to a ~1185x580 pixel cover photo.
         /// </summary>
         [JsonProperty("cover_photo")]
@@ -85,19 +86,6 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("cover_photo_small")]
         public Uri? CoverPhotoSmall {  get; set; }
-
-        /// <summary>
-        /// The activity types that count for a club. 
-        /// This takes precedence over sport_type.
-        /// </summary>
-        [JsonProperty("activity_types")]
-        [JsonConverter(typeof(ActivityTypeEnumerableToStringEnumerableJsonConverter))]
-        public IEnumerable<ActivityType> ActivityTypes
-        {
-            get => mActivityTypes ?? Enumerable.Empty<ActivityType>();
-
-            set => mActivityTypes = value;
-        }
 
         /// <summary>
         /// The club's city.
@@ -136,7 +124,7 @@ namespace StravaClient
         /// Whether the club is private.
         /// </summary>
         [JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool IsPrivate { get; set; }
 
         /// <summary>
         /// Whether the club is private.
@@ -148,32 +136,19 @@ namespace StravaClient
         /// Whether the club is featured or not.
         /// </summary>
         [JsonProperty("featured")]
-        public bool Featured { get; set; }
+        public bool IsFeatured { get; set; }
 
         /// <summary>
         /// Whether the club is verified or not.
         /// </summary>
         [JsonProperty("verified")]
-        public bool Verified { get; set; }
+        public bool IsVerified { get; set; }
 
         /// <summary>
         /// The club's vanity URL.
         /// </summary>
         [JsonProperty("url")]
         public Uri? Url { get; set; }
-
-        /// <summary>
-        /// The club's profile.
-        /// </summary>
-        [JsonProperty("profile")]
-        public Uri? Profile {  get; set; }
-
-        /// <summary>
-        /// Sport type.
-        /// </summary>
-        [JsonProperty("sport_type")]
-        [JsonConverter(typeof(SportTypeToStringJsonConverter))]
-        public SportType SportType { get; set; }
 
         #endregion
 

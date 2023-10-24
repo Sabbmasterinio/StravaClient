@@ -31,6 +31,11 @@ namespace StravaClient
         /// </summary>
         private SummarySegmentResponseModel? mSegment;
 
+        /// <summary>
+        /// The member of <see cref="AthleteSegmentStats"/> property
+        /// </summary>
+        private SummaryPRSegmentEffortResponseModel? mAthleteSegmentStats;
+
         #endregion
 
         #region Public Properties
@@ -145,6 +150,16 @@ namespace StravaClient
         /// </summary>
         [JsonProperty("hidden")]
         public bool Hidden { get; set; }
+
+        /// <summary>
+        /// An instance of SummarySegmentEffort.
+        /// </summary>
+        [JsonProperty("athlete_segment_stats")]
+        public SummaryPRSegmentEffortResponseModel AthleteSegmentStats
+        {
+            get => mAthleteSegmentStats ??= new();
+            set => mAthleteSegmentStats = value;
+        }
 
         #endregion
 

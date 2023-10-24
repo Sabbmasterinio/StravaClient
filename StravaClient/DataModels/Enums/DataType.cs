@@ -11,11 +11,11 @@ namespace StravaClient
     /// </summary>
     public enum DataType 
     {
-        fit,
-        fit.gz,
-        tcx,
-        tcx.gz,
-        gpx,
-        gpx.gz
+        //fit,
+        //fit.gz,
+        //tcx,
+        //tcx.gz,
+        //gpx,
+        //gpx.gz
     }
 }

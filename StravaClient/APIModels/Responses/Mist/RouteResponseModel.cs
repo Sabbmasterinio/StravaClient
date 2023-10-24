@@ -120,7 +120,7 @@ namespace StravaClient
         /// Whether this route is private.
         /// </summary>
         [JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool IsPrivate { get; set; }
 
         /// <summary>
         /// Whether this route is starred by the logged-in athlete.
